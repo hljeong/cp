@@ -12,4 +12,8 @@
   - ~~use `setprecision(9)`~~
   - use `setprecision(12)` (`setprecision(9)` failed [j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j) :pensive:)
 - [j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j)
-  - took me a while
+  - expectation
+  - reduce state space
+- [m - candies](https://atcoder.jp/contests/dp/tasks/dp_m)
+  - prefix sum optimization
+  - remember to update to the end of prefix sum array
