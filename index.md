@@ -46,6 +46,12 @@
 | [atcoder dp j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j) | n/a | dp; math: expectation |  |
 | [atcoder dp k - stones](https://atcoder.jp/contests/dp/tasks/dp_k) | n/a | dp; math: games |  |
 
+### expectation
+
+| problem | difficulty | tags | comments |
+| :---: | :---: | :---: | :--- |
+| [atcoder dp j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j) | n/a | dp; math: expectation |  |
+
 ### games
 
 | problem | difficulty | tags | comments |
@@ -57,12 +63,6 @@
 | problem | difficulty | tags | comments |
 | :---: | :---: | :---: | :--- |
 | [atcoder dp i - coins](https://atcoder.jp/contests/dp/tasks/dp_i) | n/a | dp; math: probability |  |
-
-### probability
-
-| problem | difficulty | tags | comments |
-| :---: | :---: | :---: | :--- |
-| [atcoder dp j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j) | n/a | dp; math: expectation |  |
 
 ## strings
 
