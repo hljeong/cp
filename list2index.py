@@ -28,10 +28,12 @@ def read():
         if last[0] != None: 
           for tag in last[1]['tags']: 
             if ':' not in tag: 
-              index[tag]['problems'].append(last)
+              if last not in index[tag]['problems']: 
+                index[tag]['problems'].append(last)
             else: 
               [supertag, subtag] = tag.split(':')
-              index[supertag]['subtags'][subtag]['problems'].append(last)
+              if last not in index[supertag]['subtags'][subtag]['problems']: 
+                index[supertag]['subtags'][subtag]['problems'].append(last)
         [problem, raw_tags] = line[2:].split(') - ')
         problem += ')'
         parent_tag = ''
@@ -105,10 +107,12 @@ def read():
     if last[0] != None: 
       for tag in last[1]['tags']: 
         if ':' not in tag: 
-          index[tag]['problems'].append(last)
+          if last not in index[tag]['problems']: 
+            index[tag]['problems'].append(last)
         else: 
           [supertag, subtag] = tag.split(':')
-          index[supertag]['subtags'][subtag]['problems'].append(last)
+          if last not in index[supertag]['subtags'][subtag]['problems']: 
+            index[supertag]['subtags'][subtag]['problems'].append(last)
   return index
   
 def main(): 
