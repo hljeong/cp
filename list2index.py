@@ -92,7 +92,7 @@ def read():
         last = [problem, {
           'raw_tags': raw_tags, 
           'tags': tags, 
-          'difficulty': 'n/a', 
+          'difficulty': '', 
           'comments': ''
         }]
       elif line.startswith('  - difficulty: '): 
