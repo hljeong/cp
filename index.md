@@ -16,7 +16,7 @@
 | [atcoder dp j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j) | n/a | dp, math: expectation | |
 | [atcoder dp k - stones](https://atcoder.jp/contests/dp/tasks/dp_k) | n/a | dp, math: games | |
 | [atcoder dp l - deque](https://atcoder.jp/contests/dp/tasks/dp_l) | n/a | dp: interval | |
-| [atcoder dp m - candies](https://atcoder.jp/contests/dp/tasks/dp_m) | n/a | dp | |
+| [atcoder dp m - candies](https://atcoder.jp/contests/dp/tasks/dp_m) | n/a | dp | prefix sum optimization |
 | [atcoder dp n - slimes](https://atcoder.jp/contests/dp/tasks/dp_n) | n/a | dp: inverval | |
 
 ### grid
