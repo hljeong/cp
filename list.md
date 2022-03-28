@@ -476,7 +476,7 @@
   - difficulty: 900
 - [codeforces 547b - mike and feet](https://codeforces.com/problemset/problem/547/B) - binary search; data structures; dp; graph: dsu
   - difficulty: 1900
-- [codeforces 732b - cormen � the best friend of a man](https://codeforces.com/problemset/problem/732/B) - dp; greedy
+- [codeforces 732b - cormen - the best friend of a man](https://codeforces.com/problemset/problem/732/B) - dp; greedy
   - difficulty: 900
 - [codeforces 1350a - orac and factors](https://codeforces.com/problemset/problem/1350/A) - math
   - difficulty: 900

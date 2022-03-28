@@ -622,7 +622,7 @@
 | [codeforces 1206b - make product equal one](https://codeforces.com/problemset/problem/1206/B) | 900 | dp; implementation |  |
 | [codeforces 1113a - sasha and his trip](https://codeforces.com/problemset/problem/1113/A) | 900 | dp; greedy; math |  |
 | [codeforces 547b - mike and feet](https://codeforces.com/problemset/problem/547/B) | 1900 | binary search; data structures; dp; graph: dsu |  |
-| [codeforces 732b - cormen � the best friend of a man](https://codeforces.com/problemset/problem/732/B) | 900 | dp; greedy |  |
+| [codeforces 732b - cormen - the best friend of a man](https://codeforces.com/problemset/problem/732/B) | 900 | dp; greedy |  |
 | [codeforces 1350b - orac and models](https://codeforces.com/problemset/problem/1350/B) | 1400 | dp |  |
 | [codeforces 1337c - linova and kingdom](https://codeforces.com/problemset/problem/1337/C) | 1600 | dp; graph: dfs and similar; graph: tree; greedy; sorting |  |
 | [codeforces 1339c - powered addition](https://codeforces.com/problemset/problem/1339/C) | 1500 | dp: bitmask; greedy; implementation |  |
