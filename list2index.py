@@ -1,6 +1,6 @@
-def write(index): 
-  with open('index.md', 'w') as f: 
-    f.write('# index\n')
+def write(index, file): 
+  with open(file, 'w') as f: 
+    f.write(f'# {file.split(".")[0].replace("_", " ")}\n')
     for tag in sorted(index.keys()): 
       f.write('\n'
               f'## {tag}\n'
@@ -18,9 +18,9 @@ def write(index):
         for problem in index[tag]['subtags'][subtag]['problems']: 
           f.write(f'| {problem[0]} | {problem[1]["difficulty"]} | {problem[1]["raw_tags"]} | {problem[1]["comments"]} |\n')
 
-def read(): 
+def read(file): 
   index = {}
-  with open('list.md') as f: 
+  with open(file) as f: 
     last = [None, None]
     for line in f.readlines(): 
       line = line.rstrip()
@@ -102,7 +102,7 @@ def read():
       elif line.startswith('  - '): 
         comment = line[4:]
         if last[1]['comments'] != '': 
-          last[1]['comments'] += '; '
+          last[1]['comments'] += '<br />'
         last[1]['comments'] += comment
     if last[0] != None: 
       for tag in last[1]['tags']: 
@@ -116,7 +116,8 @@ def read():
   return index
   
 def main(): 
-  write(read())
+  write(read('list.md'), 'index.md')
+  write(read('notable.md'), 'notable_index.md')
 
 if __name__ == '__main__': 
   main()

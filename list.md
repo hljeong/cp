@@ -7,6 +7,7 @@
   - classic knapsack
 - [atcoder dp e - knapsack 2](https://atcoder.jp/contests/dp/tasks/dp_e) - dp
   - reverse knapsack
+  - for each value find min weight
 - [atcoder dp f - lcs](https://atcoder.jp/contests/dp/tasks/dp_f) - dp; string
   - longest common subsequence + backtracking
 - [atcoder dp g - longest path](https://atcoder.jp/contests/dp/tasks/dp_g) - dp; graph
@@ -14,11 +15,16 @@
 - [atcoder dp h - grid 1](https://atcoder.jp/contests/dp/tasks/dp_h) - dp: grid
   - classic grid dp
 - [atcoder dp i - coins](https://atcoder.jp/contests/dp/tasks/dp_i) - dp; math: probability
+  - be careful when printing long double
+  - ~~use `setprecision(9)`~~
+  - use `setprecision(12)` (`setprecision(9)` failed [j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j) :pensive:)
 - [atcoder dp j - sushi](https://atcoder.jp/contests/dp/tasks/dp_j) - dp; math: expectation
+  - reduce state space
 - [atcoder dp k - stones](https://atcoder.jp/contests/dp/tasks/dp_k) - dp; math: game
 - [atcoder dp l - deque](https://atcoder.jp/contests/dp/tasks/dp_l) - dp: interval
 - [atcoder dp m - candies](https://atcoder.jp/contests/dp/tasks/dp_m) - dp
   - prefix sum optimization
+  - remember to update to the end of prefix sum array
 - [atcoder dp n - slimes](https://atcoder.jp/contests/dp/tasks/dp_n) - dp: interval
 - [codeforces 69a - young physicist](https://codeforces.com/problemset/problem/69/A) - implementation; math
   - difficulty: 1000
@@ -94,7 +100,7 @@
   - difficulty: 1000
 - [codeforces 219a - k-string](https://codeforces.com/problemset/problem/219/A) - implementation; string
   - difficulty: 1000
-- [codeforces 270a - fancy fence](https://codeforces.com/problemset/problem/270/A) - implementation; math; math: geometry
+- [codeforces 270a - fancy fence](https://codeforces.com/problemset/problem/270/A) - implementation; math: geometry
   - difficulty: 1100
 - [codeforces 58a - chat room](https://codeforces.com/problemset/problem/58/A) - greedy; string
   - difficulty: 1000
@@ -112,7 +118,7 @@
   - difficulty: 1400
 - [codeforces 363b - fence](https://codeforces.com/problemset/problem/363/B) - dp; implementation
   - difficulty: 1100
-- [codeforces 230b - t-primes](https://codeforces.com/problemset/problem/230/B) - binary search; implementation; math; math: number theory
+- [codeforces 230b - t-primes](https://codeforces.com/problemset/problem/230/B) - binary search; implementation; math: number theory
   - difficulty: 1300
 - [codeforces 166a - rank list](https://codeforces.com/problemset/problem/166/A) - binary search; implementation; sorting
   - difficulty: 1100
@@ -136,15 +142,15 @@
   - difficulty: 1100
 - [codeforces 433b - kuriyama mirai's stones](https://codeforces.com/problemset/problem/433/B) - dp; implementation; sorting
   - difficulty: 1200
-- [codeforces 115a - party](https://codeforces.com/problemset/problem/115/A) - graph; graph: dfs and similar; graph: tree
+- [codeforces 115a - party](https://codeforces.com/problemset/problem/115/A) - graph: dfs and similar, tree
   - difficulty: 900
-- [codeforces 217a - ice skating](https://codeforces.com/problemset/problem/217/A) - graph; graph: dfs and similar; graph: dsu; implementation
+- [codeforces 217a - ice skating](https://codeforces.com/problemset/problem/217/A) - graph: dfs and similar, dsu; implementation
   - difficulty: 1200
 - [codeforces 189a - cut ribbon](https://codeforces.com/problemset/problem/189/A) - dp; implementation
   - difficulty: 1300
 - [codeforces 416c - booking system](https://codeforces.com/problemset/problem/416/C) - binary search; dp; greedy; implementation
   - difficulty: 1600
-- [codeforces 510c - fox and names](https://codeforces.com/problemset/problem/510/C) - graph; graph: dfs and similar; sorting
+- [codeforces 510c - fox and names](https://codeforces.com/problemset/problem/510/C) - graph: dfs and similar; sorting
   - difficulty: 1600
 - [codeforces 510b - fox and two dots](https://codeforces.com/problemset/problem/510/B) - graph: dfs and similar
   - difficulty: 1500
@@ -158,13 +164,13 @@
   - difficulty: 1500
 - [codeforces 220a - little elephant and problem](https://codeforces.com/problemset/problem/220/A) - implementation; sorting
   - difficulty: 1300
-- [codeforces 322b - ciel and flowers](https://codeforces.com/problemset/problem/322/B) - math; math: combinatorics
+- [codeforces 322b - ciel and flowers](https://codeforces.com/problemset/problem/322/B) - math: combinatorics
   - difficulty: 1600
 - [codeforces 275b - convex shape](https://codeforces.com/problemset/problem/275/B) - constructive; implementation
   - difficulty: 1700
 - [codeforces 377a - maze](https://codeforces.com/problemset/problem/377/A) - graph: dfs and similar
   - difficulty: 1600
-- [codeforces 257c - view angle](https://codeforces.com/problemset/problem/257/C) - implementation; math; math: geometry
+- [codeforces 257c - view angle](https://codeforces.com/problemset/problem/257/C) - implementation; math: geometry
   - difficulty: 1800
 - [codeforces 332b - maximum absurdity](https://codeforces.com/problemset/problem/332/B) - data structures; dp; implementation
   - difficulty: 1500
@@ -180,13 +186,13 @@
   - difficulty: 1800
 - [codeforces 371c - hamburgers](https://codeforces.com/problemset/problem/371/C) - binary search; implementation
   - difficulty: 1600
-- [codeforces 246d - colorful graph](https://codeforces.com/problemset/problem/246/D) - graph; graph: dfs and similar; implementation
+- [codeforces 246d - colorful graph](https://codeforces.com/problemset/problem/246/D) - graph: dfs and similar; implementation
   - difficulty: 1600
 - [codeforces 231c - to add or not to add](https://codeforces.com/problemset/problem/231/C) - binary search; sorting; two pointers
   - difficulty: 1600
 - [codeforces 339d - xenia and bit operations](https://codeforces.com/problemset/problem/339/D) - data structures; graph: tree
   - difficulty: 1700
-- [codeforces 276d - little girl and maximum xor](https://codeforces.com/problemset/problem/276/D) - dp; dp: bitmask; greedy; implementation; math
+- [codeforces 276d - little girl and maximum xor](https://codeforces.com/problemset/problem/276/D) - dp: bitmask; greedy; implementation; math
   - difficulty: 1700
 - [codeforces 382c - arithmetic progression](https://codeforces.com/problemset/problem/382/C) - implementation; sorting
   - difficulty: 1700
@@ -194,11 +200,11 @@
   - difficulty: 1800
 - [codeforces 225c - barcode](https://codeforces.com/problemset/problem/225/C) - dp; math: matrix
   - difficulty: 1700
-- [codeforces 460b - little dima and equation](https://codeforces.com/problemset/problem/460/B) - implementation; math; math: number theory
+- [codeforces 460b - little dima and equation](https://codeforces.com/problemset/problem/460/B) - implementation; math: number theory
   - difficulty: 1500
 - [codeforces 479d - long jumps](https://codeforces.com/problemset/problem/479/D) - binary search; greedy; implementation
   - difficulty: 1700
-- [codeforces 166e - tetrahedron](https://codeforces.com/problemset/problem/166/E) - dp; math; math: matrix
+- [codeforces 166e - tetrahedron](https://codeforces.com/problemset/problem/166/E) - dp; math: matrix
   - difficulty: 1500
 - [codeforces 253b - physics practical](https://codeforces.com/problemset/problem/253/B) - binary search; dp; sorting; two pointers
   - difficulty: 1400
@@ -206,7 +212,7 @@
   - difficulty: 1500
 - [codeforces 441c - valera and tubes ](https://codeforces.com/problemset/problem/441/C) - constructive; graph: dfs and similar; implementation
   - difficulty: 1500
-- [codeforces 369c - valera and elections](https://codeforces.com/problemset/problem/369/C) - graph; graph: dfs and similar; graph: tree
+- [codeforces 369c - valera and elections](https://codeforces.com/problemset/problem/369/C) - graph: dfs and similar, tree
   - difficulty: 1600
 - [codeforces 276c - little girl and maximum sum](https://codeforces.com/problemset/problem/276/C) - data structures; greedy; implementation; sorting
   - difficulty: 1500
@@ -230,7 +236,7 @@
   - difficulty: 1700
 - [codeforces 493c - vasya and basketball](https://codeforces.com/problemset/problem/493/C) - binary search; data structures; implementation; sorting; two pointers
   - difficulty: 1600
-- [codeforces 404c - restore graph](https://codeforces.com/problemset/problem/404/C) - graph; graph: dfs and similar; sorting
+- [codeforces 404c - restore graph](https://codeforces.com/problemset/problem/404/C) - graph: dfs and similar; sorting
   - difficulty: 1800
 - [codeforces 463c - gargari and bishops](https://codeforces.com/problemset/problem/463/C) - greedy; hashing; implementation
   - difficulty: 1900
@@ -248,13 +254,13 @@
   - difficulty: 1000
 - [codeforces 230a - dragons](https://codeforces.com/problemset/problem/230/A) - greedy; sorting
   - difficulty: 1000
-- [codeforces 476b - dreamoon and wifi](https://codeforces.com/problemset/problem/476/B) - dp; dp: bitmask; implementation; math; math: combinatorics; math: probability
+- [codeforces 476b - dreamoon and wifi](https://codeforces.com/problemset/problem/476/B) - dp: bitmask; implementation; math: combinatorics, probability
   - difficulty: 1300
 - [codeforces 277a - learning languages](https://codeforces.com/problemset/problem/277/A) - graph: dfs and similar; graph: dsu
   - difficulty: 1400
 - [codeforces 295a - greg and array](https://codeforces.com/problemset/problem/295/A) - data structures; implementation
   - difficulty: 1400
-- [codeforces 493d - vasya and chess](https://codeforces.com/problemset/problem/493/D) - constructive; math; math: game
+- [codeforces 493d - vasya and chess](https://codeforces.com/problemset/problem/493/D) - constructive; math: game
   - difficulty: 1700
 - [codeforces 1015b - obtaining the string](https://codeforces.com/problemset/problem/1015/B) - implementation
   - difficulty: 1200
@@ -274,9 +280,9 @@
   - difficulty: 1500
 - [codeforces 714b - filya and homework](https://codeforces.com/problemset/problem/714/B) - implementation; sorting
   - difficulty: 1200
-- [codeforces 385c - bear and prime numbers](https://codeforces.com/problemset/problem/385/C) - binary search; data structures; dp; implementation; math; math: number theory
+- [codeforces 385c - bear and prime numbers](https://codeforces.com/problemset/problem/385/C) - binary search; data structures; dp; implementation; math: number theory
   - difficulty: 1700
-- [codeforces 1326d2 - prefix-suffix palindrome (hard version)](https://codeforces.com/problemset/problem/1326/D2) - binary search; greedy; hashing; string; string: string suffix structure
+- [codeforces 1326d2 - prefix-suffix palindrome (hard version)](https://codeforces.com/problemset/problem/1326/D2) - binary search; greedy; hashing; string: string suffix structure
   - difficulty: 1800
 - [codeforces 1151d - stas and the queue at the buffet](https://codeforces.com/problemset/problem/1151/D) - greedy; math; sorting
   - difficulty: 1600
@@ -292,17 +298,17 @@
   - difficulty: 1400
 - [codeforces 746b - decoding](https://codeforces.com/problemset/problem/746/B) - implementation; string
   - difficulty: 900
-- [codeforces 522a - reposts](https://codeforces.com/problemset/problem/522/A) - dp; graph; graph: dfs and similar; graph: tree
+- [codeforces 522a - reposts](https://codeforces.com/problemset/problem/522/A) - dp; graph: dfs and similar, tree
   - difficulty: 1200
 - [codeforces 996a - hit the lottery](https://codeforces.com/problemset/problem/996/A) - dp; greedy
   - difficulty: 800
 - [codeforces 1176c - lose it!](https://codeforces.com/problemset/problem/1176/C) - dp; greedy; implementation
   - difficulty: 1300
-- [codeforces 870c - maximum splitting](https://codeforces.com/problemset/problem/870/C) - dp; greedy; math; math: number theory
+- [codeforces 870c - maximum splitting](https://codeforces.com/problemset/problem/870/C) - dp; greedy; math: number theory
   - difficulty: 1300
 - [codeforces 626b - cards](https://codeforces.com/problemset/problem/626/B) - constructive; dp; math
   - difficulty: 1300
-- [codeforces 584d - dima and lisa](https://codeforces.com/problemset/problem/584/D) - implementation; math; math: number theory
+- [codeforces 584d - dima and lisa](https://codeforces.com/problemset/problem/584/D) - implementation; math: number theory
   - difficulty: 1800
 - [codeforces 1182a - filling shapes](https://codeforces.com/problemset/problem/1182/A) - dp; math
   - difficulty: 1000
@@ -314,7 +320,7 @@
   - difficulty: 1500
 - [codeforces 788a - functions again](https://codeforces.com/problemset/problem/788/A) - dp; two pointers
   - difficulty: 1600
-- [codeforces 295b - greg and graph](https://codeforces.com/problemset/problem/295/B) - dp; graph; graph: shortest path
+- [codeforces 295b - greg and graph](https://codeforces.com/problemset/problem/295/B) - dp; graph: shortest path
   - difficulty: 1700
 - [codeforces 1015f - bracket substring](https://codeforces.com/problemset/problem/1015/F) - dp; string
   - difficulty: 2300
@@ -336,7 +342,7 @@
   - difficulty: 1300
 - [codeforces 1339a - filling diamonds](https://codeforces.com/problemset/problem/1339/A) - dp; implementation; math
   - difficulty: 900
-- [codeforces 505b - mr. kitayuta's colorful graph](https://codeforces.com/problemset/problem/505/B) - dp; graph; graph: dfs and similar; graph: dsu
+- [codeforces 505b - mr. kitayuta's colorful graph](https://codeforces.com/problemset/problem/505/B) - dp; graph: dfs and similar, dsu
   - difficulty: 1400
 - [codeforces 233a - perfect permutation](https://codeforces.com/problemset/problem/233/A) - implementation; math
   - difficulty: 800
@@ -344,7 +350,7 @@
   - difficulty: 1700
 - [codeforces 455c - civilization](https://codeforces.com/problemset/problem/455/C) - dp; graph: dfs and similar; graph: dsu; graph: tree; ternary search
   - difficulty: 2100
-- [codeforces 73d - freediv](https://codeforces.com/problemset/problem/73/D) - graph; graph: dfs and similar; greedy
+- [codeforces 73d - freediv](https://codeforces.com/problemset/problem/73/D) - graph: dfs and similar; greedy
   - difficulty: 2200
 - [codeforces 1249b1 - books exchange (easy version)](https://codeforces.com/problemset/problem/1249/B1) - graph: dsu; math
   - difficulty: 1000
@@ -358,7 +364,7 @@
   - difficulty: 1200
 - [codeforces 1249b2 - books exchange (hard version)](https://codeforces.com/problemset/problem/1249/B2) - graph: dfs and similar; graph: dsu; math
   - difficulty: 1300
-- [codeforces 755c - polandball and forest](https://codeforces.com/problemset/problem/755/C) - graph; graph: dfs and similar; graph: dsu; graph: tree; interactive
+- [codeforces 755c - polandball and forest](https://codeforces.com/problemset/problem/755/C) - graph: dfs and similar, dsu, tree; interactive
   - difficulty: 1300
 - [codeforces 515b - drazil and his happy friends](https://codeforces.com/problemset/problem/515/B) - graph: dsu; implementation; math: number theory; meet-in-the-middle
   - difficulty: 1300
@@ -378,7 +384,7 @@
   - difficulty: 1300
 - [codeforces 1292a - neko's maze game](https://codeforces.com/problemset/problem/1292/A) - data structures; graph: dsu; implementation
   - difficulty: 1400
-- [codeforces 1167c - news distribution](https://codeforces.com/problemset/problem/1167/C) - graph; graph: dfs and similar; graph: dsu
+- [codeforces 1167c - news distribution](https://codeforces.com/problemset/problem/1167/C) - graph: dfs and similar, dsu
   - difficulty: 1400
 - [codeforces 445b - dzy loves chemistry](https://codeforces.com/problemset/problem/445/B) - graph: dfs and similar; graph: dsu; greedy
   - difficulty: 1400
@@ -390,17 +396,17 @@
   - difficulty: 1400
 - [codeforces 1332c - k-complete word](https://codeforces.com/problemset/problem/1332/C) - graph: dfs and similar; graph: dsu; greedy; implementation; string
   - difficulty: 1500
-- [codeforces 771a - bear and friendship condition](https://codeforces.com/problemset/problem/771/A) - graph; graph: dfs and similar; graph: dsu
+- [codeforces 771a - bear and friendship condition](https://codeforces.com/problemset/problem/771/A) - graph: dfs and similar, dsu
   - difficulty: 1500
-- [codeforces 977e - cyclic components](https://codeforces.com/problemset/problem/977/E) - graph; graph: dfs and similar; graph: dsu
+- [codeforces 977e - cyclic components](https://codeforces.com/problemset/problem/977/E) - graph: dfs and similar, dsu
   - difficulty: 1500
 - [codeforces 356a - knight tournament](https://codeforces.com/problemset/problem/356/A) - data structures; graph: dsu
   - difficulty: 1500
-- [codeforces 1139c - edgy trees](https://codeforces.com/problemset/problem/1139/C) - graph; graph: dfs and similar; graph: dsu; graph: tree; math
+- [codeforces 1139c - edgy trees](https://codeforces.com/problemset/problem/1139/C) - graph: dfs and similar, dsu, tree; math
   - difficulty: 1500
-- [codeforces 1263d - secret passwords](https://codeforces.com/problemset/problem/1263/D) - graph; graph: dfs and similar; graph: dsu
+- [codeforces 1263d - secret passwords](https://codeforces.com/problemset/problem/1263/D) - graph: dfs and similar, dsu
   - difficulty: 1500
-- [codeforces 103b - cthulhu](https://codeforces.com/problemset/problem/103/B) - graph; graph: dfs and similar; graph: dsu
+- [codeforces 103b - cthulhu](https://codeforces.com/problemset/problem/103/B) - graph: dfs and similar, dsu
   - difficulty: 1500
 - [codeforces 490b - queue](https://codeforces.com/problemset/problem/490/B) - graph: dsu; implementation
   - difficulty: 1500
@@ -408,33 +414,33 @@
   - difficulty: 1500
 - [codeforces 17b - hierarchy](https://codeforces.com/problemset/problem/17/B) - graph: dfs and similar; graph: dsu; graph: shortest path; greedy
   - difficulty: 1500
-- [codeforces 177c2 - party](https://codeforces.com/problemset/problem/177/C2) - graph; graph: dfs and similar; graph: dsu; implementation
+- [codeforces 177c2 - party](https://codeforces.com/problemset/problem/177/C2) - graph: dfs and similar, dsu; implementation
   - difficulty: 1500
-- [codeforces 763a - timofey and a tree](https://codeforces.com/problemset/problem/763/A) - dp; graph; graph: dfs and similar; graph: dsu; graph: tree; implementation
+- [codeforces 763a - timofey and a tree](https://codeforces.com/problemset/problem/763/A) - dp; graph: dfs and similar, dsu, tree; implementation
   - difficulty: 1600
-- [codeforces 500b - new year permutation](https://codeforces.com/problemset/problem/500/B) - graph; graph: dfs and similar; graph: dsu; greedy; math; sorting
+- [codeforces 500b - new year permutation](https://codeforces.com/problemset/problem/500/B) - graph: dfs and similar, dsu; greedy; math; sorting
   - difficulty: 1600
 - [codeforces 722c - destroying array](https://codeforces.com/problemset/problem/722/C) - data structures; graph: dsu
   - difficulty: 1600
-- [codeforces 659e - new reform](https://codeforces.com/problemset/problem/659/E) - data structures; graph; graph: dfs and similar; graph: dsu; greedy
+- [codeforces 659e - new reform](https://codeforces.com/problemset/problem/659/E) - data structures; graph: dfs and similar, dsu; greedy
   - difficulty: 1600
-- [codeforces 723d - lakes in berland](https://codeforces.com/problemset/problem/723/D) - graph; graph: dfs and similar; graph: dsu; greedy; implementation
+- [codeforces 723d - lakes in berland](https://codeforces.com/problemset/problem/723/D) - graph: dfs and similar, dsu; greedy; implementation
   - difficulty: 1600
-- [codeforces 731c - socks](https://codeforces.com/problemset/problem/731/C) - graph; graph: dfs and similar; graph: dsu; greedy
+- [codeforces 731c - socks](https://codeforces.com/problemset/problem/731/C) - graph: dfs and similar, dsu; greedy
   - difficulty: 1600
-- [codeforces 939d - love rescue](https://codeforces.com/problemset/problem/939/D) - graph; graph: dfs and similar; graph: dsu; greedy; string
+- [codeforces 939d - love rescue](https://codeforces.com/problemset/problem/939/D) - graph: dfs and similar, dsu; greedy; string
   - difficulty: 1600
 - [codeforces 741b - arpa's weak amphitheater and mehrdad's valuable hoses](https://codeforces.com/problemset/problem/741/B) - dp; graph: dfs and similar; graph: dsu
   - difficulty: 1600
-- [codeforces 28b - psort](https://codeforces.com/problemset/problem/28/B) - graph; graph: dfs and similar; graph: dsu
+- [codeforces 28b - psort](https://codeforces.com/problemset/problem/28/B) - graph: dfs and similar, dsu
   - difficulty: 1600
-- [codeforces 1253d - harmonious graph](https://codeforces.com/problemset/problem/1253/D) - constructive; graph; graph: dfs and similar; graph: dsu; greedy; sorting
+- [codeforces 1253d - harmonious graph](https://codeforces.com/problemset/problem/1253/D) - constructive; graph: dfs and similar, dsu; greedy; sorting
   - difficulty: 1700
-- [codeforces 1209d - cow and snacks](https://codeforces.com/problemset/problem/1209/D) - graph; graph: dfs and similar; graph: dsu
+- [codeforces 1209d - cow and snacks](https://codeforces.com/problemset/problem/1209/D) - graph: dfs and similar, dsu
   - difficulty: 1700
-- [codeforces 1176e - cover it!](https://codeforces.com/problemset/problem/1176/E) - graph; graph: dfs and similar; graph: dsu; graph: shortest path; graph: tree
+- [codeforces 1176e - cover it!](https://codeforces.com/problemset/problem/1176/E) - graph: dfs and similar, dsu, shortest path, tree
   - difficulty: 1700
-- [codeforces 698b - fix a tree](https://codeforces.com/problemset/problem/698/B) - constructive; graph; graph: dfs and similar; graph: dsu; graph: tree
+- [codeforces 698b - fix a tree](https://codeforces.com/problemset/problem/698/B) - constructive; graph: dfs and similar, dsu, tree
   - difficulty: 1700
 - [codeforces 1131f - asya and kittens](https://codeforces.com/problemset/problem/1131/F) - constructive; graph: dsu
   - difficulty: 1700
@@ -446,9 +452,9 @@
   - difficulty: 1700
 - [codeforces 371d - vessels](https://codeforces.com/problemset/problem/371/D) - data structures; graph: dsu; graph: tree; implementation
   - difficulty: 1800
-- [codeforces 1213g - path queries](https://codeforces.com/problemset/problem/1213/G) - divide and conquer; graph; graph: dsu; graph: tree; sorting
+- [codeforces 1213g - path queries](https://codeforces.com/problemset/problem/1213/G) - divide and conquer; graph: dsu, tree; sorting
   - difficulty: 1800
-- [codeforces 1081d - maximum distance](https://codeforces.com/problemset/problem/1081/D) - graph; graph: dsu; graph: shortest path; sorting
+- [codeforces 1081d - maximum distance](https://codeforces.com/problemset/problem/1081/D) - graph: dsu, shortest path; sorting
   - difficulty: 1800
 - [codeforces 4a - watermelon](https://codeforces.com/problemset/problem/4/A) - implementation; math
   - difficulty: 800
@@ -456,7 +462,7 @@
   - difficulty: 800
 - [codeforces 894a - qaq](https://codeforces.com/problemset/problem/894/A) - dp; implementation
   - difficulty: 800
-- [codeforces 436c - dungeons and candies](https://codeforces.com/problemset/problem/436/C) - graph; graph: dsu; graph: tree; greedy
+- [codeforces 436c - dungeons and candies](https://codeforces.com/problemset/problem/436/C) - graph: dsu, tree; greedy
   - difficulty: 1800
 - [codeforces 1180a - alex and a rhombus](https://codeforces.com/problemset/problem/1180/A) - dp; implementation; math
   - difficulty: 800
@@ -476,7 +482,7 @@
   - difficulty: 900
 - [codeforces 1350b - orac and models](https://codeforces.com/problemset/problem/1350/B) - dp
   - difficulty: 1400
-- [codeforces 1350c - orac and lcm](https://codeforces.com/problemset/problem/1350/C) - math; math: number theory
+- [codeforces 1350c - orac and lcm](https://codeforces.com/problemset/problem/1350/C) - math: number theory
   - difficulty: 1600
 - [codeforces 1341a - nastya and rice](https://codeforces.com/problemset/problem/1341/A) - math
   - difficulty: 900
@@ -514,7 +520,7 @@
   - difficulty: 1100
 - [codeforces 1333c - eugene and an array](https://codeforces.com/problemset/problem/1333/C) - binary search; data structures; implementation; two pointers
   - difficulty: 1700
-- [codeforces 1333f - kate and imperfection](https://codeforces.com/problemset/problem/1333/F) - greedy; implementation; math; math: number theory; sorting; two pointers
+- [codeforces 1333f - kate and imperfection](https://codeforces.com/problemset/problem/1333/F) - greedy; implementation; math: number theory; sorting; two pointers
   - difficulty: 2200
 - [codeforces 1330a - dreamoon and ranking collection](https://codeforces.com/problemset/problem/1330/A) - implementation
   - difficulty: 900
@@ -524,7 +530,7 @@
   - difficulty: 1800
 - [codeforces 1328a - divisibility problem](https://codeforces.com/problemset/problem/1328/A) - math
   - difficulty: 800
-- [codeforces 1328b - k-th beautiful string](https://codeforces.com/problemset/problem/1328/B) - binary search; implementation; math; math: combinatorics
+- [codeforces 1328b - k-th beautiful string](https://codeforces.com/problemset/problem/1328/B) - binary search; implementation; math: combinatorics
   - difficulty: 1300
 - [codeforces 1328c - ternary xor](https://codeforces.com/problemset/problem/1328/C) - greedy; implementation
   - difficulty: 1200
@@ -532,7 +538,7 @@
   - difficulty: 1800
 - [codeforces 1332a - exercising walk](https://codeforces.com/problemset/problem/1332/A) - greedy; implementation; math
   - difficulty: 1100
-- [codeforces 1332b - composite coloring](https://codeforces.com/problemset/problem/1332/B) - constructive; greedy; implementation; math; math: number theory
+- [codeforces 1332b - composite coloring](https://codeforces.com/problemset/problem/1332/B) - constructive; greedy; implementation; math: number theory
   - difficulty: 1400
 - [codeforces 1327a - sum of odd integers](https://codeforces.com/problemset/problem/1327/A) - math
   - difficulty: 1100
@@ -542,7 +548,7 @@
   - difficulty: 1600
 - [codeforces 1326a - bad ugly numbers](https://codeforces.com/problemset/problem/1326/A) - constructive; math: number theory
   - difficulty: 1000
-- [codeforces 1326c - permutation partitions](https://codeforces.com/problemset/problem/1326/C) - greedy; math; math: combinatorics
+- [codeforces 1326c - permutation partitions](https://codeforces.com/problemset/problem/1326/C) - greedy; math: combinatorics
   - difficulty: 1300
 - [codeforces 1325a - ehab and gcd](https://codeforces.com/problemset/problem/1325/A) - constructive; greedy; math: number theory
   - difficulty: 800
@@ -560,13 +566,13 @@
   - difficulty: 1400
 - [codeforces 1324e - sleeping schedule](https://codeforces.com/problemset/problem/1324/E) - dp; implementation
   - difficulty: 1700
-- [codeforces 1324f - maximum white subtree](https://codeforces.com/problemset/problem/1324/F) - dp; graph; graph: dfs and similar; graph: tree
+- [codeforces 1324f - maximum white subtree](https://codeforces.com/problemset/problem/1324/F) - dp; graph: dfs and similar, tree
   - difficulty: 1800
-- [codeforces 1312a - two regular polygons](https://codeforces.com/problemset/problem/1312/A) - greedy; math; math: geometry; math: number theory
+- [codeforces 1312a - two regular polygons](https://codeforces.com/problemset/problem/1312/A) - greedy; math: geometry, number theory
   - difficulty: 800
 - [codeforces 1312b - bogosort](https://codeforces.com/problemset/problem/1312/B) - constructive; sorting
   - difficulty: 1000
-- [codeforces 1312c - adding powers](https://codeforces.com/problemset/problem/1312/C) - dp: bitmask; greedy; implementation; math; math: number theory; ternary search
+- [codeforces 1312c - adding powers](https://codeforces.com/problemset/problem/1312/C) - dp: bitmask; greedy; implementation; math: number theory; ternary search
   - difficulty: 1400
 - [codeforces 1323b - count subrectangles](https://codeforces.com/problemset/problem/1323/B) - binary search; greedy; implementation
   - difficulty: 1500
@@ -582,7 +588,7 @@
   - difficulty: 800
 - [codeforces 1305b - kuroni and simple strings](https://codeforces.com/problemset/problem/1305/B) - constructive; greedy; string; two pointers
   - difficulty: 1200
-- [codeforces 1305c - kuroni and impossible calculation](https://codeforces.com/problemset/problem/1305/C) - implementation; math; math: combinatorics; math: number theory
+- [codeforces 1305c - kuroni and impossible calculation](https://codeforces.com/problemset/problem/1305/C) - implementation; math: combinatorics, number theory
   - difficulty: 1600
 - [codeforces 1321b - journey planning](https://codeforces.com/problemset/problem/1321/B) - data structures; sorting
   - difficulty: 1400
@@ -612,7 +618,7 @@
   - difficulty: 1900
 - [codeforces 1307a - cow and haybales](https://codeforces.com/problemset/problem/1307/A) - greedy; implementation
   - difficulty: 800
-- [codeforces 1307b - cow and friend](https://codeforces.com/problemset/problem/1307/B) - greedy; math; math: geometry
+- [codeforces 1307b - cow and friend](https://codeforces.com/problemset/problem/1307/B) - greedy; math: geometry
   - difficulty: 1300
 - [codeforces 1307c - cow and message](https://codeforces.com/problemset/problem/1307/C) - dp; implementation; math; string
   - difficulty: 1500
@@ -644,7 +650,7 @@
   - difficulty: 1600
 - [codeforces 294b - shaass and bookshelf](https://codeforces.com/problemset/problem/294/B) - dp; greedy
   - difficulty: 1700
-- [codeforces 126b - password](https://codeforces.com/problemset/problem/126/B) - binary search; dp; hashing; string; string: string suffix structure
+- [codeforces 126b - password](https://codeforces.com/problemset/problem/126/B) - binary search; dp; hashing; string: string suffix structure
   - difficulty: 1700
 - [codeforces 363c - fixing typos](https://codeforces.com/problemset/problem/363/C) - greedy; implementation
   - difficulty: 1400
@@ -670,21 +676,21 @@
   - difficulty: 1800
 - [codeforces 439d - devu and his brother](https://codeforces.com/problemset/problem/439/D) - binary search; sorting; ternary search; two pointers
   - difficulty: 1700
-- [codeforces 400d - dima and bacteria](https://codeforces.com/problemset/problem/400/D) - graph; graph: dsu; graph: shortest path
+- [codeforces 400d - dima and bacteria](https://codeforces.com/problemset/problem/400/D) - graph: dsu, shortest path
   - difficulty: 2000
-- [codeforces 514c - watto and mechanism](https://codeforces.com/problemset/problem/514/C) - binary search; data structures; hashing; string; string: string suffix structure
+- [codeforces 514c - watto and mechanism](https://codeforces.com/problemset/problem/514/C) - binary search; data structures; hashing; string: string suffix structure
   - difficulty: 2000
 - [codeforces 479e - riding in a lift](https://codeforces.com/problemset/problem/479/E) - dp; math: combinatorics
   - difficulty: 1900
 - [codeforces 451d - count good substrings](https://codeforces.com/problemset/problem/451/D) - math
   - difficulty: 2000
-- [codeforces 224a - parallelepiped](https://codeforces.com/problemset/problem/224/A) - implementation; math; math: geometry
+- [codeforces 224a - parallelepiped](https://codeforces.com/problemset/problem/224/A) - implementation; math: geometry
   - difficulty: 1100
-- [codeforces 401d - roman and numbers](https://codeforces.com/problemset/problem/401/D) - dp; dp: bitmask; implementation; math: combinatorics; math: number theory
+- [codeforces 401d - roman and numbers](https://codeforces.com/problemset/problem/401/D) - dp: bitmask; implementation; math: combinatorics; math: number theory
   - difficulty: 2000
-- [codeforces 219d - choosing capital for treeland](https://codeforces.com/problemset/problem/219/D) - dp; graph; graph: dfs and similar; graph: tree
+- [codeforces 219d - choosing capital for treeland](https://codeforces.com/problemset/problem/219/D) - dp; graph: dfs and similar, tree
   - difficulty: 1700
-- [codeforces 471d - muh and cube walls](https://codeforces.com/problemset/problem/471/D) - string; string: string suffix structure
+- [codeforces 471d - muh and cube walls](https://codeforces.com/problemset/problem/471/D) - string: string suffix structure
   - difficulty: 1800
 - [codeforces 242e - xor on segment](https://codeforces.com/problemset/problem/242/E) - data structures; dp: bitmask
   - difficulty: 2000
@@ -692,11 +698,11 @@
   - difficulty: 1900
 - [codeforces 478d - red-green towers](https://codeforces.com/problemset/problem/478/D) - dp
   - difficulty: 2000
-- [codeforces 459c - pashmak and buses](https://codeforces.com/problemset/problem/459/C) - constructive; math; math: combinatorics
+- [codeforces 459c - pashmak and buses](https://codeforces.com/problemset/problem/459/C) - constructive; math: combinatorics
   - difficulty: 1900
-- [codeforces 148d - bag of mice](https://codeforces.com/problemset/problem/148/D) - dp; math; math: game; math: probability
+- [codeforces 148d - bag of mice](https://codeforces.com/problemset/problem/148/D) - dp; math: game, probability
   - difficulty: 1800
-- [codeforces 463d - gargari and permutations](https://codeforces.com/problemset/problem/463/D) - dp; graph; graph: dfs and similar; implementation
+- [codeforces 463d - gargari and permutations](https://codeforces.com/problemset/problem/463/D) - dp; graph: dfs and similar; implementation
   - difficulty: 1900
 - [codeforces 514d - r2d2 and droid army](https://codeforces.com/problemset/problem/514/D) - binary search; data structures; two pointers
   - difficulty: 2000
@@ -722,7 +728,7 @@
   - difficulty: 1400
 - [codeforces 401c - team](https://codeforces.com/problemset/problem/401/C) - constructive; greedy; implementation
   - difficulty: 1400
-- [codeforces 490c - hacking cypher](https://codeforces.com/problemset/problem/490/C) - implementation; math; math: number theory; string
+- [codeforces 490c - hacking cypher](https://codeforces.com/problemset/problem/490/C) - implementation; math: number theory; string
   - difficulty: 1700
 - [codeforces 109a - lucky sum of digits](https://codeforces.com/problemset/problem/109/A) - implementation
   - difficulty: 1000
@@ -740,7 +746,7 @@
   - difficulty: 1800
 - [codeforces 494a - treasure](https://codeforces.com/problemset/problem/494/A) - greedy
   - difficulty: 1500
-- [codeforces 242c - king's path](https://codeforces.com/problemset/problem/242/C) - graph; graph: dfs and similar; graph: shortest path; hashing
+- [codeforces 242c - king's path](https://codeforces.com/problemset/problem/242/C) - graph: dfs and similar, shortest path; hashing
   - difficulty: 1800
 - [codeforces 482b - interesting array](https://codeforces.com/problemset/problem/482/B) - constructive; data structures; graph: tree
   - difficulty: 1800
@@ -758,7 +764,7 @@
   - difficulty: 1500
 - [codeforces 204b - little elephant and cards](https://codeforces.com/problemset/problem/204/B) - binary search; data structures
   - difficulty: 1500
-- [codeforces 442b - andrey and problem](https://codeforces.com/problemset/problem/442/B) - greedy; math; math: probability
+- [codeforces 442b - andrey and problem](https://codeforces.com/problemset/problem/442/B) - greedy; math: probability
   - difficulty: 1800
 - [codeforces 375b - maximum submatrix 2](https://codeforces.com/problemset/problem/375/B) - data structures; dp; implementation; sorting
   - difficulty: 1600
@@ -766,7 +772,7 @@
   - difficulty: 2200
 - [codeforces 550d - regular bridge](https://codeforces.com/problemset/problem/550/D) - constructive; graph; implementation
   - difficulty: 1900
-- [codeforces 453b - little pony and harmony chest](https://codeforces.com/problemset/problem/453/B) - dp; dp: bitmask; implementation
+- [codeforces 453b - little pony and harmony chest](https://codeforces.com/problemset/problem/453/B) - dp: bitmask; implementation
   - difficulty: 2000
 - [codeforces 380c - sereja and brackets](https://codeforces.com/problemset/problem/380/C) - data structures
   - difficulty: 2000
@@ -774,11 +780,11 @@
   - difficulty: 2000
 - [codeforces 461b - appleman and tree](https://codeforces.com/problemset/problem/461/B) - dp; graph: dfs and similar; graph: tree
   - difficulty: 2000
-- [codeforces 546d - soldier and number game](https://codeforces.com/problemset/problem/546/D) - constructive; dp; math; math: number theory
+- [codeforces 546d - soldier and number game](https://codeforces.com/problemset/problem/546/D) - constructive; dp; math: number theory
   - difficulty: 1700
 - [codeforces 109c - lucky tree](https://codeforces.com/problemset/problem/109/C) - dp; graph: dsu; graph: tree
   - difficulty: 1900
-- [codeforces 144d - missile silos](https://codeforces.com/problemset/problem/144/D) - data structures; graph; graph: dfs and similar; graph: shortest path
+- [codeforces 144d - missile silos](https://codeforces.com/problemset/problem/144/D) - data structures; graph: dfs and similar, shortest path
   - difficulty: 1900
 - [codeforces 367c - sereja and the arrangement of numbers](https://codeforces.com/problemset/problem/367/C) - graph; greedy; sorting
   - difficulty: 2000
@@ -796,7 +802,7 @@
   - difficulty: 1700
 - [codeforces 1369e - deadlee](https://codeforces.com/problemset/problem/1369/E) - constructive; data structures; graph: dfs and similar; greedy; implementation; sorting
   - difficulty: 2400
-- [codeforces 1367e - necklace assembly](https://codeforces.com/problemset/problem/1367/E) - dp; graph; graph: dfs and similar; greedy; implementation; math: number theory
+- [codeforces 1367e - necklace assembly](https://codeforces.com/problemset/problem/1367/E) - dp; graph: dfs and similar; greedy; implementation; math: number theory
   - difficulty: 1900
 - [codeforces 1374a - required remainder](https://codeforces.com/problemset/problem/1374/A) - math
   - difficulty: 800
@@ -820,7 +826,7 @@
   - difficulty: 1900
 - [codeforces 1375e - inversion swapsort](https://codeforces.com/problemset/problem/1375/E) - constructive; greedy; sorting
   - difficulty: 2500
-- [codeforces 1375f - integer game](https://codeforces.com/problemset/problem/1375/F) - constructive; interactive; math; math: game
+- [codeforces 1375f - integer game](https://codeforces.com/problemset/problem/1375/F) - constructive; interactive; math: game
   - difficulty: 2600
 - [codeforces 1374f - cyclic shifts sorting](https://codeforces.com/problemset/problem/1374/F) - constructive; implementation; sorting
   - difficulty: 2400
@@ -858,7 +864,7 @@
   - difficulty: 1600
 - [codeforces 1288c - two arrays](https://codeforces.com/problemset/problem/1288/C) - dp; math: combinatorics
   - difficulty: 1600
-- [codeforces 1284c - new year and permutation](https://codeforces.com/problemset/problem/1284/C) - math; math: combinatorics
+- [codeforces 1284c - new year and permutation](https://codeforces.com/problemset/problem/1284/C) - math: combinatorics
   - difficulty: 1600
 - [codeforces 1282b2 - k for the price of one (hard version)](https://codeforces.com/problemset/problem/1282/B2) - dp; greedy; sorting
   - difficulty: 1600
@@ -872,13 +878,13 @@
   - difficulty: 1600
 - [codeforces 1243b2 - character swap (hard version)](https://codeforces.com/problemset/problem/1243/B2) - string
   - difficulty: 1600
-- [codeforces 1360f - spy-string](https://codeforces.com/problemset/problem/1360/F) - constructive; dp; dp: bitmask; hashing; implementation; string
+- [codeforces 1360f - spy-string](https://codeforces.com/problemset/problem/1360/F) - constructive; dp: bitmask; hashing; implementation; string
   - difficulty: 1700
 - [codeforces 1359c - mixing water](https://codeforces.com/problemset/problem/1359/C) - binary search; math
   - difficulty: 1700
 - [codeforces 1343d - constant palindrome sum](https://codeforces.com/problemset/problem/1343/D) - data structures; greedy; implementation; two pointers
   - difficulty: 1700
-- [codeforces 1340b - nastya and scoreboard](https://codeforces.com/problemset/problem/1340/B) - dp; dp: bitmask; graph; greedy
+- [codeforces 1340b - nastya and scoreboard](https://codeforces.com/problemset/problem/1340/B) - dp: bitmask; graph; greedy
   - difficulty: 1700
 - [codeforces 1336b - xenia and colorful gems](https://codeforces.com/problemset/problem/1336/B) - binary search; greedy; math; sorting; two pointers
   - difficulty: 1700
@@ -888,17 +894,17 @@
   - difficulty: 1800
 - [codeforces 1332d - walk on matrix](https://codeforces.com/problemset/problem/1332/D) - constructive; dp: bitmask; math
   - difficulty: 1700
-- [codeforces 1329b - dreamoon likes sequences](https://codeforces.com/problemset/problem/1329/B) - dp: bitmask; math; math: combinatorics
+- [codeforces 1329b - dreamoon likes sequences](https://codeforces.com/problemset/problem/1329/B) - dp: bitmask; math: combinatorics
   - difficulty: 1700
 - [codeforces 1325d - ehab the xorcist](https://codeforces.com/problemset/problem/1325/D) - constructive; dp: bitmask; greedy; math: number theory
   - difficulty: 1700
-- [codeforces 1320b - navigation system](https://codeforces.com/problemset/problem/1320/B) - graph; graph: dfs and similar; graph: shortest path
+- [codeforces 1320b - navigation system](https://codeforces.com/problemset/problem/1320/B) - graph: dfs and similar, shortest path
   - difficulty: 1700
 - [codeforces 1338b - edge weight assignment](https://codeforces.com/problemset/problem/1338/B) - constructive; dp: bitmask; graph: dfs and similar; graph: tree; greedy; math
   - difficulty: 1800
 - [codeforces 1334d - minimum euler cycle](https://codeforces.com/problemset/problem/1334/D) - constructive; graph; greedy; implementation
   - difficulty: 1800
-- [codeforces 1327e - count the blocks](https://codeforces.com/problemset/problem/1327/E) - dp; math; math: combinatorics
+- [codeforces 1327e - count the blocks](https://codeforces.com/problemset/problem/1327/E) - dp; math: combinatorics
   - difficulty: 1800
 - [codeforces 1304d - shortest and longest lis](https://codeforces.com/problemset/problem/1304/D) - constructive; graph; greedy; two pointers
   - difficulty: 1800
@@ -906,11 +912,11 @@
   - difficulty: 1800
 - [codeforces 1296e1 - string coloring (easy version)](https://codeforces.com/problemset/problem/1296/E1) - constructive; dp; graph; greedy; sorting
   - difficulty: 1800
-- [codeforces 1295d - same gcds](https://codeforces.com/problemset/problem/1295/D) - math; math: number theory
+- [codeforces 1295d - same gcds](https://codeforces.com/problemset/problem/1295/D) - math: number theory
   - difficulty: 1800
 - [codeforces 1290b - irreducible anagrams](https://codeforces.com/problemset/problem/1290/B) - binary search; constructive; data structures; string; two pointers
   - difficulty: 1800
-- [codeforces 1286b - numbers on tree](https://codeforces.com/problemset/problem/1286/B) - constructive; data structures; graph; graph: dfs and similar; graph: tree; greedy
+- [codeforces 1286b - numbers on tree](https://codeforces.com/problemset/problem/1286/B) - constructive; data structures; graph: dfs and similar, tree; greedy
   - difficulty: 1800
 - [codeforces 1286a - garland](https://codeforces.com/problemset/problem/1286/A) - dp; greedy; sorting
   - difficulty: 1800
@@ -924,13 +930,13 @@
   - difficulty: 2000
 - [codeforces 1380e - merging towers](https://codeforces.com/problemset/problem/1380/E) - data structures; graph: dsu; graph: tree; implementation
   - difficulty: 2300
-- [codeforces 1371e1 - asterism (easy version)](https://codeforces.com/problemset/problem/1371/E1) - binary search; implementation; math; math: combinatorics; math: number theory; sorting
+- [codeforces 1371e1 - asterism (easy version)](https://codeforces.com/problemset/problem/1371/E1) - binary search; implementation; math: combinatorics, number theory; sorting
   - difficulty: 1900
-- [codeforces 1328e - tree queries](https://codeforces.com/problemset/problem/1328/E) - graph; graph: dfs and similar; graph: tree
+- [codeforces 1328e - tree queries](https://codeforces.com/problemset/problem/1328/E) - graph: dfs and similar, tree
   - difficulty: 1900
 - [codeforces 1311f - moving points](https://codeforces.com/problemset/problem/1311/F) - data structures; divide and conquer; implementation; sorting
   - difficulty: 1900
-- [codeforces 1307d - cow and fields](https://codeforces.com/problemset/problem/1307/D) - binary search; data structures; graph; graph: dfs and similar; graph: shortest path; greedy; sorting
+- [codeforces 1307d - cow and fields](https://codeforces.com/problemset/problem/1307/D) - binary search; data structures; graph: dfs and similar, shortest path; greedy; sorting
   - difficulty: 1900
 - [codeforces 1305d - kuroni and the celebration](https://codeforces.com/problemset/problem/1305/D) - constructive; graph: dfs and similar; graph: tree; interactive
   - difficulty: 1900
@@ -938,19 +944,19 @@
   - difficulty: 1900
 - [codeforces 1294e - obtain a permutation](https://codeforces.com/problemset/problem/1294/E) - greedy; implementation; math
   - difficulty: 1900
-- [codeforces 1285d - dr. evil underscores](https://codeforces.com/problemset/problem/1285/D) - divide and conquer; dp; dp: bitmask; graph: dfs and similar; graph: tree; greedy; implementation; string
+- [codeforces 1285d - dr. evil underscores](https://codeforces.com/problemset/problem/1285/D) - divide and conquer; dp: bitmask; graph: dfs and similar; graph: tree; greedy; implementation; string
   - difficulty: 1900
-- [codeforces 1366d - two divisors](https://codeforces.com/problemset/problem/1366/D) - constructive; math; math: number theory
+- [codeforces 1366d - two divisors](https://codeforces.com/problemset/problem/1366/D) - constructive; math: number theory
   - difficulty: 2000
 - [codeforces 1363e - tree shuffling](https://codeforces.com/problemset/problem/1363/E) - dp; graph: dfs and similar; graph: tree; greedy
   - difficulty: 2000
-- [codeforces 1359e - modular stability](https://codeforces.com/problemset/problem/1359/E) - math; math: combinatorics; math: number theory
+- [codeforces 1359e - modular stability](https://codeforces.com/problemset/problem/1359/E) - math: combinatorics, number theory
   - difficulty: 2000
-- [codeforces 1349c - orac and game of life](https://codeforces.com/problemset/problem/1349/C) - graph; graph: dfs and similar; graph: shortest path; implementation
+- [codeforces 1349c - orac and game of life](https://codeforces.com/problemset/problem/1349/C) - graph: dfs and similar, shortest path; implementation
   - difficulty: 2000
 - [codeforces 1349b - orac and medians](https://codeforces.com/problemset/problem/1349/B) - constructive; greedy; math
   - difficulty: 2000
-- [codeforces 1344b - monopole magnets](https://codeforces.com/problemset/problem/1344/B) - constructive; graph; graph: dfs and similar; graph: dsu
+- [codeforces 1344b - monopole magnets](https://codeforces.com/problemset/problem/1344/B) - constructive; graph: dfs and similar, dsu
   - difficulty: 2000
 - [codeforces 1367f1 - flying sort (easy version)](https://codeforces.com/problemset/problem/1367/F1) - dp; greedy; two pointers
   - difficulty: 2100
@@ -964,7 +970,7 @@
   - difficulty: 2100
 - [codeforces 1355e - restorer distance](https://codeforces.com/problemset/problem/1355/E) - binary search; greedy; math; sorting; ternary search
   - difficulty: 2100
-- [codeforces 1354e - graph coloring](https://codeforces.com/problemset/problem/1354/E) - dp; graph; graph: dfs and similar
+- [codeforces 1354e - graph coloring](https://codeforces.com/problemset/problem/1354/E) - dp; graph: dfs and similar
   - difficulty: 2100
 - [codeforces 1353f - decreasing heights](https://codeforces.com/problemset/problem/1353/F) - dp; implementation
   - difficulty: 2200
@@ -974,7 +980,7 @@
   - difficulty: 3200
 - [codeforces 1336c - kaavi and magic spell](https://codeforces.com/problemset/problem/1336/C) - dp; string
   - difficulty: 2200
-- [codeforces 1335f - robots on a grid](https://codeforces.com/problemset/problem/1335/F) - data structures; graph; graph: dfs and similar; graph: dsu; greedy; math: matrix
+- [codeforces 1335f - robots on a grid](https://codeforces.com/problemset/problem/1335/F) - data structures; graph: dfs and similar, dsu; greedy; math: matrix
   - difficulty: 2200
 - [codeforces 1238c - standard free2play](https://codeforces.com/problemset/problem/1238/C) - dp; greedy; math
   - difficulty: 1600
@@ -984,19 +990,19 @@
   - difficulty: 1600
 - [codeforces 1227d2 - optimal subsequences (hard version)](https://codeforces.com/problemset/problem/1227/D2) - data structures; greedy
   - difficulty: 1800
-- [codeforces 1334e - divisor paths](https://codeforces.com/problemset/problem/1334/E) - graph; greedy; math; math: combinatorics; math: number theory
+- [codeforces 1334e - divisor paths](https://codeforces.com/problemset/problem/1334/E) - graph; greedy; math: combinatorics, number theory
   - difficulty: 2200
-- [codeforces 1333f - kate and imperfection](https://codeforces.com/problemset/problem/1333/F) - greedy; implementation; math; math: number theory; sorting; two pointers
+- [codeforces 1333f - kate and imperfection](https://codeforces.com/problemset/problem/1333/F) - greedy; implementation; math: number theory; sorting; two pointers
   - difficulty: 2200
 - [codeforces 1328f - make k equal](https://codeforces.com/problemset/problem/1328/F) - greedy
   - difficulty: 2200
 - [codeforces 1385f - removing leaves](https://codeforces.com/problemset/problem/1385/F) - data structures; graph: tree; greedy; implementation
   - difficulty: 2300
-- [codeforces 1385g - columns swaps](https://codeforces.com/problemset/problem/1385/G) - graph; graph: 2-sat; graph: dfs and similar; graph: dsu; implementation
+- [codeforces 1385g - columns swaps](https://codeforces.com/problemset/problem/1385/G) - graph: 2-sat, dfs and similar, dsu; implementation
   - difficulty: 2300
-- [codeforces 1371e2 - asterism (hard version)](https://codeforces.com/problemset/problem/1371/E2) - binary search; dp; math; math: combinatorics; math: number theory; sorting
+- [codeforces 1371e2 - asterism (hard version)](https://codeforces.com/problemset/problem/1371/E2) - binary search; dp; math: combinatorics, number theory; sorting
   - difficulty: 2300
-- [codeforces 1342e - placing rooks](https://codeforces.com/problemset/problem/1342/E) - math; math: combinatorics; math: fft
+- [codeforces 1342e - placing rooks](https://codeforces.com/problemset/problem/1342/E) - math: combinatorics, fft
   - difficulty: 2300
 - [codeforces 1382a - common subsequence](https://codeforces.com/problemset/problem/1382/A) - implementation
   - difficulty: 800
@@ -1004,17 +1010,17 @@
   - difficulty: 1100
 - [codeforces 1381c - mastermind](https://codeforces.com/problemset/problem/1381/C) - constructive; graph: matching; greedy; implementation; sorting; two pointers
   - difficulty: 2500
-- [codeforces 1322c - instant noodles](https://codeforces.com/problemset/problem/1322/C) - graph; hashing; math; math: number theory
+- [codeforces 1322c - instant noodles](https://codeforces.com/problemset/problem/1322/C) - graph; hashing; math: number theory
   - difficulty: 2300
-- [codeforces 1316e - team building](https://codeforces.com/problemset/problem/1316/E) - dp; dp: bitmask; greedy; sorting
+- [codeforces 1316e - team building](https://codeforces.com/problemset/problem/1316/E) - dp: bitmask; greedy; sorting
   - difficulty: 2300
 - [codeforces 1310d - tourism](https://codeforces.com/problemset/problem/1310/D) - dp; graph; math: probability
   - difficulty: 2300
-- [codeforces 1312d - count the arrays](https://codeforces.com/problemset/problem/1312/D) - math; math: combinatorics
+- [codeforces 1312d - count the arrays](https://codeforces.com/problemset/problem/1312/D) - math: combinatorics
   - difficulty: 1700
 - [codeforces 1310a - recommendations](https://codeforces.com/problemset/problem/1310/A) - data structures; greedy; sorting
   - difficulty: 1700
-- [codeforces 1301c - ayoub's function](https://codeforces.com/problemset/problem/1301/C) - binary search; greedy; math; math: combinatorics; string
+- [codeforces 1301c - ayoub's function](https://codeforces.com/problemset/problem/1301/C) - binary search; greedy; math: combinatorics; string
   - difficulty: 1700
 - [codeforces 1295b - infinite prefixes](https://codeforces.com/problemset/problem/1295/B) - math; string
   - difficulty: 1700
@@ -1022,11 +1028,11 @@
   - difficulty: 1700
 - [codeforces 1283e - new year parties](https://codeforces.com/problemset/problem/1283/E) - dp; greedy
   - difficulty: 1800
-- [codeforces 1283d - christmas trees](https://codeforces.com/problemset/problem/1283/D) - graph; graph: shortest path; greedy
+- [codeforces 1283d - christmas trees](https://codeforces.com/problemset/problem/1283/D) - graph: shortest path; greedy
   - difficulty: 1800
 - [codeforces 1335d - anti-sudoku](https://codeforces.com/problemset/problem/1335/D) - constructive; implementation
   - difficulty: 1300
-- [codeforces 1326d1 - prefix-suffix palindrome (easy version)](https://codeforces.com/problemset/problem/1326/D1) - hashing; string; string: string suffix structure
+- [codeforces 1326d1 - prefix-suffix palindrome (easy version)](https://codeforces.com/problemset/problem/1326/D1) - hashing; string: string suffix structure
   - difficulty: 1500
 - [codeforces 1320c - world of darkraft: battle for azathoth](https://codeforces.com/problemset/problem/1320/C) - data structures; implementation; sorting
   - difficulty: 2000
@@ -1056,7 +1062,7 @@
   - difficulty: 1200
 - [codeforces 331c1 - the great julya calendar](https://codeforces.com/problemset/problem/331/C1) - dp
   - difficulty: 1100
-- [codeforces 1097b - petr and a combination lock](https://codeforces.com/problemset/problem/1097/B) - dp; dp: bitmask; implementation
+- [codeforces 1097b - petr and a combination lock](https://codeforces.com/problemset/problem/1097/B) - dp: bitmask; implementation
   - difficulty: 1200
 - [codeforces 1272c - yet another broken keyboard](https://codeforces.com/problemset/problem/1272/C) - dp; implementation; math: combinatorics
   - difficulty: 1200
@@ -1070,7 +1076,7 @@
   - difficulty: 1200
 - [codeforces 961b - lecture sleep](https://codeforces.com/problemset/problem/961/B) - data structures; dp; implementation; two pointers
   - difficulty: 1200
-- [codeforces 1042b - vitamins](https://codeforces.com/problemset/problem/1042/B) - dp; dp: bitmask; implementation
+- [codeforces 1042b - vitamins](https://codeforces.com/problemset/problem/1042/B) - dp: bitmask; implementation
   - difficulty: 1200
 - [codeforces 729b - spotlights](https://codeforces.com/problemset/problem/729/B) - dp; implementation
   - difficulty: 1200
@@ -1146,7 +1152,7 @@
   - difficulty: 1800
 - [codeforces 1267j - just arrange the icons](https://codeforces.com/problemset/problem/1267/J) - greedy; implementation; math
   - difficulty: 1800
-- [codeforces 1254b1 - send boxes to alice (easy version)](https://codeforces.com/problemset/problem/1254/B1) - constructive; greedy; math; math: number theory; ternary search; two pointers
+- [codeforces 1254b1 - send boxes to alice (easy version)](https://codeforces.com/problemset/problem/1254/B1) - constructive; greedy; math: number theory; ternary search; two pointers
   - difficulty: 1800
 - [codeforces 550a - two substrings](https://codeforces.com/problemset/problem/550/A) - dp; greedy; implementation; string
   - difficulty: 1500
@@ -1154,7 +1160,7 @@
   - difficulty: 1500
 - [codeforces 676c - vasya and string](https://codeforces.com/problemset/problem/676/C) - binary search; dp; string; two pointers
   - difficulty: 1500
-- [codeforces 839c - journey](https://codeforces.com/problemset/problem/839/C) - dp; graph; graph: dfs and similar; graph: tree; math: probability
+- [codeforces 839c - journey](https://codeforces.com/problemset/problem/839/C) - dp; graph: dfs and similar, tree; math: probability
   - difficulty: 1500
 - [codeforces 1234c - pipes](https://codeforces.com/problemset/problem/1234/C) - dp; implementation
   - difficulty: 1500
@@ -1162,7 +1168,7 @@
   - difficulty: 1500
 - [codeforces 1207c - gas pipeline](https://codeforces.com/problemset/problem/1207/C) - dp; greedy
   - difficulty: 1500
-- [codeforces 1105c - ayoub and lost array](https://codeforces.com/problemset/problem/1105/C) - dp; math; math: combinatorics
+- [codeforces 1105c - ayoub and lost array](https://codeforces.com/problemset/problem/1105/C) - dp; math: combinatorics
   - difficulty: 1500
 - [codeforces 1051c - vasya and multisets](https://codeforces.com/problemset/problem/1051/C) - dp; greedy; implementation; math
   - difficulty: 1500
@@ -1172,11 +1178,11 @@
   - difficulty: 1300
 - [codeforces 1279c - stack of presents](https://codeforces.com/problemset/problem/1279/C) - data structures; implementation
   - difficulty: 1400
-- [codeforces 1279d - santa's bot](https://codeforces.com/problemset/problem/1279/D) - math; math: combinatorics; math: probability
+- [codeforces 1279d - santa's bot](https://codeforces.com/problemset/problem/1279/D) - math: combinatorics, probability
   - difficulty: 1700
 - [codeforces 1279e - new year permutations](https://codeforces.com/problemset/problem/1279/E) - dp; math: combinatorics
   - difficulty: 2700
-- [codeforces 1270a - card game](https://codeforces.com/problemset/problem/1270/A) - greedy; math; math: game
+- [codeforces 1270a - card game](https://codeforces.com/problemset/problem/1270/A) - greedy; math: game
   - difficulty: 800
 - [codeforces 1270b - interesting subarray](https://codeforces.com/problemset/problem/1270/B) - constructive; greedy; math
   - difficulty: 1200
@@ -1188,7 +1194,7 @@
   - difficulty: 1800
 - [codeforces 448d - multiplication table](https://codeforces.com/problemset/problem/448/D) - binary search; implementation
   - difficulty: 1800
-- [codeforces 1389a - lcm problem](https://codeforces.com/problemset/problem/1389/A) - constructive; greedy; math; math: number theory
+- [codeforces 1389a - lcm problem](https://codeforces.com/problemset/problem/1389/A) - constructive; greedy; math: number theory
   - difficulty: 800
 - [codeforces 1389b - array walk](https://codeforces.com/problemset/problem/1389/B) - dp; greedy
   - difficulty: 1600
@@ -1196,23 +1202,23 @@
   - difficulty: 1500
 - [codeforces 1389d - segment intersections](https://codeforces.com/problemset/problem/1389/D) - binary search; greedy; implementation; math
   - difficulty: 2100
-- [codeforces 1389e - calendar ambiguity](https://codeforces.com/problemset/problem/1389/E) - math; math: number theory
+- [codeforces 1389e - calendar ambiguity](https://codeforces.com/problemset/problem/1389/E) - math: number theory
   - difficulty: 2200
 - [codeforces 1389f - bicolored segments](https://codeforces.com/problemset/problem/1389/F) - data structures; dp; graph: matching; sorting
   - difficulty: 2600
-- [codeforces 891a - pride](https://codeforces.com/problemset/problem/891/A) - dp; greedy; implementation; math; math: number theory
+- [codeforces 891a - pride](https://codeforces.com/problemset/problem/891/A) - dp; greedy; implementation; math: number theory
   - difficulty: 1500
-- [codeforces 982c - cut 'em all!](https://codeforces.com/problemset/problem/982/C) - dp; graph; graph: dfs and similar; graph: tree; greedy
+- [codeforces 982c - cut 'em all!](https://codeforces.com/problemset/problem/982/C) - dp; graph: dfs and similar, tree; greedy
   - difficulty: 1500
 - [codeforces 877b - nikita and string](https://codeforces.com/problemset/problem/877/B) - dp; implementation
   - difficulty: 1500
 - [codeforces 1005d - polycarp and div 3](https://codeforces.com/problemset/problem/1005/D) - dp; greedy; math: number theory
   - difficulty: 1500
-- [codeforces 553a - kyoya and colored balls](https://codeforces.com/problemset/problem/553/A) - dp; math; math: combinatorics
+- [codeforces 553a - kyoya and colored balls](https://codeforces.com/problemset/problem/553/A) - dp; math: combinatorics
   - difficulty: 1500
 - [codeforces 1277d - let's play the words?](https://codeforces.com/problemset/problem/1277/D) - data structures; hashing; implementation; math
   - difficulty: 1900
-- [codeforces 1081c - colorful bricks](https://codeforces.com/problemset/problem/1081/C) - dp; math; math: combinatorics
+- [codeforces 1081c - colorful bricks](https://codeforces.com/problemset/problem/1081/C) - dp; math: combinatorics
   - difficulty: 1500
 - [codeforces 1084c - the fair nut and string](https://codeforces.com/problemset/problem/1084/C) - dp; implementation; math: combinatorics
   - difficulty: 1500
@@ -1220,7 +1226,7 @@
   - difficulty: 1500
 - [codeforces 873b - balanced substring](https://codeforces.com/problemset/problem/873/B) - dp; implementation
   - difficulty: 1500
-- [codeforces 868c - qualification rounds](https://codeforces.com/problemset/problem/868/C) - constructive; dp; dp: bitmask; implementation
+- [codeforces 868c - qualification rounds](https://codeforces.com/problemset/problem/868/C) - constructive; dp: bitmask; implementation
   - difficulty: 1500
 - [codeforces 855b - marvolo gaunt's ring](https://codeforces.com/problemset/problem/855/B) - data structures; dp; implementation
   - difficulty: 1500
@@ -1230,7 +1236,7 @@
   - difficulty: 1500
 - [codeforces 761c - dasha and password](https://codeforces.com/problemset/problem/761/C) - dp; implementation
   - difficulty: 1500
-- [codeforces 566f - clique in the divisibility graph](https://codeforces.com/problemset/problem/566/F) - dp; math; math: number theory
+- [codeforces 566f - clique in the divisibility graph](https://codeforces.com/problemset/problem/566/F) - dp; math: number theory
   - difficulty: 1500
 - [codeforces 417a - elimination](https://codeforces.com/problemset/problem/417/A) - dp; implementation; math
   - difficulty: 1500
@@ -1240,7 +1246,7 @@
   - difficulty: 1800
 - [codeforces 835d - palindromic characteristics](https://codeforces.com/problemset/problem/835/D) - dp; hashing; implementation; string
   - difficulty: 1900
-- [codeforces 727e - games on a cd](https://codeforces.com/problemset/problem/727/E) - data structures; hashing; string; string: string suffix structure
+- [codeforces 727e - games on a cd](https://codeforces.com/problemset/problem/727/E) - data structures; hashing; string: string suffix structure
   - difficulty: 2300
 - [codeforces 778a - string game](https://codeforces.com/problemset/problem/778/A) - binary search; greedy; string
   - difficulty: 1700
@@ -1256,7 +1262,7 @@
   - difficulty: 2200
 - [codeforces 375d - tree and queries](https://codeforces.com/problemset/problem/375/D) - data structures; graph: dfs and similar; graph: tree
   - difficulty: 2400
-- [codeforces 452e - three strings](https://codeforces.com/problemset/problem/452/E) - data structures; graph: dsu; string; string: string suffix structure
+- [codeforces 452e - three strings](https://codeforces.com/problemset/problem/452/E) - data structures; graph: dsu; string: string suffix structure
   - difficulty: 2400
 - [codeforces 1399b - gifts fixing](https://codeforces.com/problemset/problem/1399/B) - greedy
   - difficulty: 800
@@ -1274,19 +1280,19 @@
   - difficulty: 1600
 - [codeforces 977f - consecutive subsequence](https://codeforces.com/problemset/problem/977/F) - dp
   - difficulty: 1700
-- [codeforces 518d - ilya and escalator](https://codeforces.com/problemset/problem/518/D) - dp; math; math: combinatorics; math: probability
+- [codeforces 518d - ilya and escalator](https://codeforces.com/problemset/problem/518/D) - dp; math: combinatorics, probability
   - difficulty: 1700
 - [codeforces 161d - distance in tree](https://codeforces.com/problemset/problem/161/D) - dp; graph: dfs and similar; graph: tree
   - difficulty: 1800
-- [codeforces 580d - kefa and dishes](https://codeforces.com/problemset/problem/580/D) - dp; dp: bitmask
+- [codeforces 580d - kefa and dishes](https://codeforces.com/problemset/problem/580/D) - dp: bitmask
   - difficulty: 1800
-- [codeforces 1047b - cover points](https://codeforces.com/problemset/problem/1047/B) - math; math: geometry
+- [codeforces 1047b - cover points](https://codeforces.com/problemset/problem/1047/B) - math: geometry
   - difficulty: 900
-- [codeforces 794b - cutting carrot](https://codeforces.com/problemset/problem/794/B) - math; math: geometry
+- [codeforces 794b - cutting carrot](https://codeforces.com/problemset/problem/794/B) - math: geometry
   - difficulty: 1200
 - [codeforces 842b - gleb and pizza](https://codeforces.com/problemset/problem/842/B) - math: geometry
   - difficulty: 1100
-- [codeforces 1100c - nn and the optical illusion](https://codeforces.com/problemset/problem/1100/C) - binary search; math; math: geometry
+- [codeforces 1100c - nn and the optical illusion](https://codeforces.com/problemset/problem/1100/C) - binary search; math: geometry
   - difficulty: 1200
 - [codeforces 660d - number of parallelograms](https://codeforces.com/problemset/problem/660/D) - math: geometry
   - difficulty: 1900
@@ -1306,13 +1312,13 @@
   - difficulty: 1900
 - [codeforces 713c - sonya and problem wihtout a legend](https://codeforces.com/problemset/problem/713/C) - dp; sorting
   - difficulty: 2300
-- [codeforces 1392g - omkar and pies](https://codeforces.com/problemset/problem/1392/G) - dp; dp: bitmask; graph: dfs and similar; graph: shortest path; math
+- [codeforces 1392g - omkar and pies](https://codeforces.com/problemset/problem/1392/G) - dp: bitmask; graph: dfs and similar; graph: shortest path; math
   - difficulty: 2900
 - [codeforces 1394a - boboniu chats with du](https://codeforces.com/problemset/problem/1394/A) - dp; greedy; sorting; two pointers
   - difficulty: 1800
-- [codeforces 1394b - boboniu walks on graph](https://codeforces.com/problemset/problem/1394/B) - graph; graph: dfs and similar; hashing; implementation
+- [codeforces 1394b - boboniu walks on graph](https://codeforces.com/problemset/problem/1394/B) - graph: dfs and similar; hashing; implementation
   - difficulty: 2300
-- [codeforces 1395c - boboniu and bit operations](https://codeforces.com/problemset/problem/1395/C) - dp; dp: bitmask; greedy; implementation
+- [codeforces 1395c - boboniu and bit operations](https://codeforces.com/problemset/problem/1395/C) - dp: bitmask; greedy; implementation
   - difficulty: 1600
 - [codeforces 1304a - two rabbits](https://codeforces.com/problemset/problem/1304/A) - math
   - difficulty: 800
@@ -1346,9 +1352,9 @@
   - difficulty: 1800
 - [codeforces 1249d2 - too many segments (hard version)](https://codeforces.com/problemset/problem/1249/D2) - data structures; greedy; sorting
   - difficulty: 1800
-- [codeforces 1244d - paint the tree](https://codeforces.com/problemset/problem/1244/D) - constructive; dp; graph; graph: tree; implementation
+- [codeforces 1244d - paint the tree](https://codeforces.com/problemset/problem/1244/D) - constructive; dp; graph: tree; implementation
   - difficulty: 1800
-- [codeforces 1225d - power products](https://codeforces.com/problemset/problem/1225/D) - hashing; math; math: number theory
+- [codeforces 1225d - power products](https://codeforces.com/problemset/problem/1225/D) - hashing; math: number theory
   - difficulty: 1800
 - [codeforces 1221d - make the fence great again](https://codeforces.com/problemset/problem/1221/D) - dp
   - difficulty: 1800
@@ -1358,15 +1364,15 @@
   - difficulty: 1800
 - [codeforces 1196e - connected component on a chessboard](https://codeforces.com/problemset/problem/1196/E) - constructive; implementation
   - difficulty: 1800
-- [codeforces 1195d2 - submarine in the rybinsk sea (hard edition)](https://codeforces.com/problemset/problem/1195/D2) - math; math: combinatorics; math: number theory
+- [codeforces 1195d2 - submarine in the rybinsk sea (hard edition)](https://codeforces.com/problemset/problem/1195/D2) - math: combinatorics, number theory
   - difficulty: 1800
 - [codeforces 1190b - tokitsukaze, csl and stone game](https://codeforces.com/problemset/problem/1190/B) - math: game
   - difficulty: 1800
 - [codeforces 1187c - vasya and array](https://codeforces.com/problemset/problem/1187/C) - constructive; greedy; implementation
   - difficulty: 1800
-- [codeforces 1276b - two fairs](https://codeforces.com/problemset/problem/1276/B) - graph; graph: dfs and similar; graph: dsu; math: combinatorics
+- [codeforces 1276b - two fairs](https://codeforces.com/problemset/problem/1276/B) - graph: dfs and similar, dsu; math: combinatorics
   - difficulty: 1900
-- [codeforces 1272e - nearest opposite parity](https://codeforces.com/problemset/problem/1272/E) - graph; graph: dfs and similar; graph: shortest path
+- [codeforces 1272e - nearest opposite parity](https://codeforces.com/problemset/problem/1272/E) - graph: dfs and similar, shortest path
   - difficulty: 1900
 - [codeforces 1264b - beautiful sequence](https://codeforces.com/problemset/problem/1264/B) - constructive; greedy; implementation
   - difficulty: 1900
@@ -1374,9 +1380,9 @@
   - difficulty: 1900
 - [codeforces 1251d - salary changing](https://codeforces.com/problemset/problem/1251/D) - binary search; greedy; sorting
   - difficulty: 1900
-- [codeforces 1245d - shichikuji and power grid](https://codeforces.com/problemset/problem/1245/D) - graph; graph: dsu; graph: shortest path; graph: tree; greedy
+- [codeforces 1245d - shichikuji and power grid](https://codeforces.com/problemset/problem/1245/D) - graph: dsu, shortest path, tree; greedy
   - difficulty: 1900
-- [codeforces 1242b - 0-1 mst](https://codeforces.com/problemset/problem/1242/B) - graph; graph: dfs and similar; graph: dsu; sorting
+- [codeforces 1242b - 0-1 mst](https://codeforces.com/problemset/problem/1242/B) - graph: dfs and similar, dsu; sorting
   - difficulty: 1900
 - [codeforces 1238d - ab-string](https://codeforces.com/problemset/problem/1238/D) - binary search; dp; math: combinatorics; string
   - difficulty: 1900
@@ -1386,7 +1392,7 @@
   - difficulty: 1900
 - [codeforces 1228d - complete tripartite](https://codeforces.com/problemset/problem/1228/D) - constructive; graph; hashing; implementation
   - difficulty: 1900
-- [codeforces 1220d - alex and julian](https://codeforces.com/problemset/problem/1220/D) - dp: bitmask; math; math: number theory
+- [codeforces 1220d - alex and julian](https://codeforces.com/problemset/problem/1220/D) - dp: bitmask; math: number theory
   - difficulty: 1900
 - [codeforces 1216e1 - numerical sequence (easy version)](https://codeforces.com/problemset/problem/1216/E1) - binary search; implementation; math
   - difficulty: 1900
@@ -1396,7 +1402,7 @@
   - difficulty: 1900
 - [codeforces 1379c - choosing flowers](https://codeforces.com/problemset/problem/1379/C) - binary search; data structures; dp; graph: dfs and similar; greedy; implementation; sorting; two pointers
   - difficulty: 2000
-- [codeforces 1316d - nash matrix](https://codeforces.com/problemset/problem/1316/D) - constructive; graph; graph: dfs and similar; implementation
+- [codeforces 1316d - nash matrix](https://codeforces.com/problemset/problem/1316/D) - constructive; graph: dfs and similar; implementation
   - difficulty: 2000
 - [codeforces 1304e - 1-trees and queries](https://codeforces.com/problemset/problem/1304/E) - data structures; graph: dfs and similar; graph: shortest path; graph: tree
   - difficulty: 2000
@@ -1408,9 +1414,9 @@
   - difficulty: 2000
 - [codeforces 1288e - messenger simulator](https://codeforces.com/problemset/problem/1288/E) - data structures
   - difficulty: 2000
-- [codeforces 1288d - minimax problem](https://codeforces.com/problemset/problem/1288/D) - binary search; dp; dp: bitmask
+- [codeforces 1288d - minimax problem](https://codeforces.com/problemset/problem/1288/D) - binary search; dp: bitmask
   - difficulty: 2000
-- [codeforces 1280c - jeremy bearimy](https://codeforces.com/problemset/problem/1280/C) - graph; graph: dfs and similar; graph: tree; greedy
+- [codeforces 1280c - jeremy bearimy](https://codeforces.com/problemset/problem/1280/C) - graph: dfs and similar, tree; greedy
   - difficulty: 2000
 - [codeforces 1266d - decreasing debts](https://codeforces.com/problemset/problem/1266/D) - constructive; data structures; graph; greedy; implementation; math; two pointers
   - difficulty: 2000
@@ -1428,13 +1434,13 @@
   - difficulty: 1700
 - [codeforces 1400e - clear the multiset](https://codeforces.com/problemset/problem/1400/E) - divide and conquer; dp; greedy
   - difficulty: 2200
-- [codeforces 633a - ebony and ivory](https://codeforces.com/problemset/problem/633/A) - implementation; math; math: number theory
+- [codeforces 633a - ebony and ivory](https://codeforces.com/problemset/problem/633/A) - implementation; math: number theory
   - difficulty: 1100
-- [codeforces 1343e - weights distributing](https://codeforces.com/problemset/problem/1343/E) - graph; graph: shortest path; greedy; implementation; sorting
+- [codeforces 1343e - weights distributing](https://codeforces.com/problemset/problem/1343/E) - graph: shortest path; greedy; implementation; sorting
   - difficulty: 2100
 - [codeforces 1333d - challenges in school no. 41](https://codeforces.com/problemset/problem/1333/D) - constructive; graph; greedy; implementation; math: game; sorting
   - difficulty: 2100
-- [codeforces 1332e - height all the same](https://codeforces.com/problemset/problem/1332/E) - constructive; math; math: combinatorics; math: matrix
+- [codeforces 1332e - height all the same](https://codeforces.com/problemset/problem/1332/E) - constructive; math: combinatorics, matrix
   - difficulty: 2100
 - [codeforces 1322b - present](https://codeforces.com/problemset/problem/1322/B) - binary search; constructive; data structures; dp: bitmask; math; sorting
   - difficulty: 2100
@@ -1446,15 +1452,15 @@
   - difficulty: 2100
 - [codeforces 1284d - new year and conference](https://codeforces.com/problemset/problem/1284/D) - binary search; data structures; hashing; sorting
   - difficulty: 2100
-- [codeforces 1278d - segment tree](https://codeforces.com/problemset/problem/1278/D) - data structures; graph; graph: dsu; graph: tree
+- [codeforces 1278d - segment tree](https://codeforces.com/problemset/problem/1278/D) - data structures; graph: dsu, tree
   - difficulty: 2100
-- [codeforces 1271e - common number](https://codeforces.com/problemset/problem/1271/E) - binary search; dp; math; math: combinatorics
+- [codeforces 1271e - common number](https://codeforces.com/problemset/problem/1271/E) - binary search; dp; math: combinatorics
   - difficulty: 2100
-- [codeforces 621c - wet shark and flowers](https://codeforces.com/problemset/problem/621/C) - math; math: combinatorics; math: number theory; math: probability
+- [codeforces 621c - wet shark and flowers](https://codeforces.com/problemset/problem/621/C) - math: combinatorics, number theory, probability
   - difficulty: 1700
-- [codeforces 687b - remainders game](https://codeforces.com/problemset/problem/687/B) - math; math: number theory
+- [codeforces 687b - remainders game](https://codeforces.com/problemset/problem/687/B) - math: number theory
   - difficulty: 1800
-- [codeforces 1327d - infinite path](https://codeforces.com/problemset/problem/1327/D) - graph; graph: dfs and similar; implementation; math; math: number theory
+- [codeforces 1327d - infinite path](https://codeforces.com/problemset/problem/1327/D) - graph: dfs and similar; implementation; math: number theory
   - difficulty: 2200
 - [codeforces 1311e - construct the binary tree](https://codeforces.com/problemset/problem/1311/E) - constructive; graph: tree; implementation
   - difficulty: 2200
@@ -1488,7 +1494,7 @@
   - difficulty: 2200
 - [codeforces 1249f - maximum weight subset](https://codeforces.com/problemset/problem/1249/F) - dp; graph: tree
   - difficulty: 2200
-- [codeforces 1238f - the maximum subtree](https://codeforces.com/problemset/problem/1238/F) - dp; graph; graph: dfs and similar; graph: tree
+- [codeforces 1238f - the maximum subtree](https://codeforces.com/problemset/problem/1238/F) - dp; graph: dfs and similar, tree
   - difficulty: 2200
 - [codeforces 1296b - food buying](https://codeforces.com/problemset/problem/1296/B) - math
   - difficulty: 900
@@ -1498,11 +1504,11 @@
   - difficulty: 900
 - [codeforces 1177b - digits sequence (hard edition)](https://codeforces.com/problemset/problem/1177/B) - binary search; divide and conquer; implementation
   - difficulty: 1800
-- [codeforces 1400g - mercenaries](https://codeforces.com/problemset/problem/1400/G) - dp; dp: bitmask; graph: dsu; implementation; math; math: combinatorics; two pointers
+- [codeforces 1400g - mercenaries](https://codeforces.com/problemset/problem/1400/G) - dp: bitmask; graph: dsu; implementation; math: combinatorics; two pointers
   - difficulty: 2600
-- [codeforces 1238e - keyboard purchase](https://codeforces.com/problemset/problem/1238/E) - dp; dp: bitmask
+- [codeforces 1238e - keyboard purchase](https://codeforces.com/problemset/problem/1238/E) - dp: bitmask
   - difficulty: 2200
-- [codeforces 1239a - ivan the fool and the probability theory](https://codeforces.com/problemset/problem/1239/A) - dp; math; math: combinatorics
+- [codeforces 1239a - ivan the fool and the probability theory](https://codeforces.com/problemset/problem/1239/A) - dp; math: combinatorics
   - difficulty: 1700
 - [codeforces 1239c - queue in the train](https://codeforces.com/problemset/problem/1239/C) - data structures; greedy; implementation
   - difficulty: 2300
@@ -1512,15 +1518,15 @@
   - difficulty: 1900
 - [codeforces 1207e - xor guessing](https://codeforces.com/problemset/problem/1207/E) - dp: bitmask; interactive; math
   - difficulty: 1900
-- [codeforces 1205b - shortest cycle](https://codeforces.com/problemset/problem/1205/B) - dp: bitmask; graph; graph: shortest path; implementation
+- [codeforces 1205b - shortest cycle](https://codeforces.com/problemset/problem/1205/B) - dp: bitmask; graph: shortest path; implementation
   - difficulty: 1900
-- [codeforces 1202d - print a 1337-string...](https://codeforces.com/problemset/problem/1202/D) - constructive; math; math: combinatorics; string
+- [codeforces 1202d - print a 1337-string...](https://codeforces.com/problemset/problem/1202/D) - constructive; math: combinatorics; string
   - difficulty: 1900
 - [codeforces 1200d - white lines](https://codeforces.com/problemset/problem/1200/D) - data structures; dp; implementation; two pointers
   - difficulty: 1900
 - [codeforces 1197d - yet another subarray problem](https://codeforces.com/problemset/problem/1197/D) - dp; greedy; math
   - difficulty: 1900
-- [codeforces 1184e1 - daleks' invasion (easy)](https://codeforces.com/problemset/problem/1184/E1) - graph; graph: tree
+- [codeforces 1184e1 - daleks' invasion (easy)](https://codeforces.com/problemset/problem/1184/E1) - graph: tree
   - difficulty: 1900
 - [codeforces 1183h - subsequences (hard version)](https://codeforces.com/problemset/problem/1183/H) - dp; string
   - difficulty: 1900
@@ -1534,11 +1540,11 @@
   - difficulty: 1900
 - [codeforces 1172b - nauuo and circle](https://codeforces.com/problemset/problem/1172/B) - dp; graph: dfs and similar; graph: tree; math: combinatorics
   - difficulty: 1900
-- [codeforces 300b - coach](https://codeforces.com/problemset/problem/300/B) - graph; graph: dfs and similar; implementation
+- [codeforces 300b - coach](https://codeforces.com/problemset/problem/300/B) - graph: dfs and similar; implementation
   - difficulty: 1500
 - [codeforces 1168b - good triple](https://codeforces.com/problemset/problem/1168/B) - implementation; two pointers
   - difficulty: 1900
-- [codeforces 1163c2 - power transmission (hard edition)](https://codeforces.com/problemset/problem/1163/C2) - data structures; implementation; math; math: geometry
+- [codeforces 1163c2 - power transmission (hard edition)](https://codeforces.com/problemset/problem/1163/C2) - data structures; implementation; math: geometry
   - difficulty: 1900
 - [codeforces 1157d - n problems during k days](https://codeforces.com/problemset/problem/1157/D) - constructive; greedy; math
   - difficulty: 1900
@@ -1548,15 +1554,15 @@
   - difficulty: 1900
 - [codeforces 1147b - chladni figure](https://codeforces.com/problemset/problem/1147/B) - implementation; string
   - difficulty: 1900
-- [codeforces 322b - ciel and flowers](https://codeforces.com/problemset/problem/322/B) - math; math: combinatorics
+- [codeforces 322b - ciel and flowers](https://codeforces.com/problemset/problem/322/B) - math: combinatorics
   - difficulty: 1600
-- [codeforces 1144e - median string](https://codeforces.com/problemset/problem/1144/E) - dp: bitmask; math; math: number theory; string
+- [codeforces 1144e - median string](https://codeforces.com/problemset/problem/1144/E) - dp: bitmask; math: number theory; string
   - difficulty: 1900
-- [codeforces 1141g - privatization of roads in treeland](https://codeforces.com/problemset/problem/1141/G) - binary search; constructive; graph; graph: dfs and similar; graph: tree; greedy
+- [codeforces 1141g - privatization of roads in treeland](https://codeforces.com/problemset/problem/1141/G) - binary search; constructive; graph: dfs and similar, tree; greedy
   - difficulty: 1900
 - [codeforces 1141f2 - same sum blocks (hard)](https://codeforces.com/problemset/problem/1141/F2) - data structures; greedy
   - difficulty: 1900
-- [codeforces 1133f2 - spanning tree with one fixed degree](https://codeforces.com/problemset/problem/1133/F2) - constructive; graph; graph: dfs and similar; graph: dsu; greedy
+- [codeforces 1133f2 - spanning tree with one fixed degree](https://codeforces.com/problemset/problem/1133/F2) - constructive; graph: dfs and similar, dsu; greedy
   - difficulty: 1900
 - [codeforces 1120a - diana and liana](https://codeforces.com/problemset/problem/1120/A) - greedy; implementation; two pointers
   - difficulty: 1900
@@ -1566,9 +1572,9 @@
   - difficulty: 1900
 - [codeforces 1114d - flood fill](https://codeforces.com/problemset/problem/1114/D) - dp
   - difficulty: 1900
-- [codeforces 1105d - kilani and the game](https://codeforces.com/problemset/problem/1105/D) - graph; graph: dfs and similar; graph: shortest path; implementation
+- [codeforces 1105d - kilani and the game](https://codeforces.com/problemset/problem/1105/D) - graph: dfs and similar, shortest path; implementation
   - difficulty: 1900
-- [codeforces 1095f - make it connected](https://codeforces.com/problemset/problem/1095/F) - graph; graph: dsu; greedy
+- [codeforces 1095f - make it connected](https://codeforces.com/problemset/problem/1095/F) - graph: dsu; greedy
   - difficulty: 1900
 - [codeforces 1095e - almost regular bracket sequence](https://codeforces.com/problemset/problem/1095/E) - implementation
   - difficulty: 1900
@@ -1578,7 +1584,7 @@
   - difficulty: 1900
 - [codeforces 1089f - fractions](https://codeforces.com/problemset/problem/1089/F) - math
   - difficulty: 1900
-- [codeforces 1081e - missing numbers](https://codeforces.com/problemset/problem/1081/E) - binary search; constructive; greedy; math; math: number theory
+- [codeforces 1081e - missing numbers](https://codeforces.com/problemset/problem/1081/E) - binary search; constructive; greedy; math: number theory
   - difficulty: 1900
 - [codeforces 1077f1 - pictures with kittens (easy version)](https://codeforces.com/problemset/problem/1077/F1) - dp
   - difficulty: 1900
@@ -1588,21 +1594,21 @@
   - difficulty: 1900
 - [codeforces 1067a - array without local maximums ](https://codeforces.com/problemset/problem/1067/A) - dp
   - difficulty: 1900
-- [codeforces 935d - fafa and ancient alphabet](https://codeforces.com/problemset/problem/935/D) - math; math: probability
+- [codeforces 935d - fafa and ancient alphabet](https://codeforces.com/problemset/problem/935/D) - math: probability
   - difficulty: 1900
 - [codeforces 1237f - balanced domino placements](https://codeforces.com/problemset/problem/1237/F) - dp; math: combinatorics
   - difficulty: 2600
 - [codeforces 1397a - juggling letters](https://codeforces.com/problemset/problem/1397/A) - greedy; string
   - difficulty: 800
-- [codeforces 717a - festival organization](https://codeforces.com/problemset/problem/717/A) - math; math: number theory
+- [codeforces 717a - festival organization](https://codeforces.com/problemset/problem/717/A) - math: number theory
   - difficulty: 2900
-- [codeforces 1250n - wires](https://codeforces.com/problemset/problem/1250/N) - graph; graph: dfs and similar; greedy
+- [codeforces 1250n - wires](https://codeforces.com/problemset/problem/1250/N) - graph: dfs and similar; greedy
   - difficulty: 2000
 - [codeforces 1248d1 - the world is just a programming task (easy version)](https://codeforces.com/problemset/problem/1248/D1) - dp; greedy; implementation
   - difficulty: 2000
 - [codeforces 1244e - minimizing difference](https://codeforces.com/problemset/problem/1244/E) - binary search; constructive; greedy; sorting; ternary search; two pointers
   - difficulty: 2000
-- [codeforces 1244c - the football season](https://codeforces.com/problemset/problem/1244/C) - implementation; math; math: number theory
+- [codeforces 1244c - the football season](https://codeforces.com/problemset/problem/1244/C) - implementation; math: number theory
   - difficulty: 2000
 - [codeforces 1237d - balanced playlist](https://codeforces.com/problemset/problem/1237/D) - binary search; data structures; implementation
   - difficulty: 2000
@@ -1612,7 +1618,7 @@
   - difficulty: 2000
 - [codeforces 1219g - harvester](https://codeforces.com/problemset/problem/1219/G) - implementation
   - difficulty: 2000
-- [codeforces 1214e - petya and construction set](https://codeforces.com/problemset/problem/1214/E) - constructive; graph; graph: tree; math; sorting
+- [codeforces 1214e - petya and construction set](https://codeforces.com/problemset/problem/1214/E) - constructive; graph: tree; math; sorting
   - difficulty: 2000
 - [codeforces 1381a1 - prefix flip (easy version)](https://codeforces.com/problemset/problem/1381/A1) - constructive; data structures; string
   - difficulty: 1300
@@ -1630,11 +1636,11 @@
   - difficulty: 1000
 - [codeforces 1404c - fixed point removal](https://codeforces.com/problemset/problem/1404/C) - binary search; constructive; data structures; greedy; two pointers
   - difficulty: 2300
-- [codeforces 1375f - integer game](https://codeforces.com/problemset/problem/1375/F) - constructive; interactive; math; math: game
+- [codeforces 1375f - integer game](https://codeforces.com/problemset/problem/1375/F) - constructive; interactive; math: game
   - difficulty: 2600
 - [codeforces 239a - two bags of potatoes](https://codeforces.com/problemset/problem/239/A) - greedy; implementation; math
   - difficulty: 1200
-- [codeforces 1375g - tree modification](https://codeforces.com/problemset/problem/1375/G) - constructive; graph; graph: dfs and similar; graph: matching; graph: tree; implementation
+- [codeforces 1375g - tree modification](https://codeforces.com/problemset/problem/1375/G) - constructive; graph: dfs and similar, matching, tree; implementation
   - difficulty: 2800
 - [codeforces 253a - boys and girls](https://codeforces.com/problemset/problem/253/A) - greedy
   - difficulty: 1100
@@ -1644,7 +1650,7 @@
   - difficulty: 2300
 - [codeforces 1292c - xenon's attack on the gangs](https://codeforces.com/problemset/problem/1292/C) - dp; graph: dfs and similar; graph: tree; greedy; math: combinatorics
   - difficulty: 2300
-- [codeforces 1285e - delete a segment](https://codeforces.com/problemset/problem/1285/E) - constructive; data structures; dp; graph; graph: tree; implementation; sorting; two pointers
+- [codeforces 1285e - delete a segment](https://codeforces.com/problemset/problem/1285/E) - constructive; data structures; dp; graph: tree; implementation; sorting; two pointers
   - difficulty: 2300
 - [codeforces 1282d - enchanted artifact](https://codeforces.com/problemset/problem/1282/D) - constructive; interactive; string
   - difficulty: 2300
@@ -1652,47 +1658,47 @@
   - difficulty: 1400
 - [codeforces 1271d - portals](https://codeforces.com/problemset/problem/1271/D) - data structures; dp; greedy; implementation; sorting
   - difficulty: 2100
-- [codeforces 1267k - key storage](https://codeforces.com/problemset/problem/1267/K) - math; math: combinatorics
+- [codeforces 1267k - key storage](https://codeforces.com/problemset/problem/1267/K) - math: combinatorics
   - difficulty: 2100
-- [codeforces 580c - kefa and park](https://codeforces.com/problemset/problem/580/C) - graph; graph: dfs and similar; graph: tree
+- [codeforces 580c - kefa and park](https://codeforces.com/problemset/problem/580/C) - graph: dfs and similar, tree
   - difficulty: 1500
 - [codeforces 959c - mahmoud and ehab and the wrong algorithm](https://codeforces.com/problemset/problem/959/C) - constructive; graph: tree
   - difficulty: 1500
 - [codeforces 707b - bakery](https://codeforces.com/problemset/problem/707/B) - graph
   - difficulty: 1300
-- [codeforces 263d - cycle in graph](https://codeforces.com/problemset/problem/263/D) - graph; graph: dfs and similar
+- [codeforces 263d - cycle in graph](https://codeforces.com/problemset/problem/263/D) - graph: dfs and similar
   - difficulty: 1800
-- [codeforces 1407e - egor in the republic of dagestan](https://codeforces.com/problemset/problem/1407/E) - constructive; dp; graph; graph: dfs and similar; graph: shortest path; greedy
+- [codeforces 1407e - egor in the republic of dagestan](https://codeforces.com/problemset/problem/1407/E) - constructive; dp; graph: dfs and similar, shortest path; greedy
   - difficulty: 2500
-- [codeforces 1407d - discrete centrifugal jumps](https://codeforces.com/problemset/problem/1407/D) - data structures; dp; graph; graph: dsu; graph: shortest path; two pointers
+- [codeforces 1407d - discrete centrifugal jumps](https://codeforces.com/problemset/problem/1407/D) - data structures; dp; graph: dsu, shortest path; two pointers
   - difficulty: 2200
-- [codeforces 118e - bertown roads](https://codeforces.com/problemset/problem/118/E) - graph; graph: dfs and similar
+- [codeforces 118e - bertown roads](https://codeforces.com/problemset/problem/118/E) - graph: dfs and similar
   - difficulty: 2000
 - [codeforces 803e - roma and poker](https://codeforces.com/problemset/problem/803/E) - dp; graph
   - difficulty: 2000
-- [codeforces 546e - soldier and traveling](https://codeforces.com/problemset/problem/546/E) - graph; graph: flow; math
+- [codeforces 546e - soldier and traveling](https://codeforces.com/problemset/problem/546/E) - graph: flow; math
   - difficulty: 2100
-- [codeforces 598d - igor in the museum](https://codeforces.com/problemset/problem/598/D) - graph; graph: dfs and similar; graph: shortest path
+- [codeforces 598d - igor in the museum](https://codeforces.com/problemset/problem/598/D) - graph: dfs and similar, shortest path
   - difficulty: 1700
-- [codeforces 449b - jzzhu and cities](https://codeforces.com/problemset/problem/449/B) - graph; graph: shortest path; greedy
+- [codeforces 449b - jzzhu and cities](https://codeforces.com/problemset/problem/449/B) - graph: shortest path; greedy
   - difficulty: 2000
-- [codeforces 1397b - power sequence](https://codeforces.com/problemset/problem/1397/B) - implementation; math; math: number theory; sorting
+- [codeforces 1397b - power sequence](https://codeforces.com/problemset/problem/1397/B) - implementation; math: number theory; sorting
   - difficulty: 1500
-- [codeforces 1063c - dwarves, hats and extrasensory abilities](https://codeforces.com/problemset/problem/1063/C) - binary search; constructive; interactive; math: geometry
+- [codeforces 1063c - challenges in school no. 41](https://codeforces.com/problemset/problem/1063/C) - binary search; constructive; interactive; math: geometry
   - difficulty: 1900
-- [codeforces 1210c - kamil and making a stream](https://codeforces.com/problemset/problem/1210/C) - graph: tree; math; math: number theory
+- [codeforces 1210c - kamil and making a stream](https://codeforces.com/problemset/problem/1210/C) - graph: tree; math: number theory
   - difficulty: 2000
 - [codeforces 1209g1 - into blocks (easy version)](https://codeforces.com/problemset/problem/1209/G1) - data structures; graph: dsu; greedy; implementation; two pointers
   - difficulty: 2000
-- [codeforces 1209e1 - rotate columns (easy version)](https://codeforces.com/problemset/problem/1209/E1) - dp; dp: bitmask; greedy; implementation; sorting
+- [codeforces 1209e1 - rotate columns (easy version)](https://codeforces.com/problemset/problem/1209/E1) - dp: bitmask; greedy; implementation; sorting
   - difficulty: 2000
 - [codeforces 1204d1 - kirk and a binary string (easy version)](https://codeforces.com/problemset/problem/1204/D1) - greedy; implementation; string
   - difficulty: 2000
-- [codeforces 1200e - compress words](https://codeforces.com/problemset/problem/1200/E) - hashing; implementation; string; string: string suffix structure
+- [codeforces 1200e - compress words](https://codeforces.com/problemset/problem/1200/E) - hashing; implementation; string: string suffix structure
   - difficulty: 2000
 - [codeforces 1060d - social circles](https://codeforces.com/problemset/problem/1060/D) - greedy; math
   - difficulty: 1900
-- [codeforces 1055c - lucky days](https://codeforces.com/problemset/problem/1055/C) - math; math: number theory
+- [codeforces 1055c - lucky days](https://codeforces.com/problemset/problem/1055/C) - math: number theory
   - difficulty: 1900
 - [codeforces 1054d - changing array](https://codeforces.com/problemset/problem/1054/D) - greedy; implementation
   - difficulty: 1900
@@ -1710,11 +1716,11 @@
   - difficulty: 2400
 - [codeforces 1420c2 - pok�mon army (hard version)](https://codeforces.com/problemset/problem/1420/C2) - data structures; divide and conquer; dp; greedy; implementation
   - difficulty: 2100
-- [codeforces 1422d - returning home](https://codeforces.com/problemset/problem/1422/D) - graph; graph: shortest path; sorting
+- [codeforces 1422d - returning home](https://codeforces.com/problemset/problem/1422/D) - graph: shortest path; sorting
   - difficulty: 2300
 - [codeforces 1416b - make them equal](https://codeforces.com/problemset/problem/1416/B) - constructive; greedy; math
   - difficulty: 2000
-- [codeforces 1416c - xor inverse](https://codeforces.com/problemset/problem/1416/C) - data structures; divide and conquer; dp; dp: bitmask; graph: tree; greedy; math; sorting; string
+- [codeforces 1416c - xor inverse](https://codeforces.com/problemset/problem/1416/C) - data structures; divide and conquer; dp: bitmask; graph: tree; greedy; math; sorting; string
   - difficulty: 2000
 - [codeforces 1426f - number of subsequences](https://codeforces.com/problemset/problem/1426/F) - dp; math: combinatorics; string
   - difficulty: 2000
@@ -1726,7 +1732,7 @@
   - difficulty: 2000
 - [codeforces 1183g - candy box (hard version)](https://codeforces.com/problemset/problem/1183/G) - greedy; implementation; sorting
   - difficulty: 2000
-- [codeforces 1183e - subsequences (easy version)](https://codeforces.com/problemset/problem/1183/E) - dp; graph; graph: shortest path; implementation
+- [codeforces 1183e - subsequences (easy version)](https://codeforces.com/problemset/problem/1183/E) - dp; graph: shortest path; implementation
   - difficulty: 2000
 - [codeforces 1183h - subsequences (hard version)](https://codeforces.com/problemset/problem/1183/H) - dp; string
   - difficulty: 1900
@@ -1738,33 +1744,33 @@
   - difficulty: 2000
 - [codeforces 1132f - clear the string](https://codeforces.com/problemset/problem/1132/F) - dp
   - difficulty: 2000
-- [codeforces 1131d - gourmet choice](https://codeforces.com/problemset/problem/1131/D) - dp; graph; graph: dfs and similar; graph: dsu; greedy
+- [codeforces 1131d - gourmet choice](https://codeforces.com/problemset/problem/1131/D) - dp; graph: dfs and similar, dsu; greedy
   - difficulty: 2000
 - [codeforces 1101d - gcd counting](https://codeforces.com/problemset/problem/1101/D) - data structures; dp; graph: dfs and similar; graph: tree; math: number theory
   - difficulty: 2000
-- [codeforces 1102f - elongated matrix](https://codeforces.com/problemset/problem/1102/F) - binary search; dp; dp: bitmask; graph; implementation
+- [codeforces 1102f - elongated matrix](https://codeforces.com/problemset/problem/1102/F) - binary search; dp: bitmask; graph; implementation
   - difficulty: 2000
 - [codeforces 1057c - tanya and colored candies](https://codeforces.com/problemset/problem/1057/C) - dp
   - difficulty: 2000
 - [codeforces 1060e - sergey and subway](https://codeforces.com/problemset/problem/1060/E) - dp; graph: dfs and similar; graph: tree
   - difficulty: 2000
-- [codeforces 20c - dijkstra?](https://codeforces.com/problemset/problem/20/C) - graph; graph: shortest path
+- [codeforces 20c - dijkstra?](https://codeforces.com/problemset/problem/20/C) - graph: shortest path
   - difficulty: 1900
-- [codeforces 689b - mike and shortcuts](https://codeforces.com/problemset/problem/689/B) - graph; graph: dfs and similar; graph: shortest path; greedy
+- [codeforces 689b - mike and shortcuts](https://codeforces.com/problemset/problem/689/B) - graph: dfs and similar, shortest path; greedy
   - difficulty: 1600
-- [codeforces 986a - fair](https://codeforces.com/problemset/problem/986/A) - graph; graph: shortest path; greedy; math: number theory
+- [codeforces 986a - fair](https://codeforces.com/problemset/problem/986/A) - graph: shortest path; greedy; math: number theory
   - difficulty: 1600
-- [codeforces 449b - jzzhu and cities](https://codeforces.com/problemset/problem/449/B) - graph; graph: shortest path; greedy
+- [codeforces 449b - jzzhu and cities](https://codeforces.com/problemset/problem/449/B) - graph: shortest path; greedy
   - difficulty: 2000
 - [codeforces 33b - string problem](https://codeforces.com/problemset/problem/33/B) - graph: shortest path
   - difficulty: 1800
 - [codeforces 95c - volleyball](https://codeforces.com/problemset/problem/95/C) - graph: shortest path
   - difficulty: 1900
-- [codeforces 938d - buy a ticket](https://codeforces.com/problemset/problem/938/D) - data structures; graph; graph: shortest path
+- [codeforces 938d - buy a ticket](https://codeforces.com/problemset/problem/938/D) - data structures; graph: shortest path
   - difficulty: 2000
-- [codeforces 1030e - vasya and good sequences](https://codeforces.com/problemset/problem/1030/E) - dp; dp: bitmask
+- [codeforces 1030e - vasya and good sequences](https://codeforces.com/problemset/problem/1030/E) - dp: bitmask
   - difficulty: 2000
-- [codeforces 997b - roman digits](https://codeforces.com/problemset/problem/997/B) - dp; greedy; implementation; math; math: combinatorics
+- [codeforces 997b - roman digits](https://codeforces.com/problemset/problem/997/B) - dp; greedy; implementation; math: combinatorics
   - difficulty: 2000
 - [codeforces 999f - cards and joy](https://codeforces.com/problemset/problem/999/F) - dp
   - difficulty: 2000
@@ -1776,7 +1782,7 @@
   - difficulty: 2000
 - [codeforces 1433f - zero remainder sum ](https://codeforces.com/problemset/problem/1433/F) - dp
   - difficulty: 2100
-- [codeforces 1433g - reducing delivery cost](https://codeforces.com/problemset/problem/1433/G) - graph; graph: shortest path; implementation
+- [codeforces 1433g - reducing delivery cost](https://codeforces.com/problemset/problem/1433/G) - graph: shortest path; implementation
   - difficulty: 2100
 - [codeforces 1421a - xorwice](https://codeforces.com/problemset/problem/1421/A) - dp: bitmask; greedy; math
   - difficulty: 800
@@ -1790,7 +1796,7 @@
   - difficulty: 800
 - [codeforces 1435b - a new technique](https://codeforces.com/problemset/problem/1435/B) - constructive; implementation
   - difficulty: 1100
-- [codeforces 1328e - tree queries](https://codeforces.com/problemset/problem/1328/E) - graph; graph: dfs and similar; graph: tree
+- [codeforces 1328e - tree queries](https://codeforces.com/problemset/problem/1328/E) - graph: dfs and similar, tree
   - difficulty: 1900
 - [codeforces 191c - fools and roads](https://codeforces.com/problemset/problem/191/C) - data structures; graph: dfs and similar; graph: tree
   - difficulty: 1900
@@ -1808,7 +1814,7 @@
   - difficulty: 2200
 - [codeforces 1187e - tree painting](https://codeforces.com/problemset/problem/1187/E) - dp; graph: dfs and similar; graph: tree
   - difficulty: 2100
-- [codeforces 559c - gerald and giant chess](https://codeforces.com/problemset/problem/559/C) - dp; math; math: combinatorics; math: number theory
+- [codeforces 559c - gerald and giant chess](https://codeforces.com/problemset/problem/559/C) - dp; math: combinatorics, number theory
   - difficulty: 2200
 - [codeforces 675c - money transfers](https://codeforces.com/problemset/problem/675/C) - constructive; data structures; greedy; sorting
   - difficulty: 2100
@@ -1822,7 +1828,7 @@
   - difficulty: 800
 - [codeforces 1445b - elimination](https://codeforces.com/problemset/problem/1445/B) - greedy; math
   - difficulty: 900
-- [codeforces 165e - compatible numbers](https://codeforces.com/problemset/problem/165/E) - dp; dp: bitmask; graph: dfs and similar; implementation
+- [codeforces 165e - compatible numbers](https://codeforces.com/problemset/problem/165/E) - dp: bitmask; graph: dfs and similar; implementation
   - difficulty: 2200
 - [codeforces 1092d1 - great vova wall (version 1)](https://codeforces.com/problemset/problem/1092/D1) - greedy; implementation; math
   - difficulty: 2200
@@ -1836,15 +1842,15 @@
   - difficulty: 2400
 - [codeforces 1204d2 - kirk and a binary string (hard version)](https://codeforces.com/problemset/problem/1204/D2) - data structures; greedy; math; string
   - difficulty: 2100
-- [codeforces 877d - olya and energy drinks](https://codeforces.com/problemset/problem/877/D) - data structures; graph; graph: dfs and similar; graph: shortest path
+- [codeforces 877d - olya and energy drinks](https://codeforces.com/problemset/problem/877/D) - data structures; graph: dfs and similar, shortest path
   - difficulty: 2100
-- [codeforces 510c - fox and names](https://codeforces.com/problemset/problem/510/C) - graph; graph: dfs and similar; sorting
+- [codeforces 510c - fox and names](https://codeforces.com/problemset/problem/510/C) - graph: dfs and similar; sorting
   - difficulty: 1600
-- [codeforces 427c - checkposts](https://codeforces.com/problemset/problem/427/C) - graph; graph: dfs and similar; two pointers
+- [codeforces 427c - checkposts](https://codeforces.com/problemset/problem/427/C) - graph: dfs and similar; two pointers
   - difficulty: 1700
-- [codeforces 652e - pursuit for artifacts](https://codeforces.com/problemset/problem/652/E) - graph; graph: dfs and similar; graph: dsu; graph: tree
+- [codeforces 652e - pursuit for artifacts](https://codeforces.com/problemset/problem/652/E) - graph: dfs and similar, dsu, tree
   - difficulty: 2300
-- [codeforces 25c - roads in berland](https://codeforces.com/problemset/problem/25/C) - graph; graph: shortest path
+- [codeforces 25c - roads in berland](https://codeforces.com/problemset/problem/25/C) - graph: shortest path
   - difficulty: 1900
 - [codeforces 372c - watching fireworks is fun](https://codeforces.com/problemset/problem/372/C) - data structures; dp; math
   - difficulty: 2100
@@ -1858,7 +1864,7 @@
   - difficulty: 2200
 - [codeforces 771c - bear and tree jumps](https://codeforces.com/problemset/problem/771/C) - dp; graph: dfs and similar; graph: tree
   - difficulty: 2100
-- [codeforces 1151e - number of components](https://codeforces.com/problemset/problem/1151/E) - data structures; dp; math; math: combinatorics
+- [codeforces 1151e - number of components](https://codeforces.com/problemset/problem/1151/E) - data structures; dp; math: combinatorics
   - difficulty: 2100
 - [codeforces 600e - lomsat gelral](https://codeforces.com/problemset/problem/600/E) - data structures; graph: dfs and similar; graph: dsu; graph: tree
   - difficulty: 2300
@@ -1870,19 +1876,19 @@
   - difficulty: 2200
 - [codeforces 1266e - spaceship solitaire](https://codeforces.com/problemset/problem/1266/E) - data structures; greedy; implementation
   - difficulty: 2100
-- [codeforces 1117d - magic gems](https://codeforces.com/problemset/problem/1117/D) - dp; math; math: matrix
+- [codeforces 1117d - magic gems](https://codeforces.com/problemset/problem/1117/D) - dp; math: matrix
   - difficulty: 2100
 - [codeforces 466d - increase sequence](https://codeforces.com/problemset/problem/466/D) - dp; math: combinatorics
   - difficulty: 2100
-- [codeforces 126b - password](https://codeforces.com/problemset/problem/126/B) - binary search; dp; hashing; string; string: string suffix structure
+- [codeforces 126b - password](https://codeforces.com/problemset/problem/126/B) - binary search; dp; hashing; string: string suffix structure
   - difficulty: 1700
 - [codeforces 1045i - palindrome pairs](https://codeforces.com/problemset/problem/1045/I) - hashing; string
   - difficulty: 1600
-- [codeforces 471d - muh and cube walls](https://codeforces.com/problemset/problem/471/D) - string; string: string suffix structure
+- [codeforces 471d - muh and cube walls](https://codeforces.com/problemset/problem/471/D) - string: string suffix structure
   - difficulty: 1800
 - [codeforces 835d - palindromic characteristics](https://codeforces.com/problemset/problem/835/D) - dp; hashing; implementation; string
   - difficulty: 1900
-- [codeforces 432d - prefixes and suffixes](https://codeforces.com/problemset/problem/432/D) - dp; string; string: string suffix structure; two pointers
+- [codeforces 432d - prefixes and suffixes](https://codeforces.com/problemset/problem/432/D) - dp; string: string suffix structure; two pointers
   - difficulty: 2000
 - [codeforces 7d - palindrome degree](https://codeforces.com/problemset/problem/7/D) - hashing; string
   - difficulty: 2200
@@ -1894,7 +1900,7 @@
   - difficulty: 1700
 - [codeforces 61e - enemy is weak](https://codeforces.com/problemset/problem/61/E) - data structures; graph: tree
   - difficulty: 1900
-- [codeforces 474d - flowers](https://codeforces.com/problemset/problem/474/D) - data structures; math; math: number theory
+- [codeforces 474d - flowers](https://codeforces.com/problemset/problem/474/D) - data structures; math: number theory
   - difficulty: 2100
 - [codeforces 813e - army creation](https://codeforces.com/problemset/problem/813/E) - binary search; data structures
   - difficulty: 2200
@@ -1920,7 +1926,7 @@
   - difficulty: 900
 - [codeforces 1451c - string equality](https://codeforces.com/problemset/problem/1451/C) - dp; greedy; hashing; implementation; string
   - difficulty: 1400
-- [codeforces 1451d - circle game](https://codeforces.com/problemset/problem/1451/D) - math; math: game; math: geometry
+- [codeforces 1451d - circle game](https://codeforces.com/problemset/problem/1451/D) - math: game, geometry
   - difficulty: 1700
 - [codeforces 1451e1 - bitwise queries (easy version)](https://codeforces.com/problemset/problem/1451/E1) - constructive; dp: bitmask; interactive; math
   - difficulty: 2000
@@ -1942,13 +1948,13 @@
   - difficulty: 800
 - [codeforces 1454c - sequence transformation](https://codeforces.com/problemset/problem/1454/C) - greedy; implementation
   - difficulty: 1200
-- [codeforces 1454d - number into sequence](https://codeforces.com/problemset/problem/1454/D) - constructive; math; math: number theory
+- [codeforces 1454d - number into sequence](https://codeforces.com/problemset/problem/1454/D) - constructive; math: number theory
   - difficulty: 1300
-- [codeforces 1454e - number of simple paths](https://codeforces.com/problemset/problem/1454/E) - graph; graph: dfs and similar; graph: tree; math: combinatorics
+- [codeforces 1454e - number of simple paths](https://codeforces.com/problemset/problem/1454/E) - graph: dfs and similar, tree; math: combinatorics
   - difficulty: 2000
 - [codeforces 1454f - array partition](https://codeforces.com/problemset/problem/1454/F) - binary search; data structures; greedy; two pointers
   - difficulty: 2100
-- [codeforces 1446c - xor tree](https://codeforces.com/problemset/problem/1446/C) - binary search; data structures; divide and conquer; dp; dp: bitmask; graph: tree
+- [codeforces 1446c - xor tree](https://codeforces.com/problemset/problem/1446/C) - binary search; data structures; divide and conquer; dp: bitmask; graph: tree
   - difficulty: 2100
 - [codeforces 1446d1 - frequency problem (easy version)](https://codeforces.com/problemset/problem/1446/D1) - data structures; greedy
   - difficulty: 2600
@@ -1966,35 +1972,35 @@
   - difficulty: 3000
 - [codeforces 1442b - identify the operations](https://codeforces.com/problemset/problem/1442/B) - data structures; graph: dsu; greedy; implementation; math: combinatorics
   - difficulty: 1800
-- [codeforces 1442c - graph transpositions](https://codeforces.com/problemset/problem/1442/C) - graph; graph: dfs and similar; graph: shortest path; greedy
+- [codeforces 1442c - graph transpositions](https://codeforces.com/problemset/problem/1442/C) - graph: dfs and similar, shortest path; greedy
   - difficulty: 2400
 - [codeforces 1442d - sum](https://codeforces.com/problemset/problem/1442/D) - data structures; divide and conquer; dp; greedy
   - difficulty: 2800
-- [codeforces 1437f - emotional fishermen](https://codeforces.com/problemset/problem/1437/F) - dp; math; math: combinatorics; two pointers
+- [codeforces 1437f - emotional fishermen](https://codeforces.com/problemset/problem/1437/F) - dp; math: combinatorics; two pointers
   - difficulty: 2600
-- [codeforces 1455a - strange functions](https://codeforces.com/problemset/problem/1455/A) - math; math: number theory
+- [codeforces 1455a - strange functions](https://codeforces.com/problemset/problem/1455/A) - math: number theory
   - difficulty: 800
 - [codeforces 1455b - jumps](https://codeforces.com/problemset/problem/1455/B) - constructive; math
   - difficulty: 1200
-- [codeforces 1455c - ping-pong](https://codeforces.com/problemset/problem/1455/C) - constructive; math; math: game
+- [codeforces 1455c - ping-pong](https://codeforces.com/problemset/problem/1455/C) - constructive; math: game
   - difficulty: 1100
 - [codeforces 1455d - sequence and swaps](https://codeforces.com/problemset/problem/1455/D) - dp; greedy; sorting
   - difficulty: 1600
-- [codeforces 1455e - four points](https://codeforces.com/problemset/problem/1455/E) - constructive; graph: flow; greedy; implementation; math; math: geometry; ternary search
+- [codeforces 1455e - four points](https://codeforces.com/problemset/problem/1455/E) - constructive; graph: flow; greedy; implementation; math: geometry; ternary search
   - difficulty: 2400
 - [codeforces 1455f - string and operations](https://codeforces.com/problemset/problem/1455/F) - dp; greedy
   - difficulty: 2800
 - [codeforces 1455g - forbidden value](https://codeforces.com/problemset/problem/1455/G) - data structures; dp
   - difficulty: 2900
-- [codeforces 1372b - omkar and last class of math](https://codeforces.com/problemset/problem/1372/B) - greedy; math; math: number theory
+- [codeforces 1372b - omkar and last class of math](https://codeforces.com/problemset/problem/1372/B) - greedy; math: number theory
   - difficulty: 1300
-- [codeforces 1359e - modular stability](https://codeforces.com/problemset/problem/1359/E) - math; math: combinatorics; math: number theory
+- [codeforces 1359e - modular stability](https://codeforces.com/problemset/problem/1359/E) - math: combinatorics, number theory
   - difficulty: 2000
-- [codeforces 359c - prime number](https://codeforces.com/problemset/problem/359/C) - math; math: number theory
+- [codeforces 359c - prime number](https://codeforces.com/problemset/problem/359/C) - math: number theory
   - difficulty: 1900
-- [codeforces 230b - t-primes](https://codeforces.com/problemset/problem/230/B) - binary search; implementation; math; math: number theory
+- [codeforces 230b - t-primes](https://codeforces.com/problemset/problem/230/B) - binary search; implementation; math: number theory
   - difficulty: 1300
-- [codeforces 919e - congruence equation](https://codeforces.com/problemset/problem/919/E) - math; math: number theory
+- [codeforces 919e - congruence equation](https://codeforces.com/problemset/problem/919/E) - math: number theory
   - difficulty: 2100
 - [codeforces 1457a - prison break](https://codeforces.com/problemset/problem/1457/A) - implementation; math
   - difficulty: 800
@@ -2008,11 +2014,11 @@
   - difficulty: 1400
 - [codeforces 1453c - triangles](https://codeforces.com/problemset/problem/1453/C) - greedy; implementation
   - difficulty: 1700
-- [codeforces 1453d - checkpoints](https://codeforces.com/problemset/problem/1453/D) - constructive; greedy; implementation; math; math: probability
+- [codeforces 1453d - checkpoints](https://codeforces.com/problemset/problem/1453/D) - constructive; greedy; implementation; math: probability
   - difficulty: 1900
 - [codeforces 1453e - dog snacks](https://codeforces.com/problemset/problem/1453/E) - binary search; dp; graph: dfs and similar; graph: tree; greedy
   - difficulty: 2300
-- [codeforces 1265e - beautiful mirrors](https://codeforces.com/problemset/problem/1265/E) - data structures; dp; math; math: probability
+- [codeforces 1265e - beautiful mirrors](https://codeforces.com/problemset/problem/1265/E) - data structures; dp; math: probability
   - difficulty: 2100
 - [codeforces 1450f - the struggling contestant](https://codeforces.com/problemset/problem/1450/F) - constructive; greedy
   - difficulty: 2400
@@ -2020,11 +2026,11 @@
   - difficulty: 2300
 - [codeforces 1453f - even harder](https://codeforces.com/problemset/problem/1453/F) - dp
   - difficulty: 2700
-- [codeforces 1450e - capitalism](https://codeforces.com/problemset/problem/1450/E) - constructive; graph; graph: dfs and similar; graph: shortest path
+- [codeforces 1450e - capitalism](https://codeforces.com/problemset/problem/1450/E) - constructive; graph: dfs and similar, shortest path
   - difficulty: 2700
 - [codeforces 1428f - fruit sequences](https://codeforces.com/problemset/problem/1428/F) - binary search; data structures; divide and conquer; dp; two pointers
   - difficulty: 2400
-- [codeforces 322b - ciel and flowers](https://codeforces.com/problemset/problem/322/B) - math; math: combinatorics
+- [codeforces 322b - ciel and flowers](https://codeforces.com/problemset/problem/322/B) - math: combinatorics
   - difficulty: 1600
 - [codeforces 1015b - obtaining the string](https://codeforces.com/problemset/problem/1015/B) - implementation
   - difficulty: 1200
@@ -2036,21 +2042,21 @@
   - difficulty: 2000
 - [codeforces 1268a - long beautiful integer](https://codeforces.com/problemset/problem/1268/A) - constructive; greedy; implementation; string
   - difficulty: 1700
-- [codeforces 1436d - bandit in a city](https://codeforces.com/problemset/problem/1436/D) - binary search; graph; graph: dfs and similar; graph: tree; greedy
+- [codeforces 1436d - bandit in a city](https://codeforces.com/problemset/problem/1436/D) - binary search; graph: dfs and similar, tree; greedy
   - difficulty: 1900
 - [codeforces 1436e - complicated computations](https://codeforces.com/problemset/problem/1436/E) - binary search; data structures; two pointers
   - difficulty: 2400
-- [codeforces 1423j - bubble cup hypothesis](https://codeforces.com/problemset/problem/1423/J) - constructive; dp; dp: bitmask; math
+- [codeforces 1423j - bubble cup hypothesis](https://codeforces.com/problemset/problem/1423/J) - constructive; dp: bitmask; math
   - difficulty: 2400
-- [codeforces 1408e - avoid rainbow cycles](https://codeforces.com/problemset/problem/1408/E) - data structures; graph; graph: dsu; graph: tree; greedy; sorting
+- [codeforces 1408e - avoid rainbow cycles](https://codeforces.com/problemset/problem/1408/E) - data structures; graph: dsu, tree; greedy; sorting
   - difficulty: 2400
-- [codeforces 1403a - the potion of great power](https://codeforces.com/problemset/problem/1403/A) - binary search; data structures; graph; graph: 2-sat; interactive; sorting; two pointers
+- [codeforces 1403a - the potion of great power](https://codeforces.com/problemset/problem/1403/A) - binary search; data structures; graph: 2-sat; interactive; sorting; two pointers
   - difficulty: 2400
-- [codeforces 1234f - yet another substring reverse](https://codeforces.com/problemset/problem/1234/F) - dp; dp: bitmask
+- [codeforces 1234f - yet another substring reverse](https://codeforces.com/problemset/problem/1234/F) - dp: bitmask
   - difficulty: 2200
-- [codeforces 1370f1 - the hidden pair (easy version)](https://codeforces.com/problemset/problem/1370/F1) - binary search; graph; graph: dfs and similar; graph: shortest path; graph: tree; interactive
+- [codeforces 1370f1 - the hidden pair (easy version)](https://codeforces.com/problemset/problem/1370/F1) - binary search; graph: dfs and similar, shortest path, tree; interactive
   - difficulty: 2400
-- [codeforces 1370f2 - the hidden pair (hard version)](https://codeforces.com/problemset/problem/1370/F2) - binary search; graph; graph: dfs and similar; graph: shortest path; graph: tree; interactive
+- [codeforces 1370f2 - the hidden pair (hard version)](https://codeforces.com/problemset/problem/1370/F2) - binary search; graph: dfs and similar, shortest path, tree; interactive
   - difficulty: 2700
 - [codeforces 1462a - favorite sequence](https://codeforces.com/problemset/problem/1462/A) - implementation; two pointers
   - difficulty: 800
@@ -2058,11 +2064,11 @@
   - difficulty: 800
 - [codeforces 1462c - unique number](https://codeforces.com/problemset/problem/1462/C) - greedy; implementation; math
   - difficulty: 900
-- [codeforces 1462d - add to neighbour and remove](https://codeforces.com/problemset/problem/1462/D) - greedy; math; math: number theory
+- [codeforces 1462d - add to neighbour and remove](https://codeforces.com/problemset/problem/1462/D) - greedy; math: number theory
   - difficulty: 1400
-- [codeforces 1462e1 - close tuples (easy version)](https://codeforces.com/problemset/problem/1462/E1) - binary search; math; math: combinatorics; sorting; two pointers
+- [codeforces 1462e1 - close tuples (easy version)](https://codeforces.com/problemset/problem/1462/E1) - binary search; math: combinatorics; sorting; two pointers
   - difficulty: 1500
-- [codeforces 1462e2 - close tuples (hard version)](https://codeforces.com/problemset/problem/1462/E2) - binary search; implementation; math; math: combinatorics; sorting; two pointers
+- [codeforces 1462e2 - close tuples (hard version)](https://codeforces.com/problemset/problem/1462/E2) - binary search; implementation; math: combinatorics; sorting; two pointers
   - difficulty: 1700
 - [codeforces 1463a - dungeon](https://codeforces.com/problemset/problem/1463/A) - binary search; math
   - difficulty: 1100
@@ -2072,7 +2078,7 @@
   - difficulty: 1800
 - [codeforces 1463d - pairs](https://codeforces.com/problemset/problem/1463/D) - binary search; constructive; greedy
   - difficulty: 1900
-- [codeforces 1463e - plan of lectures](https://codeforces.com/problemset/problem/1463/E) - constructive; graph; graph: dfs and similar; graph: tree; implementation; sorting
+- [codeforces 1463e - plan of lectures](https://codeforces.com/problemset/problem/1463/E) - constructive; graph: dfs and similar, tree; implementation; sorting
   - difficulty: 2400
 - [codeforces 1462f - the treasure of the segments](https://codeforces.com/problemset/problem/1462/F) - binary search; data structures; greedy
   - difficulty: 1800
@@ -2082,29 +2088,29 @@
   - difficulty: 2100
 - [codeforces 1348e - phoenix and berries](https://codeforces.com/problemset/problem/1348/E) - dp; greedy; implementation; math
   - difficulty: 2400
-- [codeforces 1458c - latin square](https://codeforces.com/problemset/problem/1458/C) - math; math: matrix
+- [codeforces 1458c - latin square](https://codeforces.com/problemset/problem/1458/C) - math: matrix
   - difficulty: 2700
-- [codeforces 1464c - poman numbers](https://codeforces.com/problemset/problem/1464/C) - constructive; dp; dp: bitmask; greedy; math
+- [codeforces 1464c - poman numbers](https://codeforces.com/problemset/problem/1464/C) - constructive; dp: bitmask; greedy; math
   - difficulty: 2300
-- [codeforces 1459a - red-blue shuffle](https://codeforces.com/problemset/problem/1459/A) - math; math: probability
+- [codeforces 1459a - red-blue shuffle](https://codeforces.com/problemset/problem/1459/A) - math: probability
   - difficulty: 800
 - [codeforces 1459b - move and turn](https://codeforces.com/problemset/problem/1459/B) - dp; math
   - difficulty: 1300
-- [codeforces 1254b2 - send boxes to alice (hard version)](https://codeforces.com/problemset/problem/1254/B2) - constructive; greedy; math; math: number theory; ternary search; two pointers
+- [codeforces 1254b2 - send boxes to alice (hard version)](https://codeforces.com/problemset/problem/1254/B2) - constructive; greedy; math: number theory; ternary search; two pointers
   - difficulty: 2100
 - [codeforces 1218i - the light square](https://codeforces.com/problemset/problem/1218/I) - graph: 2-sat; graph: dfs and similar; greedy
   - difficulty: 2100
-- [codeforces 1217d - coloring edges](https://codeforces.com/problemset/problem/1217/D) - constructive; graph; graph: dfs and similar
+- [codeforces 1217d - coloring edges](https://codeforces.com/problemset/problem/1217/D) - constructive; graph: dfs and similar
   - difficulty: 2100
 - [codeforces 1216f - wi-fi](https://codeforces.com/problemset/problem/1216/F) - data structures; dp; greedy
   - difficulty: 2100
-- [codeforces 1213f - unstable string sort](https://codeforces.com/problemset/problem/1213/F) - data structures; graph; graph: dfs and similar; graph: dsu; greedy; implementation; string
+- [codeforces 1213f - unstable string sort](https://codeforces.com/problemset/problem/1213/F) - data structures; graph: dfs and similar, dsu; greedy; implementation; string
   - difficulty: 2100
 - [codeforces 1417a - copy-paste](https://codeforces.com/problemset/problem/1417/A) - greedy; math
   - difficulty: 800
 - [codeforces 1465a - in-game chat](https://codeforces.com/problemset/problem/1465/A) - implementation; string
   - difficulty: 800
-- [codeforces 1465b - fair numbers](https://codeforces.com/problemset/problem/1465/B) - implementation; math; math: number theory
+- [codeforces 1465b - fair numbers](https://codeforces.com/problemset/problem/1465/B) - implementation; math: number theory
   - difficulty: 1000
 - [codeforces 1203f1 - complete the projects (easy version)](https://codeforces.com/problemset/problem/1203/F1) - greedy
   - difficulty: 2100
@@ -2114,7 +2120,7 @@
   - difficulty: 2100
 - [codeforces 1195e - openstreetmap](https://codeforces.com/problemset/problem/1195/E) - data structures; two pointers
   - difficulty: 2100
-- [codeforces 1185g1 - playlist for polycarp (easy version)](https://codeforces.com/problemset/problem/1185/G1) - dp; dp: bitmask; math: combinatorics
+- [codeforces 1185g1 - playlist for polycarp (easy version)](https://codeforces.com/problemset/problem/1185/G1) - dp: bitmask; math: combinatorics
   - difficulty: 2100
 - [codeforces 1185f - two pizzas](https://codeforces.com/problemset/problem/1185/F) - dp: bitmask; implementation
   - difficulty: 2100
@@ -2122,27 +2128,27 @@
   - difficulty: 2100
 - [codeforces 1176f - destroy it!](https://codeforces.com/problemset/problem/1176/F) - dp; implementation; sorting
   - difficulty: 2100
-- [codeforces 1464e - no game no life](https://codeforces.com/problemset/problem/1464/E) - dp; dp: bitmask; math; math: game; math: matrix; math: probability
+- [codeforces 1464e - no game no life](https://codeforces.com/problemset/problem/1464/E) - dp: bitmask; math: game, matrix, probability
   - difficulty: 2700
 - [codeforces 1469f - power sockets](https://codeforces.com/problemset/problem/1469/F) - binary search; data structures; greedy
   - difficulty: 2600
 - [codeforces 1167e - range deleting](https://codeforces.com/problemset/problem/1167/E) - binary search; data structures; math: combinatorics; two pointers
   - difficulty: 2100
-- [codeforces 1469e - a bit similar](https://codeforces.com/problemset/problem/1469/E) - binary search; dp: bitmask; hashing; implementation; string; string: string suffix structure; two pointers
+- [codeforces 1469e - a bit similar](https://codeforces.com/problemset/problem/1469/E) - binary search; dp: bitmask; hashing; implementation; string: string suffix structure; two pointers
   - difficulty: 2400
-- [codeforces 1166e - the lcms must be large](https://codeforces.com/problemset/problem/1166/E) - constructive; dp: bitmask; implementation; math; math: number theory
+- [codeforces 1166e - the lcms must be large](https://codeforces.com/problemset/problem/1166/E) - constructive; dp: bitmask; implementation; math: number theory
   - difficulty: 2100
-- [codeforces 1166b - all the vowels please](https://codeforces.com/problemset/problem/1166/B) - constructive; math; math: number theory
+- [codeforces 1166b - all the vowels please](https://codeforces.com/problemset/problem/1166/B) - constructive; math: number theory
   - difficulty: 1100
 - [codeforces 1163d - mysterious code](https://codeforces.com/problemset/problem/1163/D) - dp; string
   - difficulty: 2100
-- [codeforces 1158c - permutation recovery](https://codeforces.com/problemset/problem/1158/C) - constructive; data structures; graph; graph: dfs and similar; greedy; math; sorting
+- [codeforces 1158c - permutation recovery](https://codeforces.com/problemset/problem/1158/C) - constructive; data structures; graph: dfs and similar; greedy; math; sorting
   - difficulty: 2100
 - [codeforces 1154f - shovels shop](https://codeforces.com/problemset/problem/1154/F) - dp; greedy; sorting
   - difficulty: 2100
 - [codeforces 1152d - neko and aki's prank](https://codeforces.com/problemset/problem/1152/D) - dp; graph: tree; greedy
   - difficulty: 2100
-- [codeforces 1146d - frog jumping](https://codeforces.com/problemset/problem/1146/D) - graph: dfs and similar; math; math: number theory
+- [codeforces 1146d - frog jumping](https://codeforces.com/problemset/problem/1146/D) - graph: dfs and similar; math: number theory
   - difficulty: 2100
 - [codeforces 1468a - lais](https://codeforces.com/problemset/problem/1468/A) - data structures; dp; greedy
   - difficulty: 2200
@@ -2160,7 +2166,7 @@
   - difficulty: 1700
 - [codeforces 1472f - new year's puzzle](https://codeforces.com/problemset/problem/1472/F) - dp; graph: matching; greedy; implementation; sorting
   - difficulty: 2100
-- [codeforces 1472g - moving to the capital](https://codeforces.com/problemset/problem/1472/G) - dp; graph; graph: dfs and similar; graph: shortest path
+- [codeforces 1472g - moving to the capital](https://codeforces.com/problemset/problem/1472/G) - dp; graph: dfs and similar, shortest path
   - difficulty: 2100
 - [codeforces 1471a - strange partition](https://codeforces.com/problemset/problem/1471/A) - greedy; math
   - difficulty: 900
@@ -2178,7 +2184,7 @@
   - difficulty: 1400
 - [codeforces 1520d - same differences](https://codeforces.com/problemset/problem/1520/D) - data structures; hashing; math
   - difficulty: 1200
-- [codeforces 1525a - potion-making](https://codeforces.com/problemset/problem/1525/A) - math; math: number theory
+- [codeforces 1525a - potion-making](https://codeforces.com/problemset/problem/1525/A) - math: number theory
   - difficulty: 800
 - [codeforces 1525b - permutation sort](https://codeforces.com/problemset/problem/1525/B) - constructive; greedy
   - difficulty: 900
@@ -2186,9 +2192,9 @@
   - difficulty: 2000
 - [codeforces 1525d - armchairs](https://codeforces.com/problemset/problem/1525/D) - dp; graph: flow; graph: matching; greedy
   - difficulty: 1800
-- [codeforces 1521a - nastia and nearly good numbers](https://codeforces.com/problemset/problem/1521/A) - constructive; math; math: number theory
+- [codeforces 1521a - nastia and nearly good numbers](https://codeforces.com/problemset/problem/1521/A) - constructive; math: number theory
   - difficulty: 1000
-- [codeforces 1521b - nastia and a good array](https://codeforces.com/problemset/problem/1521/B) - constructive; math; math: number theory
+- [codeforces 1521b - nastia and a good array](https://codeforces.com/problemset/problem/1521/B) - constructive; math: number theory
   - difficulty: 1300
 - [codeforces 1520f1 - guess the k-th zero (easy version)](https://codeforces.com/problemset/problem/1520/F1) - binary search; interactive
   - difficulty: 1600
@@ -2212,11 +2218,11 @@
   - difficulty: 1900
 - [codeforces 1527c - sequence pair weight](https://codeforces.com/problemset/problem/1527/C) - hashing; implementation; math
   - difficulty: 1600
-- [codeforces 1527d - mex tree](https://codeforces.com/problemset/problem/1527/D) - graph: dfs and similar; graph: tree; implementation; math; math: combinatorics
+- [codeforces 1527d - mex tree](https://codeforces.com/problemset/problem/1527/D) - graph: dfs and similar; graph: tree; implementation; math: combinatorics
   - difficulty: 2400
 - [codeforces 383e - vowels](https://codeforces.com/problemset/problem/383/E) - divide and conquer; dp; math: combinatorics
   - difficulty: 2700
-- [codeforces 449d - jzzhu and numbers](https://codeforces.com/problemset/problem/449/D) - dp; dp: bitmask; math: combinatorics
+- [codeforces 449d - jzzhu and numbers](https://codeforces.com/problemset/problem/449/D) - dp: bitmask; math: combinatorics
   - difficulty: 2400
 - [codeforces 800d - varying kibibits](https://codeforces.com/problemset/problem/800/D) - dp; math: combinatorics
   - difficulty: 2700
@@ -2230,7 +2236,7 @@
   - difficulty: 1900
 - [codeforces 1591e - frequency queries](https://codeforces.com/problemset/problem/1591/E) - binary search; data structures; graph: dfs and similar; graph: tree; two pointers
   - difficulty: 2400
-- [codeforces 1591f - non-equal neighbours](https://codeforces.com/problemset/problem/1591/F) - data structures; dp; math; math: combinatorics
+- [codeforces 1591f - non-equal neighbours](https://codeforces.com/problemset/problem/1591/F) - data structures; dp; math: combinatorics
   - difficulty: 2400
-- [codeforces 1620g - subsequences galore](https://codeforces.com/problemset/problem/1620/G) - dp; dp: bitmask; math: combinatorics
+- [codeforces 1620g - subsequences galore](https://codeforces.com/problemset/problem/1620/G) - dp: bitmask; math: combinatorics
   - difficulty: 2400
