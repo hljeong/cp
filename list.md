@@ -2240,3 +2240,11 @@
   - difficulty: 2400
 - [codeforces 1620g - subsequences galore](https://codeforces.com/problemset/problem/1620/G) - dp: bitmask; math: combinatorics
   - difficulty: 2400
+- [codeforces 1656a - good pairs](https://codeforces.com/problemset/problem/1656/A) - math; sorting
+  - difficulty: 800
+- [codeforces 1656b - subtract operation](https://codeforces.com/problemset/problem/1656/B) - data structures; greedy; math; two pointers
+  - difficulty: 1100
+- [codeforces 1656c - make equal with mod](https://codeforces.com/problemset/problem/1656/C) - constructive; math: number theory; sorting
+  - difficulty: 1200
+- [codeforces 1656d - k-good](https://codeforces.com/problemset/problem/1656/D) - constructive; math: number theory
+  - difficulty: 1900

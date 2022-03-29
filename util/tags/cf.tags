@@ -1,0 +1,40 @@
+math
+implementation
+shortest paths=graph:shortest path
+graph matchings=graph:matching
+constructive algorithms=constructive
+constructive algorithm=constructive
+expression parsing=ignore
+strings=string
+brute force=implementation
+sortings=sorting
+greedy
+geometry=math:geometry
+number theory=math:number theory
+dp
+combinatorics=math:combinatorics
+graphs=graph
+binary search
+data structures
+two pointers
+trees=graph:tree
+tree=graph:tree
+dfs and similar=graph:dfs and similar
+dsu=graph:dsu
+bitmasks=dp:bitmask
+matrices=math:matrix
+ternary search
+hashing
+probabilities=math:probability
+games=math:game
+string suffix structures=string:string suffix structure
+*special problem=ignore
+interactive
+meet-in-the-middle
+divide and conquer
+schedules=ignore
+2-sat=graph:2-sat
+fft=math:fft
+brute foce=implementation
+flows=graph:flow
+chinese remainder theorem=math:number theory

@@ -1,6 +1,6 @@
 def write(index, file): 
   with open(file, 'w') as f: 
-    f.write(f'# {file.split(".")[0].replace("_", " ")}\n')
+    f.write(f'# {file.split("/")[-1].split(".")[0].replace("_", " ")}\n')
     for tag in sorted(index.keys()): 
       f.write('\n'
               f'## {tag}\n'
@@ -116,8 +116,10 @@ def read(file):
   return index
   
 def main(): 
-  write(read('list.md'), 'index.md')
-  write(read('notable.md'), 'notable_index.md')
+  write(read('../list.md'), '../index.md')
+  print('updated index.md')
+  write(read('../notable.md'), '../notable_index.md')
+  print('updated notable_index.md')
 
 if __name__ == '__main__': 
   main()

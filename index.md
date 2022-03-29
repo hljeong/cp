@@ -322,6 +322,8 @@
 | [codeforces 1467c - three bags](https://codeforces.com/problemset/problem/1467/C) | 1900 | constructive; greedy |  |
 | [codeforces 1527b2 - palindrome game (hard version)](https://codeforces.com/problemset/problem/1527/B2) | 1900 | constructive; dp; math: game |  |
 | [codeforces 1591d - yet another sorting problem](https://codeforces.com/problemset/problem/1591/D) | 1900 | constructive; data structures; math; sorting |  |
+| [codeforces 1656c - make equal with mod](https://codeforces.com/problemset/problem/1656/C) | 1200 | constructive; math: number theory; sorting |  |
+| [codeforces 1656d - k-good](https://codeforces.com/problemset/problem/1656/D) | 1900 | constructive; math: number theory |  |
 
 ## data structures
 
@@ -517,6 +519,7 @@
 | [codeforces 1591d - yet another sorting problem](https://codeforces.com/problemset/problem/1591/D) | 1900 | constructive; data structures; math; sorting |  |
 | [codeforces 1591e - frequency queries](https://codeforces.com/problemset/problem/1591/E) | 2400 | binary search; data structures; graph: dfs and similar; graph: tree; two pointers |  |
 | [codeforces 1591f - non-equal neighbours](https://codeforces.com/problemset/problem/1591/F) | 2400 | data structures; dp; math: combinatorics |  |
+| [codeforces 1656b - subtract operation](https://codeforces.com/problemset/problem/1656/B) | 1100 | data structures; greedy; math; two pointers |  |
 
 ## divide and conquer
 
@@ -1771,7 +1774,7 @@
 | [codeforces 436c - dungeons and candies](https://codeforces.com/problemset/problem/436/C) | 1800 | graph: dsu, tree; greedy |  |
 | [codeforces 910a - the way to home](https://codeforces.com/problemset/problem/910/A) | 800 | dp; graph: dfs and similar; greedy; implementation |  |
 | [codeforces 1113a - sasha and his trip](https://codeforces.com/problemset/problem/1113/A) | 900 | dp; greedy; math |  |
-| [codeforces 732b - cormen � the best friend of a man](https://codeforces.com/problemset/problem/732/B) | 900 | dp; greedy |  |
+| [codeforces 732b - cormen - the best friend of a man](https://codeforces.com/problemset/problem/732/B) | 900 | dp; greedy |  |
 | [codeforces 1341b - nastya and door](https://codeforces.com/problemset/problem/1341/B) | 1300 | greedy; implementation |  |
 | [codeforces 1341c - nastya and strange generator](https://codeforces.com/problemset/problem/1341/C) | 1500 | greedy; implementation |  |
 | [codeforces 1337b - kana and dragon quest game](https://codeforces.com/problemset/problem/1337/B) | 900 | greedy; implementation; math |  |
@@ -2099,6 +2102,7 @@
 | [codeforces 1519c - berland regional](https://codeforces.com/problemset/problem/1519/C) | 1400 | data structures; greedy; implementation; math: number theory; sorting |  |
 | [codeforces 1591b - array eversion](https://codeforces.com/problemset/problem/1591/B) | 900 | greedy |  |
 | [codeforces 1591c - minimize distance](https://codeforces.com/problemset/problem/1591/C) | 1300 | greedy; math |  |
+| [codeforces 1656b - subtract operation](https://codeforces.com/problemset/problem/1656/B) | 1100 | data structures; greedy; math; two pointers |  |
 
 ## hashing
 
@@ -2980,6 +2984,10 @@
 | [codeforces 1591d - yet another sorting problem](https://codeforces.com/problemset/problem/1591/D) | 1900 | constructive; data structures; math; sorting |  |
 | [codeforces 1591f - non-equal neighbours](https://codeforces.com/problemset/problem/1591/F) | 2400 | data structures; dp; math: combinatorics |  |
 | [codeforces 1620g - subsequences galore](https://codeforces.com/problemset/problem/1620/G) | 2400 | dp: bitmask; math: combinatorics |  |
+| [codeforces 1656a - good pairs](https://codeforces.com/problemset/problem/1656/A) | 800 | math; sorting |  |
+| [codeforces 1656b - subtract operation](https://codeforces.com/problemset/problem/1656/B) | 1100 | data structures; greedy; math; two pointers |  |
+| [codeforces 1656c - make equal with mod](https://codeforces.com/problemset/problem/1656/C) | 1200 | constructive; math: number theory; sorting |  |
+| [codeforces 1656d - k-good](https://codeforces.com/problemset/problem/1656/D) | 1900 | constructive; math: number theory |  |
 
 ### combinatorics
 
@@ -3208,6 +3216,8 @@
 | [codeforces 1521a - nastia and nearly good numbers](https://codeforces.com/problemset/problem/1521/A) | 1000 | constructive; math: number theory |  |
 | [codeforces 1521b - nastia and a good array](https://codeforces.com/problemset/problem/1521/B) | 1300 | constructive; math: number theory |  |
 | [codeforces 1519c - berland regional](https://codeforces.com/problemset/problem/1519/C) | 1400 | data structures; greedy; implementation; math: number theory; sorting |  |
+| [codeforces 1656c - make equal with mod](https://codeforces.com/problemset/problem/1656/C) | 1200 | constructive; math: number theory; sorting |  |
+| [codeforces 1656d - k-good](https://codeforces.com/problemset/problem/1656/D) | 1900 | constructive; math: number theory |  |
 
 ### probability
 
@@ -3392,6 +3402,8 @@
 | [codeforces 1525c - robot collisions](https://codeforces.com/problemset/problem/1525/C) | 2000 | data structures; greedy; implementation; sorting |  |
 | [codeforces 1519c - berland regional](https://codeforces.com/problemset/problem/1519/C) | 1400 | data structures; greedy; implementation; math: number theory; sorting |  |
 | [codeforces 1591d - yet another sorting problem](https://codeforces.com/problemset/problem/1591/D) | 1900 | constructive; data structures; math; sorting |  |
+| [codeforces 1656a - good pairs](https://codeforces.com/problemset/problem/1656/A) | 800 | math; sorting |  |
+| [codeforces 1656c - make equal with mod](https://codeforces.com/problemset/problem/1656/C) | 1200 | constructive; math: number theory; sorting |  |
 
 ## string
 
@@ -3625,3 +3637,4 @@
 | [codeforces 1472e - correct placement](https://codeforces.com/problemset/problem/1472/E) | 1700 | binary search; data structures; dp; sorting; two pointers |  |
 | [codeforces 1516d - cut](https://codeforces.com/problemset/problem/1516/D) | 2100 | binary search; data structures; dp; graph; math: number theory; two pointers |  |
 | [codeforces 1591e - frequency queries](https://codeforces.com/problemset/problem/1591/E) | 2400 | binary search; data structures; graph: dfs and similar; graph: tree; two pointers |  |
+| [codeforces 1656b - subtract operation](https://codeforces.com/problemset/problem/1656/B) | 1100 | data structures; greedy; math; two pointers |  |
