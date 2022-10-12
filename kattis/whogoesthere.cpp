@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+#define A first
+#define B second
+#define vc vector
+using namespace std;
+using ll = long long;
+using ld = long double;
+using vi = vc<int>;
+using vll = vc<ll>;
+using pii = pair<int, int>;
+
+template<class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0; }
+template<class T> bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0; }
+
+int main() {
+  int n, m; cin >> n >> m;
+  int i = 0, s = 0;
+  vi t(m), a(m); for (int i = 0; i < m; ++i) cin >> t[i], s += t[i];
+  ckmin(n, s);
+  while (n) {
+    if (t[i]) {
+      --t[i];
+      ++a[i];
+      --n;
+      --s;
+    }
+    i = (i + 1) % m;
+  }
+  for (int i = 0; i < m; ++i) cout << a[i] << endl;
+}
