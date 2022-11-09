@@ -42,18 +42,6 @@ bool combine(dsu &d, int i, int j) {
   return false;
 }
 
-static void mu(vi &f, int n) {
-  for (int i = 0; i < n; ++i) {
-    for (int mask = 0; mask < (1 << n); ++mask) {
-      if ((mask >> i) & 1) {
-        int smask = mask ^ (1 << i);
-        f[smask] += mod - f[mask];
-        if (f[smask] >= mod) f[smask] -= mod;
-      }
-    }
-  }
-}
-
 int main() {
   int n, m, k; cin >> n >> m >> k;
   vc<vi> g(n, vi());
@@ -66,7 +54,6 @@ int main() {
     e[i].B = v;
   }
   vi ans(m + 1);
-  vi f(1 << m);
   for (int mask = 0; mask < (1 << m); ++mask) {
     vi par(n), sz(n);
     dsu d = {par, sz};
@@ -84,13 +71,27 @@ int main() {
         mp[find(d, i)] = id++;
       }
     }
-    f[mask] = qpow(k, id);
-  }
-  mu(f, m);
-  for (int mask = 0; mask < (1 << m); ++mask) {
     int pcnt = __builtin_popcount(mask);
-    ans[pcnt] += f[mask];
+    ans[pcnt] += qpow(k, id);
     if (ans[pcnt] >= mod) ans[pcnt] -= mod;
+  }
+  int fact[m + 1], ifact[m + 1];
+  fact[0] = fact[1] = ifact[0] = ifact[1] = 1;
+  for (int i = 2; i <= m; ++i) {
+    fact[i] = (int) (((ll) i * fact[i - 1]) % mod);
+    ifact[i] = qpow(fact[i], mod - 2);
+  }
+  for (int i = 0; i <= m; ++i) {
+    for (int j = i + 1; j <= m; ++j) {
+      if ((j - i) & 1) {
+        ans[i] += mod;
+        ans[i] -= (int) ((((ll) fact[j] * ifact[i] % mod) * ifact[j - i] % mod) * ans[j] % mod);
+        if (ans[i] >= mod) ans[i] -= mod;
+      } else {
+        ans[i] += (int) ((((ll) fact[j] * ifact[i] % mod) * ifact[j - i] % mod) * ans[j] % mod);
+        if (ans[i] >= mod) ans[i] -= mod;
+      }
+    }
   }
   for (int i = 0; i <= m; ++i) cout << ans[i] << " \n"[i == m];
 }
