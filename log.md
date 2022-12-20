@@ -95,3 +95,30 @@
   - contingencyplanning: trivial
   - supplyroutes: offline, reverse, dsu
   - trickyfactoring: ans = # factors of ac + ac is perfect sq
+
+## 12.1.22
+- robert couldnt solve this 2.4 problem
+- solved
+  - ada: impl
+
+## 12.13.22
+- wb training 1 (bapc prelim 2017)
+- solved
+  - ghostbusters2: mst w connectivity constraint
+  - enviousexponents: flip latest possible 0 bit
+  - diastrousdoubling: keep track up to (1 << 62) - 1
+  - crowdcontrol: dijkstra w path max
+  - abandonedanimal: check if prefix and suffix overlap
+
+## 12.17.22
+- wb traning 2 makeup (ncpc 2015)
+- solved
+  - adjoin: find half diameters, connect into star
+  - justaquiz: dp on trie
+
+## 12.19.22
+- wb training 1 upsolve
+- solved
+  - boomingbusiness: `dp[i][j] =` height <= i, weight j + edge case when j < i 
+  - journalediting: bitmask dp sorted by popcount
+  - downtime: fifo q, ans = max q size / k ceiled
