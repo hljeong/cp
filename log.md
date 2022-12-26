@@ -117,8 +117,39 @@
   - justaquiz: dp on trie
 
 ## 12.19.22
-- wb training 1 upsolve
+- wb trainingupsolve
+- wb training 4
 - solved
   - boomingbusiness: `dp[i][j] =` height <= i, weight j + edge case when j < i 
   - journalediting: bitmask dp sorted by popcount
   - downtime: fifo q, ans = max q size / k ceiled
+  - entertainmentbox: sort by end desc then start asc, greedily select latest possible available track
+  - floppy: keep track of all possible positions
+  - bumped: dijkstra from s and t
+  - lessvsfewer: python parse
+  - pandemicshopping: casework
+- unsolved
+  - yetanotherdivisorproblem
+  - primebitcount 
+
+## 12.22.22
+- wb training 5
+- solved
+  - houselawn: check all possible start points in lcm cycle
+  - intergalacticbidding: greedily choose largest since superincreasing
+  - kingscolors: incl-excl
+- unsolved
+  - explosion
+
+## 12.24.22
+- wb training upsolve
+- solved
+  - intelligenceinfection: scc, compress, topsort, private message all bad nodes (nodes that have enemy downstream) and public message sources of good nodes incrementally
+
+## 12.25.22
+- wb training upsolve
+- solved
+  - companypicnic: dp on tree, either use or not use
+  - spaceprobe: union all bad segs to start at
+  - suspensionbridges: stupid problem, bin search for a
+  - umbraldecoding: quadtree
