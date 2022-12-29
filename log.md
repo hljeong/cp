@@ -117,7 +117,7 @@
   - justaquiz: dp on trie
 
 ## 12.19.22
-- wb trainingupsolve
+- wb training upsolve
 - wb training 4
 - solved
   - boomingbusiness: `dp[i][j] =` height <= i, weight j + edge case when j < i 
@@ -173,6 +173,7 @@
   - raffle: find formula, ++r until decrease
   - autocorrect: build trie, lca for lcp, dp backwards for each word; official solution: add shortcut edges and bfs
   - exponial: generalized euler theorem
+  - 1dfroggerhard: scc, compress graph, propagate reachability, reverse graph and dfs
 
 ## 12.28.22
 - wb training upsolve
