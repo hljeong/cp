@@ -153,3 +153,30 @@
   - spaceprobe: union all bad segs to start at
   - suspensionbridges: stupid problem, bin search for a
   - umbraldecoding: quadtree
+
+## 12.26.22
+- upsolve
+- hk 2016 (wb training 8)
+- solved
+  - raftingtrip: scc then make reverse tree then propagate w sightseeing spot cnt backtracking
+  - playingwithnumbers: greedy
+  - teamup: tricky construction of forest, then recursively assign
+  - 1dfroggereasy: sim
+- unsolved
+  - perfecttree
+  - 1dfroggerhard
+
+## 12.27.22
+- wb training 7
+- solved
+  - compass
+  - raffle: find formula, ++r until decrease
+  - autocorrect: build trie, lca for lcp, dp backwards for each word; official solution: add shortcut edges and bfs
+  - exponial: generalized euler theorem
+
+## 12.28.22
+- wb training upsolve
+- solved
+  - bells: sift n thru ans for n - 1
+  - altruisticamphibians: sort by weight dec, dp on weight
+  - deliverydelays: run dijkstra on each notable node, precompute wait time and trip time for each interval of orders, bin search on wait time + dp for reachability

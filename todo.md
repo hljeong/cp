@@ -1,9 +1,9 @@
 # todo
-- umbraldecoding?
-- raftingtrip
-- colourfulnewworld
-- 1dfroggereasy
-- 1dfroggerhard
-- altruisticamphibians
 - deliverydelays
 - explosion
+- slimcut
+- peaktram
+- taboo
+- cardhand
+- tower
+- camels
