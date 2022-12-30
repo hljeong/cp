@@ -1,5 +1,4 @@
 # todo
-- deliverydelays
 - explosion
 - slimcut
 - peaktram

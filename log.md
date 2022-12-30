@@ -42,20 +42,20 @@
 ## 11.13.22
 - looking at robert's graph problems
 - then looking randomly at other practices
-- then training #4
+- then f22 training 4
 - solved
   - thekingofthenorth: min cut, 1 edge for each cell
   - tetration: trivial math, pow(n, 1 / n)
   - damsindistress: dfs
 
 ## 11.15.22
-- solving training #4
+- f22 training 4
 - solved
   - invasion: dijkstra
 
 ## 11.16.22
-- solving training #4
-- finding mod math problsm for training #5
+- f22 training 4
+- finding mod math problem for f22 training 5
 - solved
   - perica: sort + combinatorics
 - unsolved
@@ -75,7 +75,7 @@
   - hopscotch: combinatorics
 
 ## 11.20.22
-- doing training #5
+- f22 training 5
 - solved
   - randomdigitalexponentiation: brute force from the back
 - unsolved
@@ -102,7 +102,7 @@
   - ada: impl
 
 ## 12.13.22
-- wb training 1 (bapc prelim 2017)
+- wb22 training 1 (bapc prelim 2017)
 - solved
   - ghostbusters2: mst w connectivity constraint
   - enviousexponents: flip latest possible 0 bit
@@ -111,16 +111,16 @@
   - abandonedanimal: check if prefix and suffix overlap
 
 ## 12.17.22
-- wb traning 2 makeup (ncpc 2015)
+- wb22 traning 2 makeup (ncpc 2015)
 - solved
   - adjoin: find half diameters, connect into star
   - justaquiz: dp on trie
 
 ## 12.19.22
-- wb training upsolve
-- wb training 4
+- wb22 training upsolve
+- wb22 training 4 (maps 2022)
 - solved
-  - boomingbusiness: `dp[i][j] =` height <= i, weight j + edge case when j < i 
+  - boomingbusiness: dp[i][j] = height <= i, weight j + edge case when j < i 
   - journalediting: bitmask dp sorted by popcount
   - downtime: fifo q, ans = max q size / k ceiled
   - entertainmentbox: sort by end desc then start asc, greedily select latest possible available track
@@ -133,7 +133,7 @@
   - primebitcount 
 
 ## 12.22.22
-- wb training 5
+- wb22 training 5 (ncpc 2018)
 - solved
   - houselawn: check all possible start points in lcm cycle
   - intergalacticbidding: greedily choose largest since superincreasing
@@ -142,12 +142,12 @@
   - explosion
 
 ## 12.24.22
-- wb training upsolve
+- wb22 training upsolve
 - solved
   - intelligenceinfection: scc, compress, topsort, private message all bad nodes (nodes that have enemy downstream) and public message sources of good nodes incrementally
 
 ## 12.25.22
-- wb training upsolve
+- wb22 training upsolve
 - solved
   - companypicnic: dp on tree, either use or not use
   - spaceprobe: union all bad segs to start at
@@ -156,7 +156,7 @@
 
 ## 12.26.22
 - upsolve
-- hk 2016 (wb training 8)
+- wb22 training 8 (hk 2016)
 - solved
   - raftingtrip: scc then make reverse tree then propagate w sightseeing spot cnt backtracking
   - playingwithnumbers: greedy
@@ -167,7 +167,7 @@
   - 1dfroggerhard
 
 ## 12.27.22
-- wb training 7
+- wb22 training 7 (ncpc 2018)
 - solved
   - compass
   - raffle: find formula, ++r until decrease
@@ -176,8 +176,19 @@
   - 1dfroggerhard: scc, compress graph, propagate reachability, reverse graph and dfs
 
 ## 12.28.22
-- wb training upsolve
+- wb22 training upsolve
 - solved
   - bells: sift n thru ans for n - 1
   - altruisticamphibians: sort by weight dec, dp on weight
   - deliverydelays: run dijkstra on each notable node, precompute wait time and trip time for each interval of orders, bin search on wait time + dp for reachability
+
+## 12.29.22
+- wb22 training 8 (maps 2020)
+- robert strong recc smootharray
+- solved
+  - magicalcows: farms that double keep doubling
+  - roundtrips: scc, can add edge between any pair of sccs
+  - divideandconquer: need to check if b^m = -1 mod d, then b^(2 m) = 1 mod d, then order of b mod d must be even, check if b^(d') = 1 mod d (no if true), where d' is largest odd factor of d - 1 [benq](https://codeforces.com/blog/entry/74977?#comment-594342)
+  - thewrathofkahn: find width of valid part of graph (remove scc + downstream), equivalent to path cover of poset
+  - easymultiplication: transitions on mod graph, dijkstra then construct via bfs
+  - smootharray: operate on mod k of array; optimize O(n^3) dp by only iterating over values you dont need to change in inner loop
