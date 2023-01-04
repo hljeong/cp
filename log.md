@@ -189,6 +189,41 @@
   - magicalcows: farms that double keep doubling
   - roundtrips: scc, can add edge between any pair of sccs
   - divideandconquer: need to check if b^m = -1 mod d, then b^(2 m) = 1 mod d, then order of b mod d must be even, check if b^(d') = 1 mod d (no if true), where d' is largest odd factor of d - 1 [benq](https://codeforces.com/blog/entry/74977?#comment-594342)
+  - keywords: trivial
   - thewrathofkahn: find width of valid part of graph (remove scc + downstream), equivalent to path cover of poset
   - easymultiplication: transitions on mod graph, dijkstra then construct via bfs
   - smootharray: operate on mod k of array; optimize O(n^3) dp by only iterating over values you dont need to change in inner loop
+
+## 1.1.23
+- wb22 training 9 (calgary 2021)
+- solved
+  - haltingafterall: sim
+  - workingfromhome: sim
+  - combinatorialstanleycup: 1 << popcount
+  - thecouncil: for each edge, greedily give to better endpoint
+  - whichbits: binary search with pruning
+  - concertrehearsal: bin search to construct graph, bin lift to count
+  - wordpuzzle: rotate subseq then subseq dp
+  - evensubstrings: segtree on prefix/suffix freq, count of 0-sum substrings, xor sum
+
+## 1.2.23
+- wb training 10 (gcpc 2020)
+- solved
+  - flipflow: sim
+  - impressiveintegers: no if 2, 3, 5; 1 on top if even, 4 on top if odd > 1
+  - knightlyknowledge: try all monument (x, y) pairs
+  - mixtapemanagement: in perm order, find prev, append 1s until length i, append 2
+  - confinedcatching: occupying diagonals of a square containing enemy wins
+- unsolved
+  - exhaustingerrands
+  - hecticharbour
+
+## 1.3.23
+- upsolve
+- solved
+  - lexiographiclecturing: find normalized delta between chars of adj strings, for each starting point, if next -1 comes before next 1 then invalid; otherwise take max of next 1
+  - decorativedominoes: max matching has to be n + reconstruct matching
+  - adolescentarchitecture: dfs to find path containing all nodes, keep track of dfs stack
+  - gravitygrid: get finished board, for each win, find min winning time
+  - landscaping: supersource to low cells w weight b, high cells to super sink w weight b, connect pairwise adj cells w weight a
+  - explosion: compress dp state by sorting
