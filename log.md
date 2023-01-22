@@ -16,6 +16,7 @@
   - fairdivision: greedy
   - minimumscalar: greedy
   - bank: greedy
+  - jigsaw: 
 
 ## 11.9.22
 - looking at robert's graph problems
@@ -227,3 +228,46 @@
   - gravitygrid: get finished board, for each win, find min winning time
   - landscaping: supersource to low cells w weight b, high cells to super sink w weight b, connect pairwise adj cells w weight a
   - explosion: compress dp state by sorting
+
+## 1.4.23
+- solved
+  - distributinglevels
+
+## 1.5.23
+- wb22 training 11
+- solved
+  - jigsaw: brute force check
+  - incompletesort: fix 1st and 2nd quarters then 2nd half
+
+## 1.14.23
+- solved
+  - ac dp t: insert at each step
+  - ac dp u: $3^n$ traverse submasks
+
+## 1.20.23
+- w23 training 1 makeup
+- solved
+  - cf237a: print max simultaneous
+  - ninepacks: knapsack
+  - bigtruck: dijkstra + construct dag + dp
+  - robotopia: stupid casework
+  - arcade: markov gauss
+  - primonimo: gauss
+
+## 1.29.23
+- solved
+  - molekule: back and forth edges
+
+## 1.21.23
+- w23 training 2 makeup
+- solved
+  - rankproblem: sim
+  - simplysudoku: (robert)
+  - overthehill1: sim
+  - oreperationsresearch: (robert) dp, knapsack for transition eligibility
+  - restroommonitor: greedily assign non-toilet paper ppl to non-toilet paper stalls
+  - weightytomes: recursive dp
+  - workers: (robert) min cost max flow
+  - scholarslawn: (robert) geometry
+- unsolved
+  - overthehill2
