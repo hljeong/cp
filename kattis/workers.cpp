@@ -1,134 +1,164 @@
 #include <bits/stdc++.h>
-#include <bits/extc++.h>
-
+#define A first
+#define B second
+#define vc vector
 using namespace std;
+using ll = long long;
+using ld = long double;
+using vi = vc<int>;
+using vll = vc<ll>;
+using pii = pair<int, int>;
 
 template<class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0; }
-
-#define rep(i, a, b) for(int i = a; i < (b); ++i)
-#define all(x) begin(x), end(x)
-#define sz(x) (int)(x).size()
-typedef long long ll;
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-
-const ll INF = numeric_limits<ll>::max() / 4;
-typedef vector<ll> VL;
-
-struct MCMF {
-	int N;
-	vector<vi> ed, red;
-	vector<VL> cap, flow, cost;
-	vi seen;
-	VL dist, pi;
-	vector<pii> par;
-
-	MCMF(int N) :
-		N(N), ed(N), red(N), cap(N, VL(N)), flow(cap), cost(cap),
-		seen(N), dist(N), pi(N), par(N) {}
-
-	void addEdge(int from, int to, ll cap, ll cost) {
-		this->cap[from][to] = cap;
-		this->cost[from][to] = cost;
-		ed[from].push_back(to);
-		red[to].push_back(from);
-	}
-
-	void path(int s) {
-		fill(all(seen), 0);
-		fill(all(dist), INF);
-		dist[s] = 0; ll di;
-
-		__gnu_pbds::priority_queue<pair<ll, int>> q;
-		vector<decltype(q)::point_iterator> its(N);
-		q.push({0, s});
-
-		auto relax = [&](int i, ll cap, ll cost, int dir) {
-			ll val = di - pi[i] + cost;
-			if (cap && val < dist[i]) {
-				dist[i] = val;
-				par[i] = {s, dir};
-				if (its[i] == q.end()) its[i] = q.push({-dist[i], i});
-				else q.modify(its[i], {-dist[i], i});
-			}
-		};
-
-		while (!q.empty()) {
-			s = q.top().second; q.pop();
-			seen[s] = 1; di = dist[s] + pi[s];
-			for (int i : ed[s]) if (!seen[i])
-				relax(i, cap[s][i] - flow[s][i], cost[s][i], 1);
-			for (int i : red[s]) if (!seen[i])
-				relax(i, flow[i][s], -cost[i][s], 0);
-		}
-		rep(i,0,N) pi[i] = min(pi[i] + dist[i], INF);
-	}
-
-	ll maxflow(int s, int t) {
-		ll totflow = 0, totcost = 0;
-		while (path(s), seen[t]) {
-			ll fl = INF;
-			for (int p,r,x = t; tie(p,r) = par[x], x != s; x = p)
-				fl = min(fl, r ? cap[p][x] - flow[p][x] : flow[x][p]);
-			totflow += fl;
-			for (int p,r,x = t; tie(p,r) = par[x], x != s; x = p)
-				if (r) flow[p][x] += fl;
-				else flow[x][p] -= fl;
-		}
-		rep(i,0,N) rep(j,0,N) totcost += cost[i][j] * flow[i][j];
-		return totcost;
-	}
-
-	// If some costs can be negative, call this before maxflow:
-	void setpi(int s) { // (otherwise, leave this out)
-		fill(all(pi), INF); pi[s] = 0;
-		int it = N, ch = 1; ll v;
-		while (ch-- && it--)
-			rep(i,0,N) if (pi[i] != INF)
-				for (int to : ed[i]) if (cap[i][to])
-					if ((v = pi[i] + cost[i][to]) < pi[to])
-						pi[to] = v, ch = 1;
-		assert(it >= 0); // negative cost cycle
-	}
+template<class T> bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0; }
+struct Edge
+{
+    int from, to, capacity, cost;
 };
 
-int main(){
-  int n;
-  cin >> n;
-  int da[n][n], db[n][n], dc[n][n], dd[n][n];
-  for(int i = 0; i < n; i++)
-    for(int j = 0; j < n; j++)
-      cin >> da[i][j] >> db[i][j];
-  for(int i = 0; i < n; i++)
-    for(int j = 0; j < n; j++)
-      cin >> dc[i][j] >> dd[i][j];
-  int s = 4*n, t = 4*n+1, best = INT_MAX;
-  int pref, asna[n], asnb[n];
-  for(int i = 0; i <= n; i++){
-    MCMF mcmf(4*n+2);
-    for(int j = 0; j < n; j++){
-      mcmf.addEdge(s, j, 1, 0);
-      mcmf.addEdge(n+j, 2*n+j, 1, 0);
-      mcmf.addEdge(3*n+j, t, 1, 0);
-    }
-    for(int j = 0; j < n; j++){
-      for(int k = 0; k < n; k++)
-        mcmf.addEdge(j, n+k, 1, (k < i ? da[j][k] : db[j][k]));
-      for(int k = 0; k < n; k++)
-        mcmf.addEdge(2*n+k, 3*n+j, 1, (k < i ? dc[j][k] : dd[j][k]));
-    }
-    if(ckmin(best, (int)mcmf.maxflow(s, t))){
-      pref = i;
-      for(int i = 0; i < n; i++)
-        for(int j = 0; j < n; j++){
-          if(mcmf.flow[i][n+j])
-            asna[i] = j;
-          if(mcmf.flow[2*n+i][3*n+j])
-            asnb[i] = j;
+vector<vector<int>> adj, cost, capacity;
+
+const int INF = 1e9;
+
+void shortest_paths(int n, int v0, vector<int>& d, vector<int>& p) {
+    d.assign(n, INF);
+    d[v0] = 0;
+    vector<bool> inq(n, false);
+    queue<int> q;
+    q.push(v0);
+    p.assign(n, -1);
+
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        inq[u] = false;
+        for (int v : adj[u]) {
+            if (capacity[u][v] > 0 && d[v] > d[u] + cost[u][v]) {
+                d[v] = d[u] + cost[u][v];
+                p[v] = u;
+                if (!inq[v]) {
+                    inq[v] = true;
+                    q.push(v);
+                }
+            }
         }
     }
-  }
-  cout << best << endl;
-  for(int i = 0; i < n; i++)
-    cout << i+1 << ' ' << asna[i]+1 << (asna[i] < pref ? 'A' : 'B') << ' ' << asnb[asna[i]]+1 << endl;
+}
+int n;
+
+int min_cost_flow(int N, vector<Edge> edges, int K, int s, int t,map<int,int> &save) {
+    adj.assign(N, vector<int>());
+    cost.assign(N, vector<int>(N, 0));
+    capacity.assign(N, vector<int>(N, 0));
+    for (Edge e : edges) {
+        adj[e.from].push_back(e.to);
+        adj[e.to].push_back(e.from);
+        cost[e.from][e.to] = e.cost;
+        cost[e.to][e.from] = -e.cost;
+        capacity[e.from][e.to] = e.capacity;
+    }
+
+    int flow = 0;
+    int cost = 0;
+    vector<int> d, p;
+    while (flow < K) {
+        shortest_paths(N, s, d, p);
+        if (d[t] == INF)
+            break;
+
+        // find max flow on that path
+        int f = K - flow;
+        int cur = t;
+        while (cur != s) {
+            f = min(f, capacity[p[cur]][cur]);
+            cur = p[cur];
+        }
+
+        // apply flow
+        flow += f;
+        cost += f * d[t];
+        cur = t;
+        while (cur != s) {
+            capacity[p[cur]][cur] -= f;
+            capacity[cur][p[cur]] += f;
+            cur = p[cur];
+        }
+    }
+    for(int i=0;i<n;i++){
+      for(int j=n;j<2*n;j++){
+        if(capacity[i][j]==0)
+          save[i]=j;
+      }
+    }
+    for(int i=n;i<2*n;i++){
+      for(int j=2*n;j<3*n;j++){
+        if(capacity[i][j]==0)
+          save[i]=j;
+      }
+    }
+    assert(flow==n);
+    if (flow < K)
+        return -1;
+    else
+        return cost;
+}
+
+int main() {
+    cin>>n;
+    int road1[n][2*n]{};
+    for(int i=0;i<n;i++){
+      for(int j=0;j<2*n;j++){
+        cin>>road1[i][j];
+      }
+    }
+    int road2[n][2*n]{};
+    for(int i=0;i<n;i++){
+      for(int j=0;j<2*n;j++){
+        cin>>road2[i][j];
+      }
+    }
+    map<int,int> ansInfo;
+    int ans=INT_MAX;
+    int a_cnt=-1;
+    for(int a=0;a<=n;a++){
+      vector<Edge> graph;
+      for(int z=0;z<n;z++){
+        graph.push_back({3*n,z,1,0});
+        int idx=n;
+        for(int i=0;i<a;i++){
+          int curr=idx;
+          graph.push_back({z,curr,1,road1[z][2*i]});
+          graph.push_back({curr,2*n+z,1,road2[z][2*i]});
+          idx++;
+        }
+        for(int i=a;i<n;i++){
+          int curr=idx;
+          graph.push_back({z,curr,1,road1[z][2*i+1]});
+          graph.push_back({curr,2*n+z,1,road2[z][2*i+1]});
+          idx++;
+        }
+        graph.push_back({2*n+z,3*n+1,1,0});
+      }
+      // for(auto a:graph){
+      //   cout<<a.from<< "->"<<a.to<<"cap"<<a.capacity<<" cost"<<a.cost<<"\n";
+      // }
+      // cout<<"\n";
+      map<int,int> save;
+      
+      int cost=min_cost_flow(3*n+2,graph,n, 3*n,3*n+1,save );
+      
+      if(ans>cost){
+        ans=cost;
+          ansInfo=save;
+          a_cnt=a;
+      }
+    }
+     cout<<ans<<"\n";
+    for(int i=0;i<n;i++){
+        int mid = ansInfo[i];
+        int last = ansInfo[mid];
+        mid-=n;
+        last-=2*n;
+        cout<<i+1<< " "<<mid+1<<(mid<a_cnt?'A':'B')<<" "<<last+1<<"\n";
+      }
 }

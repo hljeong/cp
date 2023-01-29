@@ -15,9 +15,7 @@
 - blockgame2
 - choosingnumbers
 - outofcontext*
-- ballcolors
 - cafeteria
-- paludarium
 - trianglecuts*
 - inkblots*
 - mancala

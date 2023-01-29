@@ -271,3 +271,28 @@
   - scholarslawn: (robert) geometry
 - unsolved
   - overthehill2
+
+## 1.26.23
+- looking at problems for tryout3
+- solved
+  - babylonian: python
+  - islands3: flood fill to clouds but not from clouds
+  - periodicstrings: impl
+  - alphabet: brute force lis
+  - water: flow w capacity increase updates
+  - paint: dp w binary search
+  - zigzag2: stupid max segtree
+
+## 1.28.23
+- trying out kattis challenge
+- unicup 1
+- cf
+- solved
+  - unrealestate: segtree sweepline
+  - drxvst1: trivial
+  - clampedsequence: try all lower and upper bounds
+  - cf793d: interval dp, extra state to keep track of which endpoint
+  - generators: power as node, mst
+  - cf762c: compute prefix and suffix longest subseq, binary search
+  - ballcolors: permute bad colors, permute good colors, sticks and stones
+  - paludarium: binary search, take care of 0 0 edge case
