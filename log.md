@@ -296,3 +296,83 @@
   - cf762c: compute prefix and suffix longest subseq, binary search
   - ballcolors: permute bad colors, permute good colors, sticks and stones
   - paludarium: binary search, take care of 0 0 edge case
+
+## 2.2.23
+- w23 training 3 makeup
+- solved
+  - fairplay: straight match
+  - deceleratingjump: dp
+  - evolutionaryexcerpt: greedy
+  - gyratingglyphs: solve 15 at a time
+  - armcoordination: aabb
+  - lopsidedlineup: greedy
+
+## 2.4.23
+- w23 training 4 (naq 2022)
+- w23 training 5 makeup (ecna 2021)
+- solved
+  - metronome: divide by 4
+  - movienight: scc then dp on tree counting
+  - mazeman: flood fill
+  - beastbullies: defend until survive from suffix
+  - platformplacing: greedy
+  - noonerizedspumbers: impl
+  - abridgedreading: dp on tree
+  - statues: impl
+  - ballofwhacks: find all transformations
+  - 1sforall: brute force
+  - tollroads: qry offline, sort by weight, small-to-large
+
+## 2.7.23
+- codesprint testsolving
+- solved
+  - cypherdecypher
+
+## 2.11.23
+- upsolve
+- solved
+  - stabletable: bitmask dp
+  - pinnedfiles: find matching prefix + suffix then fix rest
+
+## 2.12.23
+- cf1793
+- pacnw 2019
+- solved
+  - 1793a: casework
+  - 1793b: min to max then min
+  - 1793c: shrink seg until condition reached
+  - 1793d: compute contribution for each mex
+  - rainbowstrings: product of `1 + f[c]` for each char `c`
+  - carrycamfailure: deterministic digit by digit, recursively try
+
+# 2.16.23
+- uci week 6 training
+- solved
+  - 1523b: repeat 1 2 no each pair 3 times
+  - 1011c: binsearch
+  - 810b: greedy
+  - 534c: math
+  - 527d: dp
+  - 1509b: check valid balance forward and backward
+
+# 2.18
+- w23 training 6 (ncpc 2019)
+- solved
+  - hothike: brute force
+  - eenymeeny: brute force impl
+  - cocoacoalition: casework, can do any in 3
+  - gameofgnomes: for each c k's to tower on one of the stacks, compute damage in O(1)
+  - jealousyoungsters: gale-shapley
+
+# 2.20
+- pacnw 2015
+- solved
+  - airports: path cover
+  - excellence: sort, match start w end
+  - hilbertsort: recursively solve, rotating appropriately
+- unsolved: olympics
+
+# 2.23
+- endgame training (selection of ncpc 2022)
+- unsolved
+  - enigmaticenumeration

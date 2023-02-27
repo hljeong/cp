@@ -1,7 +1,2 @@
-*.bat
-*.exe
-*.class
 temp/
 out/
-misc/csla2022/
-dump/
