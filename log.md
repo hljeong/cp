@@ -22,7 +22,7 @@
   - 1800e1
   - 1800e2: dsu positions + check multiset equality
   - 1800f: check parity by bitmask, iterate thru 26 possible missing chars (odd parity means exists!)
-  - 1800g: tree hash
+  - 1800g: isomorphic tree hash, check rng blog for randomized polynomial hash
 
 ## 3.2.23
 - upsolve
