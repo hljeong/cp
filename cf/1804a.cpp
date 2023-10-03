@@ -21,19 +21,12 @@ const ll infll = 0x3f3f3f3f3f3f3f3fll;
 int main() {
   cin.tie(0) -> sync_with_stdio(0);
 
-  int n, p; cin >> n >> p;
-  string s; cin >> s;
-  vll f(10);
-  ll ret = 0;
-  char last = ' ';
-  int run = 0;
-  for (char c : s) {
-    if (c != last) {
-      ret += min((ll) p * run, get(run, p, f));
-      run = 1;
-      last = c;
-    } else ++run;
+  int t; cin >> t;
+  while (t--) {
+    int a, b; cin >> a >> b;
+    if (a < 0) a = -a;
+    if (b < 0) b = -b;
+    int delta = max(0, max(a, b) - min(a, b) - 1);
+    cout << (a + b + delta) << endl;
   }
-  ret += min((ll) p * run, get(run, p, f));
-  cout << ret << endl;
 }

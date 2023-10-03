@@ -3,13 +3,12 @@
 #define B second
 #define vc vector
 #define pb push_back
-#define endl '\n'
 using namespace std;
 using ll = long long; using ld = long double;
 using vi = vc<int>; using vll = vc<ll>;
 using si = set<int>; using sll = set<ll>;
-using pi = pair<int, int>; using pll = pair<ll, ll>;
-using qi = queue<int>; using mi = map<int, int>;
+using pii = pair<int, int>; using pll = pair<ll, ll>;
+using mii = map<int, int>;
 
 template<class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0; }
@@ -19,21 +18,13 @@ const int mod = inf;
 const ll infll = 0x3f3f3f3f3f3f3f3fll;
 
 int main() {
-  cin.tie(0) -> sync_with_stdio(0);
-
-  int n, p; cin >> n >> p;
-  string s; cin >> s;
-  vll f(10);
-  ll ret = 0;
-  char last = ' ';
-  int run = 0;
-  for (char c : s) {
-    if (c != last) {
-      ret += min((ll) p * run, get(run, p, f));
-      run = 1;
-      last = c;
-    } else ++run;
+  string k; cin >> k;
+  int n; cin >> n;
+  while (n--) {
+    string s; cin >> s;
+    for (int i = 0; i < s.length(); ++i) {
+      s[i] = char('A' + (int) ((s[i] - 'A') * (k[i] - '0') % 26));
+    }
+    cout << s << endl;
   }
-  ret += min((ll) p * run, get(run, p, f));
-  cout << ret << endl;
 }

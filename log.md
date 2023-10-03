@@ -1,5 +1,42 @@
 # log
 
+## 3.31.23
+- markov chain curriculum
+- solved
+  - gruesomecave: find stationary distribution then dijkstra
+
+## 3.15.23
+- cf1804 virtual + upsolve
+- solved
+  - 1804a: `abs(a) + abs(b) + max(0, delta - 1)`
+  - 1804b: sim get pack at $t_i + w$ whenever running out or expiring
+  - 1804c: repeats every $2 n$
+  - 1804d: min: maximize double brights, max: maximize single brights and double darks
+  - 1804e: find hamiltonian cycles + construct
+
+## 3.14.23
+- solved
+  - 1720c: clear a 2x2 then clear other 1s one by one
+
+## 3.13.23
+- solved
+  - 1720a: check equal or multiple then set to 0
+  - 1720b: 2 max - 2 min
+
+## 3.7.23
+- testsolve
+- solved
+  - testtubes
+
+## 3.6.23
+- cf1799 virtual + upsolve
+- solved
+  - 1799a: maintain how many $> n$ in most recent using set
+  - 1799b: use op on 2 unequal elems until $30 n$
+  - 1799c: process chars in sorted order; if on `c` where `f[c] > 0` there is an outstanding `x < c` with `sum(f[y > c]) > 0`, append all in order to prefix; otherwise add pairs of `c` to end of prefix and start of suffix; if there is outstanding `c` along with some outstanding `x < c` then append all in order to prefix
+  - 1799d1: after processing the $i$-th program, `dp[j]` stores the min time to complete up to $i$-th program with other cpu's last task as `a[j]`
+  - 1799d2: ormlis sol???
+
 ## 3.4.23
 - cf1794 virtual
 - solved
@@ -45,7 +82,7 @@
 - solved
   - 1791g2: try each starting tp w prefix sum + binsearch
 
-# 2.27.23
+## 2.27.23
 - cf1791 virtual
 - solved
   - 1791a: trivial
@@ -106,7 +143,7 @@
   - pinnedfiles: find matching prefix + suffix then fix rest
 
 ## 2.7.23
-- codesprint testsolving
+- testsolve
 - solved
   - cypherdecypher
 
@@ -422,3 +459,5 @@
   - reportcard: ez dp
   - potioncommotion: impl w edge case
   - gradingonacurve: binsearch
+
+## 7.4.23

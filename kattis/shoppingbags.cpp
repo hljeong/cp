@@ -21,19 +21,21 @@ const ll infll = 0x3f3f3f3f3f3f3f3fll;
 int main() {
   cin.tie(0) -> sync_with_stdio(0);
 
-  int n, p; cin >> n >> p;
-  string s; cin >> s;
-  vll f(10);
-  ll ret = 0;
-  char last = ' ';
-  int run = 0;
-  for (char c : s) {
-    if (c != last) {
-      ret += min((ll) p * run, get(run, p, f));
-      run = 1;
-      last = c;
-    } else ++run;
+  int t, n1, n2, s1, s2; cin >> t >> n1 >> n2 >> s1 >> s2;
+  int fit = t / s2;
+  vc<vi> dp(n1 + n2 + 1, vi(n1 + 1, -inf));
+  dp[0][0] = 0;
+  for (int i = 0; i < n1 + n2; ++i) {
+    for (int j = 0; j <= n1; ++j) {
+      for (int k = 0; k <= fit; ++k) {
+        ckmax(dp[i + 1][min(n1, j + (t - k * s2) / s1)], dp[i][j] + k);
+      }
+    }
   }
-  ret += min((ll) p * run, get(run, p, f));
-  cout << ret << endl;
+  for (int i = 0; i <= n1 + n2; ++i) {
+    if (dp[i][n1] >= n2) {
+      cout << i << endl;
+      break;
+    }
+  }
 }

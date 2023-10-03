@@ -21,19 +21,33 @@ const ll infll = 0x3f3f3f3f3f3f3f3fll;
 int main() {
   cin.tie(0) -> sync_with_stdio(0);
 
-  int n, p; cin >> n >> p;
-  string s; cin >> s;
-  vll f(10);
-  ll ret = 0;
-  char last = ' ';
-  int run = 0;
-  for (char c : s) {
-    if (c != last) {
-      ret += min((ll) p * run, get(run, p, f));
-      run = 1;
-      last = c;
-    } else ++run;
+  int t; cin >> t;
+  while (t--) {
+    int n, m, h; cin >> n >> m >> h;
+    vc<vi> t(n, vi(m));
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < m; ++j) {
+        cin >> t[i][j];
+      }
+      sort(t[i].begin(), t[i].end());
+    }
+    vc<pair<int, pll>> score(n);
+    for (int i = 0; i < n; ++i) {
+      ll cur = 0;
+      for (int j = 0; j < m; ++j) {
+        cur += t[i][j];
+        if (cur > h) break;
+        --score[i].A;
+        score[i].B.A += cur;
+      }
+      score[i].B.B = i;
+    }
+    sort(score.begin(), score.end());
+    for (int i = 0; i < n; ++i) {
+      if (score[i].B.B == 0) {
+        cout << i + 1 << endl;
+        break;
+      }
+    }
   }
-  ret += min((ll) p * run, get(run, p, f));
-  cout << ret << endl;
 }

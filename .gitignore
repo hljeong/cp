@@ -1,2 +1,5 @@
 temp/
 out/
+templates/
+templates-tmp/
+todo/
