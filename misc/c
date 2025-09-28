@@ -1,0 +1,200 @@
+#!/usr/bin/env python3
+
+from dataclasses import dataclass
+import glob
+from invoke import run as sh
+import os
+import sys
+import typer
+
+app = typer.Typer(
+    add_completion=False,
+    context_settings={"help_option_names": ["-h", "--help"]},
+    no_args_is_help=True,
+)
+
+TEMPLATE_FILE: str = f"{os.path.dirname(os.path.realpath(__file__))}/tmpl.cc"
+
+
+def err(s: str = ""):
+    typer.secho(s, fg=typer.colors.RED, err=True)
+    raise typer.Exit(1)
+
+
+def info(s: str = ""):
+    typer.secho(s, fg=typer.colors.BLUE)
+
+
+def ok(s: str = ""):
+    typer.secho(s, fg=typer.colors.GREEN)
+
+
+def resolve_src(src: str | None, missing_ok=False) -> str:
+    if src is None:
+        cc_files = glob.glob("*.cc")
+        if not cc_files:
+            err("cannot find .cc file")
+        cc_files.sort(key=os.path.getmtime, reverse=True)
+        src = cc_files[0]
+
+    if not src.endswith(".cc"):
+        src = f"{src}.cc"
+
+    if not os.path.exists(src) and not missing_ok:
+        err(f"cannot find {src}")
+
+    return src
+
+
+def gpp(src: str):
+    info(f"compiling {src}...")
+    if sh(f"g++-13 -std=c++20 {src}", warn=True).return_code:  # type: ignore
+        err("compile error")
+
+
+def get_base(src: str) -> str:
+    return os.path.splitext(os.path.basename(src))[0]
+
+
+@dataclass
+class Test:
+    id: int
+    input: str
+    output: str
+
+    def __iter__(self):
+        yield self.id
+        yield self.input
+        yield self.output
+
+    def run(self, diff: bool = False):
+        try:
+            info(f"running test {self.id}")
+            if sh(f"cat {self.input} | ./a.out >./out", hide=True, warn=True).return_code:  # type: ignore
+                err(f"test {self.id} runtime error")
+            if int(sh(f"diff ./out {self.output} | wc -l", hide=True).stdout.strip()):  # type: ignore
+                info("input:")
+                sh(f"cat {self.input}")
+                print()
+                if diff:
+                    info("output diff:")
+                    sh(f"diff ./out {self.output}", warn=True)
+                    print()
+                info("output:")
+                sh("cat ./out")
+                print()
+                info("expected:")
+                sh(f"cat {self.output}")
+
+                err(f"failed test {self.id}")
+            ok(f"passed test {self.id}")
+        finally:
+            sh("rm -f ./out")
+
+
+def find_tests(src: str) -> list[Test]:
+    base: str = get_base(src)
+    test_glob: str = f"{base}.in.*"
+    test_files = sorted(glob.glob(test_glob))
+    tests: list[Test] = []
+    for test_file in test_files:
+        test_id: int = int(test_file.rsplit(".", maxsplit=1)[1])
+        test_in: str = f"{base}.in.{test_id}"
+        test_out: str = f"{base}.out.{test_id}"
+        if not os.path.exists(test_out):
+            err(f"{test_in} does not have an output file")
+        tests.append(Test(test_id, test_in, test_out))
+
+    return tests
+
+
+@app.command(help="create or edit code")
+def vim(src: str | None = typer.Argument(None, help="source file")):
+    src = resolve_src(src, missing_ok=True)
+    if not os.path.exists(src):
+        sh(f"cp {TEMPLATE_FILE} {src}")
+    os.execvp("nvim", ["nvim", src])
+
+
+@app.command(help="edit template")
+def tmpl():
+    os.execvp("nvim", ["nvim", TEMPLATE_FILE])
+
+
+@app.command(help="run code")
+def run(
+    src: str | None = typer.Argument(None, help="source file"),
+    test_id: int | None = typer.Option(None, "-t", help="test id"),
+):
+    src = resolve_src(src)
+    gpp(src)
+    if test_id is not None:
+        info(f"running {src} for test {test_id}...")
+        base: str = get_base(src)
+        test_in: str = f"{base}.in.{test_id}"
+        test_out: str = f"{base}.out.{test_id}"
+        Test(test_id, test_in, test_out).run()
+
+    else:
+        info(f"running {src}...")
+        try:
+            sh("./a.out")
+        except Exception:
+            err("runtime error")
+        finally:
+            sh("rm ./a.out")
+
+
+@app.command(help="run test")
+def test(src: str | None = typer.Argument(None, help="source file")):
+    src = resolve_src(src)
+    tests: list[Test] = find_tests(src)
+    gpp(src)
+    info(f"testing {src}...")
+    for test in tests:
+        test.run()
+
+    if len(tests) == 1:
+        ok("passed 1 test")
+    else:
+        ok(f"passed {len(tests)} tests")
+
+
+@app.command(help="add a test case")
+def add(src: str | None = typer.Argument(None, help="source file")):
+    src = resolve_src(src)
+    base: str = get_base(src)
+    test_ids: set[int] = {test.id for test in find_tests(src)}
+    test_id: int = 0
+    while test_id in test_ids:
+        test_id += 1
+
+    test_in: str = f"{base}.in.{test_id}"
+    test_out: str = f"{base}.out.{test_id}"
+
+    try:
+        info("input:")
+        input: str = sys.stdin.read()
+        if not input:
+            return
+        with open(test_in, "w+") as f:
+            f.write("\n".join(line.strip() for line in input.split("\n")))
+
+        info("output:")
+        output: str = sys.stdin.read()
+        with open(test_out, "w+") as f:
+            f.write("\n".join(line.strip() for line in output.split("\n")))
+
+    except Exception:
+        sh(f"rm -f {test_in} {test_out}")
+
+    add(None)
+
+
+@app.command(help="clean up test files")
+def clean():
+    sh("rm -f ./a.out ./*.in.* ./*.out.*", echo=True)
+
+
+if __name__ == "__main__":
+    app()
