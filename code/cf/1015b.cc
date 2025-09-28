@@ -23,7 +23,7 @@ tT> ostream &operator<<(ostream &os, const vc<T> &a) {
   return os;
 }
 
-tT, size_t N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
+tT, int N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
   for (int i = 0; i < N; i++) os << (i ? " " : "") << a[i];
   return os;
 }
@@ -37,10 +37,10 @@ tT> vc<T> rda(int n) {
 }
 
 int ri() { return rd<int>(); }
-ll rll() { return rd<ll>(); }
+ll rl() { return rd<ll>(); }
 str rs() { return rd<str>(); }
 vi ria(int n) { return rda<int>(n); }
-vll rlla(int n) { return rda<ll>(n); }
+vll rla(int n) { return rda<ll>(n); }
 
 tTU> T max(T a, U b) { return a > b ? a : b; }
 tTU> T min(T a, U b) { return a < b ? a : b; }
@@ -70,8 +70,32 @@ constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
+template <ranges::range R> auto freq(const R &collection) {
+  using E = ranges::range_value_t<R>;
+  map<E, int> f;
+  for (auto element : collection) f[element]++;
+  return f;
+}
+
 void solve() {
-  // todo
+  int n = ri(); str s = rs(), t = rs();
+  auto fs = freq(s), ft = freq(t);
+  if (fs != ft) {
+    cout << "-1" << endl;
+    return;
+  }
+
+  vi moves;
+  for (int i = 0; i < n; i++) {
+    if (s[i] == t[i]) continue;
+    int j = i + 1;
+    while (s[j] != t[i]) j++;
+    while (j > i) {
+      swap(s[j], s[j - 1]);
+      moves.pb(j--);
+    }
+  }
+  cout << moves.size() << endl << moves << endl;
 }
 
 int main() {

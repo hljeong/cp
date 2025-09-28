@@ -70,8 +70,55 @@ constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
+// take biggest star at each coord
+
 void solve() {
-  // todo
+  int n = ri(), m = ri();
+  vc<vi> g(n + 1, vi(m + 1)),
+         u(n + 1, vi(m + 1)),
+         d(n + 1, vi(m + 1)),
+         l(n + 1, vi(m + 1)),
+         r(n + 1, vi(m + 1));
+  int cnt = 0;
+  for (int i = 0; i < n; i++) {
+    auto row = rs();
+    for (int j = 0; j < m; j++) {
+      g[i][j] = u[i][j] = d[i][j] = l[i][j] = r[i][j] = row[j] == '*';
+      cnt += g[i][j];
+    }
+  }
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      u[i + 1][j] = g[i + 1][j] ? 1 + u[i][j] : 0;
+      d[n - i - 1][j] = g[n - i - 1][j] ? 1 + d[n - i][j] : 0;
+      l[i][j + 1] = g[i][j + 1] ? 1 + l[i][j] : 0;
+      r[i][m - j - 1] = g[i][m - j - 1] ? 1 + r[i][m - j] : 0;
+    }
+  }
+
+  using a3 = ar<int, 3>;
+  vc<a3> ans;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      int sz = min(min(u[i][j], d[i][j]), min(l[i][j], r[i][j]));
+      if (sz > 1) {
+        ans.pb({i + 1, j + 1, sz - 1});
+        for (int d = 0; d < sz; d++) {
+          if (g[i - d][j]) g[i - d][j] = 0, --cnt;
+          if (g[i + d][j]) g[i + d][j] = 0, --cnt;
+          if (g[i][j - d]) g[i][j - d] = 0, --cnt;
+          if (g[i][j + d]) g[i][j + d] = 0, --cnt;
+        }
+      }
+    }
+  }
+  if (cnt) cout << "-1\n";
+  else {
+    cout << ans.size() << endl;
+    for (auto &p : ans) {
+      cout << p << endl;
+    }
+  }
 }
 
 int main() {

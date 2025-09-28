@@ -23,7 +23,7 @@ tT> ostream &operator<<(ostream &os, const vc<T> &a) {
   return os;
 }
 
-tT, size_t N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
+tT, int N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
   for (int i = 0; i < N; i++) os << (i ? " " : "") << a[i];
   return os;
 }
@@ -71,7 +71,21 @@ constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
 void solve() {
-  // todo
+  ll n = ri(), k = ri(), s = rll();
+  if (k > s || s > (n - 1) * k) {
+    cout << "NO\n"; return;
+  }
+
+  cout << "YES\n";
+  ll cur = 0;
+  while (k--) {
+    // go as far as possible, leaving k more steps
+    ll step = min(s - k, max(cur, (n - 1) - cur));
+    s -= step;
+    if (cur - step >= 0) cur -= step;
+    else cur += step;
+    cout << (cur + 1) << " \n"[!k];
+  }
 }
 
 int main() {

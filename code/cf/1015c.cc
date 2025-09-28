@@ -23,7 +23,7 @@ tT> ostream &operator<<(ostream &os, const vc<T> &a) {
   return os;
 }
 
-tT, size_t N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
+tT, int N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
   for (int i = 0; i < N; i++) os << (i ? " " : "") << a[i];
   return os;
 }
@@ -37,10 +37,10 @@ tT> vc<T> rda(int n) {
 }
 
 int ri() { return rd<int>(); }
-ll rll() { return rd<ll>(); }
+ll rl() { return rd<ll>(); }
 str rs() { return rd<str>(); }
 vi ria(int n) { return rda<int>(n); }
-vll rlla(int n) { return rda<ll>(n); }
+vll rla(int n) { return rda<ll>(n); }
 
 tTU> T max(T a, U b) { return a > b ? a : b; }
 tTU> T min(T a, U b) { return a < b ? a : b; }
@@ -70,8 +70,24 @@ constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
+constexpr auto ascending = less{};
+constexpr auto descending = greater{};
+
 void solve() {
-  // todo
+  ll n = ri(), m = ri();
+  vi save(n);
+  for (int i = 0; i < n; i++) {
+    int a = ri(); m -= a; save[i] = a - ri();
+  }
+  ranges::sort(save, descending);
+  for (int i = 0; i < n; i++) {
+    if (m >= 0) {
+      cout << i << endl;
+      return;
+    }
+    m += save[i];
+  }
+  cout << (m >= 0 ? n : -1) << endl;
 }
 
 int main() {
