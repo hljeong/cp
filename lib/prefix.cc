@@ -20,7 +20,7 @@ struct Alphabet {
   static constexpr auto build_idx(string_view symbols) { 
     ar<int, MAX_CHAR> idx{};
     for (int i = 0; i < symbols.size(); i++) idx[symbols[i]] = i;
-     return idx;
+    return idx;
   }
   constexpr Alphabet(string_view symbols) :
     symbols{symbols},
@@ -45,4 +45,59 @@ vc<vi> prefix_automaton(str s, const Alphabet &alphabet = lowercase) {
     }
   }
   return transition;
+}
+
+namespace experimental {
+
+template <size_t N> struct ConstexprString {
+  char value[N];
+  consteval ConstexprString(const char (&s)[N]) {
+    for (size_t i = 0; i < N; i++) value[i] = s[i];
+  }
+  consteval operator string_view() const { return {value, N - 1}; }
+};
+
+template <ConstexprString Symbols> struct Alphabet {
+  static constexpr int MAX_CHAR = numeric_limits<char>::max();
+  static constexpr string_view symbols = Symbols;
+  static constexpr size_t size = symbols.size();
+
+  static constexpr char max_char() {
+    char mc = 0;
+    for (char c : symbols) ckmax(mc, c);
+    return mc;
+  }
+
+  static_assert(max_char() != static_cast<char>(MAX_CHAR));
+  static constexpr char delimiter = static_cast<char>(max_char() + 1);
+
+  static constexpr auto build_idx() {
+    ar<int, MAX_CHAR> idx{};
+    for (size_t i = 0; i < size; i++) idx[symbols[i]] = i;
+    return idx;
+  }
+
+  static constexpr auto idx = build_idx();
+
+  constexpr char operator[](int i) const { return symbols[i]; }
+  constexpr int operator[](char c) const { return idx[c]; }
+};
+
+using LowerCase = Alphabet<"abcdefghijklmnopqrstuvwxyz">;
+LowerCase lowercase;
+
+template <class Alphabet = LowerCase> vc<vi> prefix_automaton(str s, Alphabet alphabet = {}) {
+  s += alphabet.delimiter;
+  int n = s.size();
+  vi pi = prefix(s);
+  vc<vi> transition(n, vi(alphabet.size));
+  for (int i = 0; i < n; i++) {
+    for (int c = 0; c < alphabet.size; c++) {
+      if (i && alphabet[c] != s[i]) transition[i][c] = transition[pi[i - 1]][c];
+      else transition[i][c] = i + (alphabet[c] == s[i]);
+    }
+  }
+  return transition;
+}
+
 }

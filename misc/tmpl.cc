@@ -42,11 +42,11 @@ str rs() { return rd<str>(); }
 vi ria(int n) { return rda<int>(n); }
 vll rlla(int n) { return rda<ll>(n); }
 
-tTU> T max(T a, U b) { return a > b ? a : b; }
-tTU> T min(T a, U b) { return a < b ? a : b; }
-tTU> bool ckmin(T &a, U b) { return b < a ? a = b, 1 : 0; }
-tTU> bool ckmax(T &a, U b) { return a < b ? a = b, 1 : 0; }
-tT> T nth_bit(T x, int n) { return (x >> n) & 1; }
+tTU> constexpr T max(T a, U b) { return a > b ? a : b; }
+tTU> constexpr T min(T a, U b) { return a < b ? a : b; }
+tTU> constexpr bool ckmin(T &a, U b) { return b < a ? a = b, 1 : 0; }
+tTU> constexpr bool ckmax(T &a, U b) { return a < b ? a = b, 1 : 0; }
+tT> constexpr T nth_bit(T x, int n) { return (x >> n) & 1; }
 tTU> T minst(T l, T r, U pred) {
   T ans = r + 1;
   while (l <= r) {
