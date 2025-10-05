@@ -5,7 +5,7 @@
 #define B second
 #define pb push_back
 #define endl '\n'
-#define tT template <class T
+#define tT template <typename T
 #define tTU tT, class U
 using namespace std;
 tT> using vc = vector<T>;
@@ -28,8 +28,6 @@ tT, size_t N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
   return os;
 }
 
-tTU> istream& operator>>(istream &i, pair<T, U> &p) { return i >> p.A >> p.B; }
-
 tT> T rd() { T x; cin >> x; return x; }
 
 tT> vc<T> rda(int n) {
@@ -44,8 +42,8 @@ str rs() { return rd<str>(); }
 vi ria(int n) { return rda<int>(n); }
 vll rlla(int n) { return rda<ll>(n); }
 
-tTU> constexpr decltype(declval<T>() + declval<U>()) max(T a, U b) { return a > b ? a : b; }
-tTU> constexpr decltype(declval<T>() + declval<U>()) min(T a, U b) { return a < b ? a : b; }
+tTU> constexpr T max(T a, U b) { return a > b ? a : b; }
+tTU> constexpr T min(T a, U b) { return a < b ? a : b; }
 tTU> constexpr bool ckmin(T &a, U b) { return b < a ? a = b, 1 : 0; }
 tTU> constexpr bool ckmax(T &a, U b) { return a < b ? a = b, 1 : 0; }
 tT> constexpr T nth_bit(T x, int n) { return (x >> n) & 1; }
@@ -72,8 +70,67 @@ constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
+// consider each bit individually
+// if if sum of row xors is diff from sum of col xors,
+// spam one row or col until they are equal
+// then just go diagonally down filling out 1s
+// this doesnt work if the sums have different parities
+
 void solve() {
-  // todo
+  int n = ri(), m = ri();
+  vi a = ria(n), b = ria(m);
+  vc<vi> ans(n, vi(m, 0));
+
+  for (int i = 0; i < 30; i++) {
+    int a_cnt = 0, b_cnt = 0;
+    for (int j = 0; j < n; j++) a_cnt += nth_bit(a[j], i);
+    for (int j = 0; j < m; j++) b_cnt += nth_bit(b[j], i);
+    if ((a_cnt ^ b_cnt) & 1) {
+      cout << "NO" << endl;
+      return;
+    }
+    // cout << a_cnt << " " << b_cnt << endl;
+    int r = 0, c = 0;
+    while (a_cnt > b_cnt) {
+      if (nth_bit(a[r], i)) {
+        ans[r][c] |= 1 << i;
+        a_cnt--;
+      }
+      r++;
+    }
+    while (b_cnt > a_cnt) {
+      if (nth_bit(b[c], i)) {
+        ans[r][c] |= 1 << i;
+        b_cnt--;
+      }
+      c++;
+    }
+    for (; r < n; r++) {
+      if (nth_bit(a[r], i)) {
+        while (!nth_bit(b[c], i)) c++;
+        ans[r][c++] |= 1 << i;
+      }
+    }
+  }
+
+  // for (int i = 0; i < n; i++) {
+  //   int ai = 0;
+  //   for (int j = 0; j < m; j++) {
+  //     ai ^= ans[i][j];
+  //   }
+  //   if (ai != a[i]) cout << "bad row " << i << ", " << ai << ", " << a[i] << endl;
+  // }
+  //
+  // for (int i = 0; i < m; i++) {
+  //   int bi = 0;
+  //   for (int j = 0; j < n; j++) {
+  //     bi ^= ans[j][i];
+  //   }
+  //   if (bi != b[i]) cout << "bad col " << i << ", " << bi << ", " << b[i] << endl;
+  // }
+
+  cout << "YES" << endl;
+  for (auto r : ans) cout << r << endl;
 }
 
 int main() {

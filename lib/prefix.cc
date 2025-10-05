@@ -29,19 +29,21 @@ struct Alphabet {
     idx(build_idx(symbols)) {}
   constexpr char operator[](int idx) const { return symbols[idx]; };
   constexpr int operator[](char c) const { return idx[c]; };
+
+  tT> using Map = ar<T, MAX_CHAR + 1>;
 };
 
 constexpr Alphabet lowercase{"abcdefghijklmnopqrstuvwxyz"sv};
 
-vc<vi> prefix_automaton(str s, const Alphabet &alphabet = lowercase) {
+auto prefix_automaton(str s, const Alphabet &alphabet = lowercase) {
   s += alphabet.delimiter;
   int n = s.size();
   vi pi = prefix(s);
-  vc<vi> transition(n, vi(alphabet.size));
+  vc<Alphabet::Map<int>> transition(n, Alphabet::Map<int>{});
   for (int i = 0; i < n; i++) {
-    for (int c = 0; c < alphabet.size; c++) {
-      if (i && alphabet[c] != s[i]) transition[i][c] = transition[pi[i - 1]][c];
-      else transition[i][c] = i + (alphabet[c] == s[i]);
+    for (char c : alphabet.symbols) {
+      if (i && c != s[i]) transition[i][c] = transition[pi[i - 1]][c];
+      else transition[i][c] = i + (c == s[i]);
     }
   }
   return transition;

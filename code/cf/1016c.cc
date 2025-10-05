@@ -5,7 +5,7 @@
 #define B second
 #define pb push_back
 #define endl '\n'
-#define tT template <class T
+#define tT template <typename T
 #define tTU tT, class U
 using namespace std;
 tT> using vc = vector<T>;
@@ -28,8 +28,6 @@ tT, size_t N> ostream &operator<<(ostream &os, const ar<T, N> &a) {
   return os;
 }
 
-tTU> istream& operator>>(istream &i, pair<T, U> &p) { return i >> p.A >> p.B; }
-
 tT> T rd() { T x; cin >> x; return x; }
 
 tT> vc<T> rda(int n) {
@@ -44,8 +42,8 @@ str rs() { return rd<str>(); }
 vi ria(int n) { return rda<int>(n); }
 vll rlla(int n) { return rda<ll>(n); }
 
-tTU> constexpr decltype(declval<T>() + declval<U>()) max(T a, U b) { return a > b ? a : b; }
-tTU> constexpr decltype(declval<T>() + declval<U>()) min(T a, U b) { return a < b ? a : b; }
+tTU> constexpr T max(T a, U b) { return a > b ? a : b; }
+tTU> constexpr T min(T a, U b) { return a < b ? a : b; }
 tTU> constexpr bool ckmin(T &a, U b) { return b < a ? a = b, 1 : 0; }
 tTU> constexpr bool ckmax(T &a, U b) { return a < b ? a = b, 1 : 0; }
 tT> constexpr T nth_bit(T x, int n) { return (x >> n) & 1; }
@@ -72,8 +70,40 @@ constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
+// there are only n possibilities:
+// zig-zag up and down for k columns and then go out and back
+
 void solve() {
-  // todo
+  int n; cin >> n;
+  vc<vll> v{rlla(n), rlla(n)};
+  if (n == 1) {
+    cout << v[1][0] << endl;
+    return;
+  }
+  vll suf(n + 1);
+  for (int i = n - 1; i >= 0; i--) {
+    suf[i] = suf[i + 1] + v[0][i] + v[1][i];
+  }
+  vll out_and_back(n + 1);
+  out_and_back[n - 1] = v[((n - 1) & 1) ^ 1][n - 1];
+  out_and_back[n - 2] = v[(n - 2) & 1][n - 1] * 1
+                      + v[((n - 2) & 1) ^ 1][n - 1] * 2
+                      + v[((n - 2) & 1) ^ 1][n - 2] * 3;
+  for (int i = n - 3; i >= 0; i--) {
+    int parity = i & 1;
+    int cnt = (n - i) * 2;
+    out_and_back[i] = suf[i + 2] * 2 + out_and_back[i + 2]
+                    + v[parity][i + 1]
+                    + v[parity ^ 1][i + 1] * (cnt - 2)
+                    + v[parity ^ 1][i] * (cnt - 1);
+  }
+  ll ans = 0, cur = 0;
+  for (int i = 0; i < n; i++) {
+    ckmax(ans, cur + 2 * i * suf[i] + out_and_back[i]);
+    int parity = i & 1;
+    cur += v[parity][i] * (2 * i) + v[parity ^ 1][i] * (2 * i + 1);
+  }
+  cout << max(ans, cur) << endl;
 }
 
 int main() {
