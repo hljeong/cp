@@ -71,6 +71,7 @@ class Test:
         try:
             info(f"running test {self.id}")
             if sh(f"cat {self.input} | ./a.out >./out", hide=True, warn=True).return_code:  # type: ignore
+                sh("cat ./out")
                 err(f"test {self.id} runtime error")
             if int(sh(f"diff ./out {self.output} | wc -l", hide=True).stdout.strip()):  # type: ignore
                 info("input:")

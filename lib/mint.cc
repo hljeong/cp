@@ -1,5 +1,5 @@
 #include "../misc/tmpl.cc"
-#include "qpow.h"
+#include "qpow.cc"
 
 template <int M> struct modint {
   int v;
