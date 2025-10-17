@@ -88,8 +88,83 @@ constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
+using ui = uint64_t;
+
+// total 16252325 ~= 1.6e7 primes <= 3e8
+// => 65009300 bytes
+void count() {
+  vi div(3e8 + 1);
+  int cnt = 0;
+  for (int p = 2; p <= 3e8; p++) {
+    if (div[p]) continue;
+    int q = p;
+    cnt++;
+    while (q <= 3e8) {
+      div[q] = p;
+      q += p;
+    }
+  }
+  cout << cnt << endl;
+}
+
+constexpr ui N = 3e8;
+// sieve[2k] -> 6k + 1
+// sieve[2k + 1] -> 6k + 5
+bitset<N / 3 + 1> sieve;
+
+// each prime contributes cnt(p) * f(p)
+// where cnt(p) = sum(floor(n / p^k))
+//
+// benq: https://codeforces.com/contest/1017/problem/F
+// cnt(n, p) = n ? n / p + cnt(n / p, p) : 0;
+// horner's for evaluating f:
+//   f(p) = d + p * (c + p * (b + p * a))
+
 void solve() {
-  // todo
+  def(ui, n, a, b, c, d);
+  ui ret = 0;
+  auto f = [&](ui p) { return a * p * p * p + b * p * p + c * p + d; };
+  auto apply = [&](ui p) {
+    ui pk = p, cnt = 0;
+    while (pk <= n) {
+      cnt += n / pk;
+      pk *= p;
+    }
+    ret += cnt * f(p);
+  };
+  {
+    ui p = 2, q = 2;
+    apply(p);
+    while (q <= N) {
+      if ((q % 6 == 5) || (q % 6 == 1)) {
+        sieve[q / 3] = 1;
+      }
+      q += p;
+    }
+  }
+  {
+    ui p = 3, q = 3;
+    apply(p);
+    while (q <= N) {
+      if ((q % 6 == 5) || (q % 6 == 1)) {
+        sieve[q / 3] = 1;
+      }
+      q += p;
+    }
+  }
+  for (ui p = 5; p <= N; p++) {
+    if ((p % 6 != 5) && (p % 6 != 1)) continue;
+    if (sieve[p / 3]) continue;
+    apply(p);
+    ui q = p;
+    while (q <= N) {
+      if ((q % 6 == 5) || (q % 6 == 1)) {
+        sieve[q / 3] = 1;
+      }
+      q += p;
+    }
+  }
+  cout << uint32_t(ret) << endl;
 }
 
 int main() {

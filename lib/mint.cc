@@ -1,38 +1,44 @@
 #include "../misc/tmpl.cc"
 #include "qpow.cc"
 
+template <int M> concept prime = []() {
+  if (M < 2) return false;
+  for (int i = 2; i * i <= M; i++)
+    if (!(M % i)) return false;
+  return true;
+}();
+
 template <int M> struct modint {
-  int v;
+  int v = 0;
 
-  explicit operator int() const { return v; }
-  modint() : v(0) {}
-  modint(ll x) : v((-M <= x && x < M) ? x : x % M) { if (v < 0) v += M; }
-  bool operator==(const modint &o) const { return v == o.v; }
-  friend bool operator!=(const modint &a, const modint &b) { return !(a == b); }
-  friend bool operator<(const modint &a, const modint &b) { return a.v < b.v; }
-  modint &operator+=(const modint &o) { if ((v += o.v) >= M) v -= M; return *this; }
-  modint &operator-=(const modint &o) { if ((v -= o.v) < 0) v += M; return *this; }
-  modint &operator*=(const modint &o) { v = int(ll(v) * o.v % M); return *this; }
-  modint &operator/=(const modint &o) { return (*this) *= inv(o); }
-  friend modint inv(const modint &x);
-  friend modint pow(modint b, ll e) { return e < 0 ? qpow(inv(b), -e) : qpow(b, e); }
-  // friend modint pow(modint b, ll e) {
-  //   if (e < 0) return pow(inv(b), -e);
-  //   modint ans = 1;
-  //   for (; e; e >>= 1, b *= b) if (e & 1) ans *= b;
-  //   return ans;
-  // }
+  constexpr modint() = default;
+  constexpr modint(ll x) : v((x % M + M) % M) {}
 
-  friend modint inv(const modint &x) { assert(x.v != 0); return pow(x, M - 2); }
-  modint operator-() const { return modint(-v); }
-  modint &operator++() { return *this += 1; }
-  modint &operator--() { return *this -= 1; }
-  friend modint operator+(modint a, const modint &b) { return a += b; }
-  friend modint operator-(modint a, const modint &b) { return a -= b; }
-  friend modint operator*(modint a, const modint &b) { return a *= b; }
-  friend modint operator/(modint a, const modint &b) { return a /= b; }
-  friend ostream &operator<<(ostream &os, const modint &x) { return os << int(x); }
-  friend istream &operator>>(istream &os, modint &x) { return os >> x.v; }
+  constexpr explicit operator int() const { return v; }
+
+  constexpr modint &operator+=(modint o) { if ((v += o.v) >= M) v -= M; return *this; }
+  constexpr modint &operator-=(modint o) { if ((v -= o.v) < 0) v += M; return *this; }
+  constexpr modint &operator*=(modint o) { v = ll(v) * o.v % M; return *this; }
+  constexpr modint &operator/=(modint o) requires prime<M> { return *this *= inv(o); }
+
+  constexpr modint operator-() const { return modint(-v); }
+  constexpr modint &operator++() { return *this += 1; }
+  constexpr modint &operator--() { return *this -= 1; }
+
+  friend constexpr modint inv(modint x) requires prime<M> { assert(x != 0); return pow(x, M - 2); }
+  friend constexpr modint pow(modint b, ll e) {
+    return e < 0 ? assert(!prime<M>), qpow(inv(b), -e) : qpow(b, e);
+  }
+
+  friend constexpr auto operator<=>(modint, modint) = default;
+
+  friend constexpr modint operator+(modint a, modint b) { return a += b; }
+  friend constexpr modint operator-(modint a, modint b) { return a -= b; }
+  friend constexpr modint operator*(modint a, modint b) { return a *= b; }
+  friend constexpr modint operator/(modint a,modint b) requires prime<M> { return a /= b; }
+
+  friend ostream &operator<<(ostream &o, modint x) { return o << x.v; }
+  friend istream &operator>>(istream &i, modint &x) { return i >> x.v; }
 };
 
 using mint = modint<inf>;

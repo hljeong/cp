@@ -1,21 +1,21 @@
 #include "../misc/tmpl.cc"
-#include "mint.h"
+#include "mint.cc"
 
 template <int... Base> struct polyhash {
   static constexpr int N = sizeof...(Base);
   static constexpr int base[N] = {Base...};
-  static array<vc<mint>, N> base_pow;
+  static inline array<vec<mint>, N> base_pow;
   array<mint, N> v;
 
   static void init(int n) {
     for (int i = 0; i < N; i++) {
-      base_pow[i] = vc<mint>(n + 1, 1);
+      base_pow[i] = vec<mint>(n + 1, 1);
       for (int j = 0; j < n; j++) base_pow[i][j + 1] = base_pow[i][j] * base[i];
     }
   }
 
   polyhash() {}
-  polyhash(int v) : v{static_cast<mint>(v + (Base * 0))...} {}
+  polyhash(ll v) : v{static_cast<mint>(v + (Base * 0))...} {}
 
   bool operator==(const polyhash &o) const { return v == o.v; }
   friend bool operator!=(const polyhash &a, const polyhash &b) { return !(a == b); }
