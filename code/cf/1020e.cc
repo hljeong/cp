@@ -11,8 +11,7 @@ using namespace std;
 namespace r = ranges;
 namespace rv = r::views;
 template <class T> using vec = vector<T>;
-template <class T, size_t N> using ar = array<T, N>;
-template <class ...Ts> using tup = tuple<Ts...>;
+template <class T, int N> using ar = array<T, N>;
 using ll = long long; using ld = long double;
 using vi = vec<int>; using vll = vec<ll>;
 using si = set<int>; using sll = set<ll>;
@@ -28,26 +27,26 @@ concept not_str = !(same_as<remove_cvref_t<T>, str> ||
                     convertible_to<T, const char *>);
 
 template <ranges::range R> requires not_str<R>
-ostream &operator<<(ostream &o, const R& range) {
-  bool first = true;
-  for (auto &value : range) {
-    if (!first) o << ' ';
-    first = false;
-    o << value;
+ostream &operator<<(ostream &os, const R& range) {
+  auto it = ranges::begin(range); auto end = ranges::end(range);
+  for (bool first = 1; it != end; it++) {
+    if (!first) os << ' ';
+    first = 0;
+    os << *it;
   }
-  return o;
+  return os;
 }
 
-template <class T, class U> ostream& operator<<(ostream &o, const pair<T, U> &p) { return o << '(' << p.A << ' ' << p.B << ')'; }
-template <class T, class U> istream& operator>>(istream &i, pair<T, U> &p) { return i >> p.A >> p.B; }
+template <class T, class U>
+istream& operator>>(istream &i, pair<T, U> &p) { return i >> p.A >> p.B; }
 
 template <class T> T rd() { T x; cin >> x; return x; }
 int ri() { return rd<int>(); }
 ll rll() { return rd<ll>(); }
 str rs() { return rd<str>(); }
 
-template <r::range R>
-requires (r::random_access_range<R> && r::sized_range<R> && not_str<R>)
+template <ranges::range R>
+requires (ranges::random_access_range<R> && ranges::sized_range<R> && not_str<R>)
 void read(R& range, int n) { for (int i = 0; i < n; i++) cin >> range[i]; }
 void read(auto &...vars) { ((cin >> vars), ...); }
 #define def(T, vars...) T vars; read(vars)
@@ -63,33 +62,24 @@ mut_torder_TU constexpr bool ckmax(T &a, U b) { return b > a ? a = b, 1 : 0; }
 #undef mut_torder_TU
 
 fun nth_bit(integral auto x, int n) { return (x >> n) & 1; }
-fun high_bit_idx(int x) { return 31 - __builtin_clz(x); }
-fun high_bit_idx(ll x) { return 63 - __builtin_clz(x); }
-fun high_bit(integral auto x) { return x ? (1 << high_bit_idx(x)) : -1; }
-fun low_bit(integral auto x) { return x & -x; }
-fun low_bit_idx(integral auto x) { return high_bit_idx(low_bit(x)); }
-fun is_pow2(integral auto x) { return x && (x == low_bit(x)); }
+fun high_bit_idx(integral auto x) { assert(x); return bit_width(x) - 1; }
+fun high_bit(integral auto x) { assert(x); return 1 << high_bit_idx(x); }
+fun low_bit(integral auto x) { assert(x); return x & -x; }
+fun low_bit_idx(integral auto x) { assert(x); return high_bit_idx(low_bit(x)); }
 
 fun mid(integral auto l, integral auto r) { return l + (r - l) / 2; }
 
 template <torder T> constexpr T minst(T l, T r, predicate<T> auto pred) {
-  T ret = r + 1;
-  while (l <= r) {
+  while (l < r) {
     const T m = mid(l, r);
-    if (pred(m)) r = (ret = m) - 1;
+    if (pred(m)) r = m;
     else l = m + 1;
   }
-  return ret;
+  return l;
 }
 
 template <torder T> constexpr T maxst(T l, T r, predicate<T> auto pred) {
-  T ret = l - 1;
-  while (l <= r) {
-    const T m = mid(l, r);
-    if (pred(m)) l = (ret = m) + 1;
-    else r = m - 1;
-  }
-  return ret;
+  return minst(l, r + 1, [pred](T x) { return !pred(x); }) - 1;
 }
 
 template <class T, size_t N> struct nvec_t;
@@ -99,19 +89,73 @@ template <class T> struct nvec_t<T, 0> { using type = T; };
 
 template <class T> T make_nvec(const T &value) { return value; }
 template <class T, class... Dims>
-auto make_nvec(size_t dim, Dims... dims) { using E = decltype(make_nvec<T>(dims...)); return vec<E>(dim, make_nvec<T>(dims...)); }
+auto make_nvec(size_t dim, Dims... dims) {
+  using E = decltype(make_nvec<T>(dims...));
+  return vec<E>(dim, make_nvec<T>(dims...));
+}
 
-template <integral T, integral U> fun range(T start, U end) { using V = common_type_t<T, U>; return rv::iota((V) start, (V) end); }
-template <integral T> fun range(T end) { return range(T(0), end); }
-template <r::range R> auto sliced(R &&r, size_t start, size_t end) { return std::forward<R>(r) | rv::drop(start) | rv::take(end - start); }
-template <r::range R> auto sliced(R &&r, size_t start) { return std::forward<R>(r) | rv::drop(start); }
+constexpr struct Directed {} directed;
+
+struct Graph : vec<vi> {
+  using base = vec<vi>;
+  using base::begin;
+  using base::end;
+  using base::size;
+  using base::operator[];
+
+  vec<map<int, ll>> w;
+
+  Graph(int n) : base(n), w(n) {}
+  Graph(const Graph &g) = default;
+  Graph(int n, int m, int off = 1) : Graph(n) {
+    for (int i = 0; i < m; i++) {
+      def(int, u, v);
+      c(u - off, v - off);
+    }
+  }
+  Graph(Directed, int n, int m, int off = 1) : Graph(n) {
+    for (int i = 0; i < m; i++) {
+      def(int, u, v);
+      cto(u - off, v - off);
+    }
+  }
+
+  void cto(int from, int to) { self[from].pb(to); }
+  void c(int from, int to) { cto(from, to); cto(to, from); }
+
+  Graph transpose() const {
+    int n = size();
+    Graph g(n);
+    for (int u = 0; u < n; u++)
+      for (int v : self[u])
+        g.cto(v, u);
+    return g;
+  }
+};
 
 constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
 void solve() {
-  // todo
+  def(int, n, m);
+  Graph g(directed, n, m);
+
+  vi order, vis(n, 0);
+  for (int u = 0; u < n; u++) if (!vis[u]) {
+    vis[u] = 1;
+    order.pb(u);
+    for (int v : g[u])
+      vis[v] = 1;
+  }
+  si ret, r1;
+  for (int u : order | rv::reverse) if (!r1.count(u)) {
+    ret.insert(u + 1);
+    for (int v : g[u])
+      r1.insert(v);
+  }
+
+  cout << ret.size() << endl << ret << endl;
 }
 
 int main() {

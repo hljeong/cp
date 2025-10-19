@@ -53,7 +53,7 @@ struct SegmentTree {
   void build(const vec<T> &a, int u, int l, int r) {
     if (l == r) t[u] = a[l];
     else {
-      int m = l + (r - l) / 2;
+      int m = mid(l, r);
       build(a, u << 1, l, m);
       build(a, u << 1 | 1, m + 1, r);
       pull(u);
@@ -67,7 +67,7 @@ struct SegmentTree {
     if (j < l || r < i) return;
     if (i <= l && r <= j) { lz[u] = upd; push(u, l, r); }
     else {
-      int m = l + (r - l) / 2;
+      int m = mid(l, r);
       update(i, j, upd, u << 1, l, m);
       update(i, j, upd, u << 1 | 1, m + 1, r);
       pull(u);
@@ -80,7 +80,7 @@ struct SegmentTree {
     push(u, l, r);
     if (j < l || r < i) return Ops::identity();
     if (i <= l && r <= j) return t[u];
-    int m = l + (r - l) / 2;
+    int m = mid(l, r);
     return Ops::merge(query(i, j, u << 1, l, m),
                       query(i, j, u << 1 | 1, m + 1, r));
   }

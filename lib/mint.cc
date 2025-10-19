@@ -16,14 +16,14 @@ template <int M> struct modint {
 
   constexpr explicit operator int() const { return v; }
 
-  constexpr modint &operator+=(modint o) { if ((v += o.v) >= M) v -= M; return *this; }
-  constexpr modint &operator-=(modint o) { if ((v -= o.v) < 0) v += M; return *this; }
-  constexpr modint &operator*=(modint o) { v = ll(v) * o.v % M; return *this; }
-  constexpr modint &operator/=(modint o) requires prime<M> { return *this *= inv(o); }
+  constexpr modint &operator+=(modint o) { if ((v += o.v) >= M) v -= M; return self; }
+  constexpr modint &operator-=(modint o) { if ((v -= o.v) < 0) v += M; return self; }
+  constexpr modint &operator*=(modint o) { v = ll(v) * o.v % M; return self; }
+  constexpr modint &operator/=(modint o) requires prime<M> { return self *= inv(o); }
 
   constexpr modint operator-() const { return modint(-v); }
-  constexpr modint &operator++() { return *this += 1; }
-  constexpr modint &operator--() { return *this -= 1; }
+  constexpr modint &operator++() { return self += 1; }
+  constexpr modint &operator--() { return self -= 1; }
 
   friend constexpr modint inv(modint x) requires prime<M> { assert(x != 0); return pow(x, M - 2); }
   friend constexpr modint pow(modint b, ll e) {

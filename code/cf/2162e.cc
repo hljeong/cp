@@ -110,15 +110,34 @@ constexpr int inf = 1e9 + 7;
 constexpr int mod = inf;
 constexpr ll infll = 0x3f3f'3f3f'3f3f'3f3fll;
 
+// ragebait contest https://codeforces.com/blog/entry/147524
+// editorial solution
+
 void solve() {
-  // todo
+  def(int, n, k);
+  defv(int, a, n);
+  si s;
+  for (int ai : a) s.insert(ai);
+  if (s.size() == n) {
+    vi ret;
+    for (int i : range(k)) ret.pb(a[i % 3]);
+    cout << ret << endl;
+    return;
+  }
+  int x = 1; while (s.count(x)) x++;
+  int z = a.back();
+  int y = 1; while (y == x || y == z) y++;
+  ar<int, 3> b = {x, y, z};
+  vi ret;
+  for (int i : range(k)) ret.pb(b[i % 3]);
+  cout << ret << endl;
 }
 
 int main() {
   cin.tie(0)->sync_with_stdio(0);
 
-  int t = 1;
-  // int t = ri();
+  // int t = 1;
+  int t = ri();
   while (t--) solve();
 }
 

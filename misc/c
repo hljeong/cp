@@ -70,6 +70,8 @@ class Test:
     def run(self, diff: bool = False):
         try:
             info(f"running test {self.id}")
+            if sh(f"stat {self.input}", hide=True, warn=True).return_code:  # type: ignore
+                err(f"test {self.id} does not exist")
             if sh(f"cat {self.input} | ./a.out >./out", hide=True, warn=True).return_code:  # type: ignore
                 sh("cat ./out")
                 err(f"test {self.id} runtime error")

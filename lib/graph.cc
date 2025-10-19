@@ -1,5 +1,7 @@
 #include "../misc/tmpl.cc"
 
+constexpr struct Directed {} directed;
+
 struct Graph : vec<vi> {
   using base = vec<vi>;
   using base::begin;
@@ -17,7 +19,22 @@ struct Graph : vec<vi> {
       c(u - off, v - off);
     }
   }
+  Graph(Directed, int n, int m, int off = 1) : Graph(n) {
+    for (int i = 0; i < m; i++) {
+      def(int, u, v);
+      cto(u - off, v - off);
+    }
+  }
 
-  void cto(int from, int to, ll weight) { (*this)[from].pb(to); w[from][to] += weight; }
-  void c(int from, int to, ll weight = 1) { cto(from, to, weight); cto(to, from, weight); }
+  void cto(int from, int to) { self[from].pb(to); }
+  void c(int from, int to) { cto(from, to); cto(to, from); }
+
+  Graph transpose() const {
+    int n = size();
+    Graph g(n);
+    for (int u = 0; u < n; u++)
+      for (int v : self[u])
+        g.cto(v, u);
+    return g;
+  }
 };

@@ -20,15 +20,15 @@ template <int... Base> struct polyhash {
   bool operator==(const polyhash &o) const { return v == o.v; }
   friend bool operator!=(const polyhash &a, const polyhash &b) { return !(a == b); }
   friend bool operator<(const polyhash &a, const polyhash &b) { return a.v < b.v; }
-  polyhash &operator+=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] += o.v[i]; } return *this; }
-  polyhash &operator-=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] -= o.v[i]; } return *this; }
-  polyhash &operator*=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] *= o.v[i]; } return *this; }
-  polyhash &operator/=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] /= o.v[i]; } return *this; }
-  polyhash &operator<<=(const int p) { for (int i = 0; i < N; i++) { v[i] *= base_pow[i][p]; } return *this; }
-  polyhash &operator>>=(const int p) { for (int i = 0; i < N; i++) { v[i] /= base_pow[i][p]; } return *this; }
+  polyhash &operator+=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] += o.v[i]; } return self; }
+  polyhash &operator-=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] -= o.v[i]; } return self; }
+  polyhash &operator*=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] *= o.v[i]; } return self; }
+  polyhash &operator/=(const polyhash &o) { for (int i = 0; i < N; i++) { v[i] /= o.v[i]; } return self; }
+  polyhash &operator<<=(const int p) { for (int i = 0; i < N; i++) { v[i] *= base_pow[i][p]; } return self; }
+  polyhash &operator>>=(const int p) { for (int i = 0; i < N; i++) { v[i] /= base_pow[i][p]; } return self; }
   polyhash operator-() const { polyhash neg; for (int i = 0; i < N; i++) { neg.v[i] = -v[i]; } return neg; }
-  polyhash &operator++() { return *this += 1; }
-  polyhash &operator--() { return *this -= 1; }
+  polyhash &operator++() { return self += 1; }
+  polyhash &operator--() { return self -= 1; }
   friend polyhash operator+(polyhash a, const polyhash &b) { return a += b; }
   friend polyhash operator-(polyhash a, const polyhash &b) { return a -= b; }
   friend polyhash operator*(polyhash a, const polyhash &b) { return a *= b; }
